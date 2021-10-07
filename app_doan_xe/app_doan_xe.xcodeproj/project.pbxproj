@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E78F1B41270F528A005B30F9 /* ImageCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F1B3F270F528A005B30F9 /* ImageCLVCell.swift */; };
+		E78F1B42270F528A005B30F9 /* ImageCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E78F1B40270F528A005B30F9 /* ImageCLVCell.xib */; };
 		E791184B270BE60A00FBF0DA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E791184A270BE60A00FBF0DA /* Roboto-Regular.ttf */; };
+		E7C2F841270F5B3000558C61 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2F840270F5B3000558C61 /* PlayViewController.swift */; };
 		E7ED94232709C5AF00E64765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED94222709C5AF00E64765 /* AppDelegate.swift */; };
 		E7ED94252709C5AF00E64765 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED94242709C5AF00E64765 /* SceneDelegate.swift */; };
 		E7ED94272709C5AF00E64765 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED94262709C5AF00E64765 /* MainViewController.swift */; };
@@ -17,8 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E78F1B3F270F528A005B30F9 /* ImageCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCLVCell.swift; sourceTree = "<group>"; };
+		E78F1B40270F528A005B30F9 /* ImageCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCLVCell.xib; sourceTree = "<group>"; };
 		E791184A270BE60A00FBF0DA /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		E791184C270C29EE00FBF0DA /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
+		E7C2F840270F5B3000558C61 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		E7ED941F2709C5AF00E64765 /* app_doan_xe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app_doan_xe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7ED94222709C5AF00E64765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7ED94242709C5AF00E64765 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +65,8 @@
 		E7911848270BDF2700FBF0DA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E78F1B3F270F528A005B30F9 /* ImageCLVCell.swift */,
+				E78F1B40270F528A005B30F9 /* ImageCLVCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -67,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				E7ED94262709C5AF00E64765 /* MainViewController.swift */,
+				E7C2F840270F5B3000558C61 /* PlayViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -162,6 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E78F1B42270F528A005B30F9 /* ImageCLVCell.xib in Resources */,
 				E7ED942F2709C5B100E64765 /* LaunchScreen.storyboard in Resources */,
 				E7ED942C2709C5B100E64765 /* Assets.xcassets in Resources */,
 				E7ED942A2709C5AF00E64765 /* Main.storyboard in Resources */,
@@ -177,6 +187,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7ED94272709C5AF00E64765 /* MainViewController.swift in Sources */,
+				E7C2F841270F5B3000558C61 /* PlayViewController.swift in Sources */,
+				E78F1B41270F528A005B30F9 /* ImageCLVCell.swift in Sources */,
 				E7ED94232709C5AF00E64765 /* AppDelegate.swift in Sources */,
 				E7ED94252709C5AF00E64765 /* SceneDelegate.swift in Sources */,
 			);
