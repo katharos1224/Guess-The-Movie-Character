@@ -7,10 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E78F1B41270F528A005B30F9 /* ImageCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F1B3F270F528A005B30F9 /* ImageCLVCell.swift */; };
-		E78F1B42270F528A005B30F9 /* ImageCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E78F1B40270F528A005B30F9 /* ImageCLVCell.xib */; };
+		E72711432710C42D005CCD0D /* WordsItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72711422710C42D005CCD0D /* WordsItemModel.swift */; };
+		E72711452710D08A005CCD0D /* ChooseLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72711442710D08A005CCD0D /* ChooseLevelViewController.swift */; };
+		E72711472710D0C6005CCD0D /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72711462710D0C6005CCD0D /* LevelViewController.swift */; };
+		E727114A2710D41A005CCD0D /* ChooseLevelCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72711482710D41A005CCD0D /* ChooseLevelCLVCell.swift */; };
+		E727114B2710D41A005CCD0D /* ChooseLevelCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72711492710D41A005CCD0D /* ChooseLevelCLVCell.xib */; };
+		E727114E2710DCE1005CCD0D /* LevelCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727114C2710DCE1005CCD0D /* LevelCLVCell.swift */; };
+		E727114F2710DCE1005CCD0D /* LevelCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E727114D2710DCE1005CCD0D /* LevelCLVCell.xib */; };
+		E728B02927108EB100FC3E61 /* ImageCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728B02727108EB100FC3E61 /* ImageCLVCell.swift */; };
+		E728B02A27108EB100FC3E61 /* ImageCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E728B02827108EB100FC3E61 /* ImageCLVCell.xib */; };
+		E728B02C271090EF00FC3E61 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728B02B271090EF00FC3E61 /* PlayViewController.swift */; };
 		E791184B270BE60A00FBF0DA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E791184A270BE60A00FBF0DA /* Roboto-Regular.ttf */; };
-		E7C2F841270F5B3000558C61 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C2F840270F5B3000558C61 /* PlayViewController.swift */; };
+		E7C4915227109451001F8929 /* GuessCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4915027109451001F8929 /* GuessCLVCell.swift */; };
+		E7C4915327109451001F8929 /* GuessCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C4915127109451001F8929 /* GuessCLVCell.xib */; };
+		E7C491562710946A001F8929 /* AnswerCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C491542710946A001F8929 /* AnswerCLVCell.swift */; };
+		E7C491572710946A001F8929 /* AnswerCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C491552710946A001F8929 /* AnswerCLVCell.xib */; };
 		E7ED94232709C5AF00E64765 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED94222709C5AF00E64765 /* AppDelegate.swift */; };
 		E7ED94252709C5AF00E64765 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED94242709C5AF00E64765 /* SceneDelegate.swift */; };
 		E7ED94272709C5AF00E64765 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED94262709C5AF00E64765 /* MainViewController.swift */; };
@@ -20,11 +31,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E78F1B3F270F528A005B30F9 /* ImageCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCLVCell.swift; sourceTree = "<group>"; };
-		E78F1B40270F528A005B30F9 /* ImageCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCLVCell.xib; sourceTree = "<group>"; };
+		E72711422710C42D005CCD0D /* WordsItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsItemModel.swift; sourceTree = "<group>"; };
+		E72711442710D08A005CCD0D /* ChooseLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLevelViewController.swift; sourceTree = "<group>"; };
+		E72711462710D0C6005CCD0D /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
+		E72711482710D41A005CCD0D /* ChooseLevelCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLevelCLVCell.swift; sourceTree = "<group>"; };
+		E72711492710D41A005CCD0D /* ChooseLevelCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseLevelCLVCell.xib; sourceTree = "<group>"; };
+		E727114C2710DCE1005CCD0D /* LevelCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCLVCell.swift; sourceTree = "<group>"; };
+		E727114D2710DCE1005CCD0D /* LevelCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelCLVCell.xib; sourceTree = "<group>"; };
+		E728B02727108EB100FC3E61 /* ImageCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCLVCell.swift; sourceTree = "<group>"; };
+		E728B02827108EB100FC3E61 /* ImageCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCLVCell.xib; sourceTree = "<group>"; };
+		E728B02B271090EF00FC3E61 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		E791184A270BE60A00FBF0DA /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		E791184C270C29EE00FBF0DA /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
-		E7C2F840270F5B3000558C61 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		E7C4915027109451001F8929 /* GuessCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessCLVCell.swift; sourceTree = "<group>"; };
+		E7C4915127109451001F8929 /* GuessCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuessCLVCell.xib; sourceTree = "<group>"; };
+		E7C491542710946A001F8929 /* AnswerCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCLVCell.swift; sourceTree = "<group>"; };
+		E7C491552710946A001F8929 /* AnswerCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerCLVCell.xib; sourceTree = "<group>"; };
 		E7ED941F2709C5AF00E64765 /* app_doan_xe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app_doan_xe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7ED94222709C5AF00E64765 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7ED94242709C5AF00E64765 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +80,7 @@
 		E7911847270BDF2100FBF0DA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E72711422710C42D005CCD0D /* WordsItemModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -65,8 +88,16 @@
 		E7911848270BDF2700FBF0DA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E78F1B3F270F528A005B30F9 /* ImageCLVCell.swift */,
-				E78F1B40270F528A005B30F9 /* ImageCLVCell.xib */,
+				E728B02727108EB100FC3E61 /* ImageCLVCell.swift */,
+				E728B02827108EB100FC3E61 /* ImageCLVCell.xib */,
+				E7C4915027109451001F8929 /* GuessCLVCell.swift */,
+				E7C4915127109451001F8929 /* GuessCLVCell.xib */,
+				E7C491542710946A001F8929 /* AnswerCLVCell.swift */,
+				E7C491552710946A001F8929 /* AnswerCLVCell.xib */,
+				E72711482710D41A005CCD0D /* ChooseLevelCLVCell.swift */,
+				E72711492710D41A005CCD0D /* ChooseLevelCLVCell.xib */,
+				E727114C2710DCE1005CCD0D /* LevelCLVCell.swift */,
+				E727114D2710DCE1005CCD0D /* LevelCLVCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -75,7 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				E7ED94262709C5AF00E64765 /* MainViewController.swift */,
-				E7C2F840270F5B3000558C61 /* PlayViewController.swift */,
+				E728B02B271090EF00FC3E61 /* PlayViewController.swift */,
+				E72711442710D08A005CCD0D /* ChooseLevelViewController.swift */,
+				E72711462710D0C6005CCD0D /* LevelViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -171,9 +204,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E78F1B42270F528A005B30F9 /* ImageCLVCell.xib in Resources */,
+				E7C491572710946A001F8929 /* AnswerCLVCell.xib in Resources */,
+				E727114F2710DCE1005CCD0D /* LevelCLVCell.xib in Resources */,
+				E728B02A27108EB100FC3E61 /* ImageCLVCell.xib in Resources */,
+				E7C4915327109451001F8929 /* GuessCLVCell.xib in Resources */,
 				E7ED942F2709C5B100E64765 /* LaunchScreen.storyboard in Resources */,
 				E7ED942C2709C5B100E64765 /* Assets.xcassets in Resources */,
+				E727114B2710D41A005CCD0D /* ChooseLevelCLVCell.xib in Resources */,
 				E7ED942A2709C5AF00E64765 /* Main.storyboard in Resources */,
 				E791184B270BE60A00FBF0DA /* Roboto-Regular.ttf in Resources */,
 			);
@@ -186,11 +223,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7C491562710946A001F8929 /* AnswerCLVCell.swift in Sources */,
+				E72711472710D0C6005CCD0D /* LevelViewController.swift in Sources */,
+				E727114E2710DCE1005CCD0D /* LevelCLVCell.swift in Sources */,
 				E7ED94272709C5AF00E64765 /* MainViewController.swift in Sources */,
-				E7C2F841270F5B3000558C61 /* PlayViewController.swift in Sources */,
-				E78F1B41270F528A005B30F9 /* ImageCLVCell.swift in Sources */,
+				E72711452710D08A005CCD0D /* ChooseLevelViewController.swift in Sources */,
+				E728B02C271090EF00FC3E61 /* PlayViewController.swift in Sources */,
+				E728B02927108EB100FC3E61 /* ImageCLVCell.swift in Sources */,
+				E7C4915227109451001F8929 /* GuessCLVCell.swift in Sources */,
 				E7ED94232709C5AF00E64765 /* AppDelegate.swift in Sources */,
+				E72711432710C42D005CCD0D /* WordsItemModel.swift in Sources */,
 				E7ED94252709C5AF00E64765 /* SceneDelegate.swift in Sources */,
+				E727114A2710D41A005CCD0D /* ChooseLevelCLVCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
