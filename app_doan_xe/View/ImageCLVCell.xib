@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="310" height="310"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E3L-YK-dm7">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ID0-n3-Q0V">
                         <rect key="frame" x="19" y="19" width="272" height="272"/>
                     </imageView>
                 </subviews>
@@ -24,13 +24,13 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="E3L-YK-dm7" secondAttribute="trailing" constant="19" id="GiY-wX-vod"/>
-                <constraint firstAttribute="bottom" secondItem="E3L-YK-dm7" secondAttribute="bottom" constant="19" id="ZTp-Ze-2xR"/>
-                <constraint firstItem="E3L-YK-dm7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="19" id="cKj-sy-JeG"/>
-                <constraint firstItem="E3L-YK-dm7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="19" id="gbf-p9-z6E"/>
+                <constraint firstAttribute="leading" secondItem="ID0-n3-Q0V" secondAttribute="leading" constant="-19" id="HGG-S3-We1"/>
+                <constraint firstItem="ID0-n3-Q0V" firstAttribute="trailing" secondItem="gTV-IL-0wX" secondAttribute="trailing" constant="-19" id="IcC-4d-WYV"/>
+                <constraint firstItem="ID0-n3-Q0V" firstAttribute="bottom" secondItem="gTV-IL-0wX" secondAttribute="bottom" constant="-19" id="WW0-Rd-e8K"/>
+                <constraint firstAttribute="top" secondItem="ID0-n3-Q0V" secondAttribute="top" constant="-19" id="ZgJ-hV-t9W"/>
             </constraints>
-            <size key="customSize" width="257" height="243"/>
-            <point key="canvasLocation" x="9.4202898550724647" y="-48.549107142857139"/>
+            <size key="customSize" width="310" height="310"/>
+            <point key="canvasLocation" x="294" y="13"/>
         </collectionViewCell>
     </objects>
 </document>

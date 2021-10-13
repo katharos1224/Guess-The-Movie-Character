@@ -10,14 +10,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GuessCLVCell" customModule="app_doan_xe" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="207" height="177"/>
+            <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="207" height="177"/>
+                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3P-Sf-GoN">
-                        <rect key="frame" x="82.5" y="100" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3P-Sf-GoN">
+                        <rect key="frame" x="2" y="12.5" width="41.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -26,11 +26,11 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="l3P-Sf-GoN" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="ifL-r7-cag"/>
-                <constraint firstItem="l3P-Sf-GoN" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="ky8-uE-BkM"/>
+                <constraint firstItem="l3P-Sf-GoN" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="ifL-r7-cag"/>
+                <constraint firstItem="l3P-Sf-GoN" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ky8-uE-BkM"/>
             </constraints>
-            <size key="customSize" width="207" height="177"/>
-            <point key="canvasLocation" x="251.44927536231887" y="187.16517857142856"/>
+            <size key="customSize" width="204" height="197"/>
+            <point key="canvasLocation" x="249.27536231884059" y="180.46875"/>
         </collectionViewCell>
     </objects>
 </document>
