@@ -6,24 +6,18 @@
 //
 
 import UIKit
+import SQLite3
 
 class WordsModel: NSObject {
-
-    class WordsModel: NSObject {
-        var id: Int = 0
-        var answer: String = ""
-        var name: String = ""
-        var desc: String = ""
-        var type: String = ""
-        
-        func initLoad(_ json:  [String: Any]) -> WordsModel{
-            if let temp = json["id"] as? Int { id = temp }
-            if let temp = json["answer"] as? String { desc = temp }
-            if let temp = json["name"] as? String { name = temp }
-            if let temp = json["desc"] as? String { desc = temp }
-            if let temp = json["type"] as? String { type = temp }
-
-            return self
-        }
+    var id: Int = 0
+    var answer: String = ""
+    var hint: String = ""
+    var type: String = ""
+    
+    init(id: Int, answer: String, hint: String, type: String) {
+        self.id = id
+        self.answer = answer
+        self.hint = hint
+        self.type = type
     }
 }

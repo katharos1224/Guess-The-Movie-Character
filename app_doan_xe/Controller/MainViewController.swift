@@ -9,6 +9,14 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBAction func freeCoinsAction() {
+    }
+    @IBAction func settingAction() {
+    }
+    @IBAction func rankAction() {
+    }
+    @IBAction func storeAction() {
+    }
     @IBAction func playAction() {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
