@@ -31,13 +31,16 @@ class PlayViewController: UIViewController {
     var listData:[WordsModel] = [WordsModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
         collectionView.register(UINib(nibName: ImageCLVCell.className, bundle: nil), forCellWithReuseIdentifier: ImageCLVCell.className)
         collectionView.register(UINib(nibName: GuessCLVCell.className, bundle: nil), forCellWithReuseIdentifier: GuessCLVCell.className)
         collectionView.register(UINib(nibName: AnswerCLVCell.className, bundle: nil), forCellWithReuseIdentifier: AnswerCLVCell.className)
         // Do any additional setup after loading the view.
+        
         func createBackground(){
                 let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-                backgroundImage.image = #imageLiteral(resourceName: "mom-sound-bg")
+            backgroundImage.image = #imageLiteral(resourceName: "Rectangle 1")
                 backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
                 self.view.insertSubview(backgroundImage, at: 0)
             }

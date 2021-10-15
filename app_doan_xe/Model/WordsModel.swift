@@ -7,17 +7,21 @@
 
 import UIKit
 
-class WordsItemModel: NSObject {
+class WordsModel: NSObject {
 
-    class WordsItemModel: NSObject {
+    class WordsModel: NSObject {
         var id: Int = 0
-        var cover: String = ""
+        var answer: String = ""
         var name: String = ""
-
-        func initLoad(_ json:  [String: Any]) -> WordsItemModel{
+        var desc: String = ""
+        var type: String = ""
+        
+        func initLoad(_ json:  [String: Any]) -> WordsModel{
             if let temp = json["id"] as? Int { id = temp }
-            if let temp = json["cover"] as? String { cover = temp }
+            if let temp = json["answer"] as? String { desc = temp }
             if let temp = json["name"] as? String { name = temp }
+            if let temp = json["desc"] as? String { desc = temp }
+            if let temp = json["type"] as? String { type = temp }
 
             return self
         }

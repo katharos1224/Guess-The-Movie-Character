@@ -305,10 +305,13 @@
                             <constraint firstAttribute="trailing" secondItem="V13-3r-hgt" secondAttribute="trailing" id="zzz-m7-ucc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="rlp-gY-582" id="cBs-DH-ysC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eni-KR-WwO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="751" y="80"/>
+            <point key="canvasLocation" x="750.72463768115949" y="79.6875"/>
         </scene>
         <!--Choose Level View Controller-->
         <scene sceneID="ySK-Zk-fgC">
@@ -387,6 +390,13 @@
                                         <color key="textColor" red="1" green="0.83714324240000004" blue="0.070428855720000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KR-0l-NH6">
+                                        <rect key="frame" x="170" y="3" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.84572178129999998" green="0.68230563399999999" blue="0.99669295550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -428,6 +438,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="zbv-Yb-SSa" id="YxQ-gA-zjq"/>
+                                    <outlet property="delegate" destination="zbv-Yb-SSa" id="XHs-vc-jyc"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pjv-pf-cCk"/>
@@ -580,6 +594,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="9ie-b0-nPs" id="seo-ex-uib"/>
+                                    <outlet property="delegate" destination="9ie-b0-nPs" id="baP-jb-BOG"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vcm-w0-Ejc"/>
