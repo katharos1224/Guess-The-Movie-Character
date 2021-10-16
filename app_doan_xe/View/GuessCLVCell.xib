@@ -31,6 +31,9 @@
                 <constraint firstItem="l3P-Sf-GoN" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ky8-uE-BkM"/>
             </constraints>
             <size key="customSize" width="766" height="708"/>
+            <connections>
+                <outlet property="guessCharLabel" destination="l3P-Sf-GoN" id="NF8-8Z-bBn"/>
+            </connections>
             <point key="canvasLocation" x="771.73913043478262" y="458.03571428571428"/>
         </collectionViewCell>
     </objects>

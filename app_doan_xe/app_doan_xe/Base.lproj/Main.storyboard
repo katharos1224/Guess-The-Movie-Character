@@ -169,7 +169,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Yi-1y-hKP" userLabel="ViewBar">
                                 <rect key="frame" x="0.0" y="44" width="414" height="51"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjv-b4-zGA" userLabel="Back">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjv-b4-zGA" userLabel="Backbtn">
                                         <rect key="frame" x="0.0" y="10.666666666666664" width="39" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="PEL-wb-Zaz"/>
@@ -184,7 +184,7 @@
                                             <constraint firstAttribute="width" constant="117" id="VaM-MX-7Xk"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AbR-Fc-Kqi" userLabel="Buy">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AbR-Fc-Kqi" userLabel="Buybtn">
                                         <rect key="frame" x="356" y="3.6666666666666643" width="56" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="hKl-0s-MdF"/>
@@ -237,7 +237,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6/18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYd-AD-2Cx">
-                                <rect key="frame" x="180.66666666666666" y="150" width="53" height="38"/>
+                                <rect key="frame" x="180.66666666666666" y="150" width="52.666666666666657" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="Zk8-Jq-7jF"/>
                                 </constraints>
@@ -245,7 +245,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBH-gd-AtS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBH-gd-AtS" userLabel="Sharebtn">
                                 <rect key="frame" x="44.666666666666657" y="208" width="75" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="sFk-sw-yny"/>
@@ -253,7 +253,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Group 23"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYQ-T6-JN5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYQ-T6-JN5" userLabel="Hintbtn">
                                 <rect key="frame" x="294.66666666666669" y="208" width="75" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bKk-pA-ag5"/>
@@ -261,7 +261,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Group 25"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtX-Df-GRW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtX-Df-GRW" userLabel="Watchbtn">
                                 <rect key="frame" x="169.66666666666666" y="208" width="75" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="UMo-yX-PZf"/>
@@ -288,6 +288,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="dc2-6V-rZA" id="uiM-fH-gxr"/>
+                                    <outlet property="delegate" destination="dc2-6V-rZA" id="mVY-af-3TC"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J0W-I2-3SF"/>
@@ -320,6 +324,10 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="rlp-gY-582" id="cBs-DH-ysC"/>
+                        <outlet property="goldLabel" destination="EhZ-RW-KUh" id="tUc-xv-7Z1"/>
+                        <outlet property="levelLabel" destination="5b5-pO-fbi" id="Q85-BE-7YJ"/>
+                        <outlet property="questionLabel" destination="sYd-AD-2Cx" id="NJV-qN-XhI"/>
+                        <outlet property="returnMain" destination="tjv-b4-zGA" id="aXU-FM-sD0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eni-KR-WwO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -385,7 +393,7 @@
                                             <constraint firstAttribute="height" constant="38" id="0yd-dh-5MR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="25"/>
-                                        <color key="textColor" red="1" green="0.83714324240000004" blue="0.070428855720000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KR-0l-NH6">
@@ -528,7 +536,7 @@
                                             <constraint firstAttribute="height" constant="38" id="9Yn-Ik-yDM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="25"/>
-                                        <color key="textColor" red="1" green="0.83714324240000004" blue="0.070428855720000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>

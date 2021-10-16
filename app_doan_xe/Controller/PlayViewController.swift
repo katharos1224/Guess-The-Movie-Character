@@ -28,6 +28,11 @@ extension NSObject {
 
 class PlayViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var goldLabel: UILabel!
+    @IBOutlet weak var returnMain: UIButton!
+    
     var listData:[WordsModel] = [WordsModel]()
     override func viewDidLoad() {
         super.viewDidLoad()

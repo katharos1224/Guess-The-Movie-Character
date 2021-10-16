@@ -25,11 +25,15 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" red="0.4446388483" green="0.54836273189999996" blue="0.33540391920000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="lxt-b0-3p0" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="YkM-V5-TA5"/>
                 <constraint firstItem="lxt-b0-3p0" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="eO7-Nv-u6V"/>
             </constraints>
             <size key="customSize" width="206" height="158"/>
+            <connections>
+                <outlet property="selectedCharLabel" destination="lxt-b0-3p0" id="Ifz-7V-9AT"/>
+            </connections>
             <point key="canvasLocation" x="254" y="176"/>
         </collectionViewCell>
     </objects>

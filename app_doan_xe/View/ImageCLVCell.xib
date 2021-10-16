@@ -30,6 +30,9 @@
                 <constraint firstAttribute="top" secondItem="ID0-n3-Q0V" secondAttribute="top" constant="-19" id="ZgJ-hV-t9W"/>
             </constraints>
             <size key="customSize" width="310" height="310"/>
+            <connections>
+                <outlet property="imageCell" destination="ID0-n3-Q0V" id="qjo-GU-myB"/>
+            </connections>
             <point key="canvasLocation" x="294" y="13"/>
         </collectionViewCell>
     </objects>

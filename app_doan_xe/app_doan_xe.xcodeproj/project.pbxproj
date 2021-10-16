@@ -16,7 +16,8 @@
 		E727114E2710DCE1005CCD0D /* LevelCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727114C2710DCE1005CCD0D /* LevelCLVCell.swift */; };
 		E727114F2710DCE1005CCD0D /* LevelCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E727114D2710DCE1005CCD0D /* LevelCLVCell.xib */; };
 		E728B02C271090EF00FC3E61 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728B02B271090EF00FC3E61 /* PlayViewController.swift */; };
-		E787DA4B27198796009BAA27 /* data.db in Resources */ = {isa = PBXBuildFile; fileRef = E787DA4A27198796009BAA27 /* data.db */; };
+		E738E3FB271B5BF700FC871C /* SQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738E3FA271B5BF700FC871C /* SQLiteService.swift */; };
+		E738E3FF271B671200FC871C /* Database in Resources */ = {isa = PBXBuildFile; fileRef = E738E3FE271B671100FC871C /* Database */; };
 		E791184B270BE60A00FBF0DA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E791184A270BE60A00FBF0DA /* Roboto-Regular.ttf */; };
 		E7C4915227109451001F8929 /* GuessCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4915027109451001F8929 /* GuessCLVCell.swift */; };
 		E7C4915327109451001F8929 /* GuessCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C4915127109451001F8929 /* GuessCLVCell.xib */; };
@@ -44,7 +45,8 @@
 		E727114C2710DCE1005CCD0D /* LevelCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCLVCell.swift; sourceTree = "<group>"; };
 		E727114D2710DCE1005CCD0D /* LevelCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelCLVCell.xib; sourceTree = "<group>"; };
 		E728B02B271090EF00FC3E61 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
-		E787DA4A27198796009BAA27 /* data.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.db; sourceTree = "<group>"; };
+		E738E3FA271B5BF700FC871C /* SQLiteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteService.swift; sourceTree = "<group>"; };
+		E738E3FE271B671100FC871C /* Database */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Database; sourceTree = "<group>"; };
 		E791184A270BE60A00FBF0DA /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		E791184C270C29EE00FBF0DA /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
 		E7C4915027109451001F8929 /* GuessCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessCLVCell.swift; sourceTree = "<group>"; };
@@ -95,16 +97,9 @@
 		E74741522718A473007FFB46 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E738E3FA271B5BF700FC871C /* SQLiteService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		E787DA47271986F1009BAA27 /* DB */ = {
-			isa = PBXGroup;
-			children = (
-				E787DA4A27198796009BAA27 /* data.db */,
-			);
-			path = DB;
 			sourceTree = "<group>";
 		};
 		E7911846270BDF1900FBF0DA /* Font */ = {
@@ -127,16 +122,16 @@
 		E7911848270BDF2700FBF0DA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E7C4915027109451001F8929 /* GuessCLVCell.swift */,
-				E7C4915127109451001F8929 /* GuessCLVCell.xib */,
+				E7DFDB7B271229C400419115 /* ImageCLVCell.swift */,
+				E7DFDB7C271229C400419115 /* ImageCLVCell.xib */,
 				E7C491542710946A001F8929 /* AnswerCLVCell.swift */,
 				E7C491552710946A001F8929 /* AnswerCLVCell.xib */,
+				E7C4915027109451001F8929 /* GuessCLVCell.swift */,
+				E7C4915127109451001F8929 /* GuessCLVCell.xib */,
 				E72711482710D41A005CCD0D /* ChooseLevelCLVCell.swift */,
 				E72711492710D41A005CCD0D /* ChooseLevelCLVCell.xib */,
 				E727114C2710DCE1005CCD0D /* LevelCLVCell.swift */,
 				E727114D2710DCE1005CCD0D /* LevelCLVCell.xib */,
-				E7DFDB7B271229C400419115 /* ImageCLVCell.swift */,
-				E7DFDB7C271229C400419115 /* ImageCLVCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,7 +150,7 @@
 		E7ED94162709C5AF00E64765 = {
 			isa = PBXGroup;
 			children = (
-				E787DA47271986F1009BAA27 /* DB */,
+				E738E3FE271B671100FC871C /* Database */,
 				E74741522718A473007FFB46 /* Services */,
 				E7911849270BDF2B00FBF0DA /* Controller */,
 				E7911848270BDF2700FBF0DA /* View */,
@@ -253,9 +248,9 @@
 				E7C4915327109451001F8929 /* GuessCLVCell.xib in Resources */,
 				E7ED942F2709C5B100E64765 /* LaunchScreen.storyboard in Resources */,
 				E7ED942C2709C5B100E64765 /* Assets.xcassets in Resources */,
+				E738E3FF271B671200FC871C /* Database in Resources */,
 				E727114B2710D41A005CCD0D /* ChooseLevelCLVCell.xib in Resources */,
 				E7ED942A2709C5AF00E64765 /* Main.storyboard in Resources */,
-				E787DA4B27198796009BAA27 /* data.db in Resources */,
 				E791184B270BE60A00FBF0DA /* Roboto-Regular.ttf in Resources */,
 				E7DFDB7E271229C500419115 /* ImageCLVCell.xib in Resources */,
 			);
@@ -301,6 +296,7 @@
 				E728B02C271090EF00FC3E61 /* PlayViewController.swift in Sources */,
 				E7C4915227109451001F8929 /* GuessCLVCell.swift in Sources */,
 				E7ED94232709C5AF00E64765 /* AppDelegate.swift in Sources */,
+				E738E3FB271B5BF700FC871C /* SQLiteService.swift in Sources */,
 				E72711432710C42D005CCD0D /* WordsModel.swift in Sources */,
 				E7DFDB7D271229C400419115 /* ImageCLVCell.swift in Sources */,
 				E7ED94252709C5AF00E64765 /* SceneDelegate.swift in Sources */,

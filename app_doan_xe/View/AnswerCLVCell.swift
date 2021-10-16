@@ -9,6 +9,7 @@ import UIKit
 
 class AnswerCLVCell: UICollectionViewCell {
 
+    @IBOutlet weak var selectedCharLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

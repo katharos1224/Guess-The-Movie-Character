@@ -9,6 +9,7 @@ import UIKit
 
 class LevelCLVCell: UICollectionViewCell {
 
+    @IBOutlet weak var levelCell: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

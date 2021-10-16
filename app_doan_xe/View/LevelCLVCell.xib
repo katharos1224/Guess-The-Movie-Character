@@ -30,6 +30,9 @@
                 <constraint firstItem="x2p-Eu-BOf" firstAttribute="trailing" secondItem="gTV-IL-0wX" secondAttribute="trailing" constant="-7" id="g2E-Eb-Y5U"/>
             </constraints>
             <size key="customSize" width="114" height="118"/>
+            <connections>
+                <outlet property="levelCell" destination="x2p-Eu-BOf" id="sKp-L0-fKU"/>
+            </connections>
             <point key="canvasLocation" x="168" y="-31"/>
         </collectionViewCell>
     </objects>
