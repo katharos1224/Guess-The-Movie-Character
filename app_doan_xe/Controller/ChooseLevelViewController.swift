@@ -10,6 +10,12 @@ import UIKit
 class ChooseLevelViewController: UIViewController {
     
     @IBOutlet weak var ChooseLevelCLV: UICollectionView!
+    @IBAction func settingAction() {
+    }
+    @IBAction func rankAction() {
+    }
+    @IBAction func storeAction() {
+    }
     @IBAction func backAction() {
         dismiss(animated: true)
     }
@@ -18,6 +24,7 @@ class ChooseLevelViewController: UIViewController {
         super.viewDidLoad()
         ChooseLevelCLV.delegate = self
         ChooseLevelCLV.dataSource = self
+        
         ChooseLevelCLV.register(UINib(nibName: ChooseLevelCLVCell.className, bundle: nil), forCellWithReuseIdentifier: ChooseLevelCLVCell.className)
     }
 }

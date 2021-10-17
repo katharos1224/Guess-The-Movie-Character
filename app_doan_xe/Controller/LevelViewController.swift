@@ -10,11 +10,17 @@ import UIKit
 class LevelViewController: UIViewController {
 
     @IBOutlet weak var LevelViewCLV: UICollectionView!
-    
+    @IBAction func settingAction() {
+    }
+    @IBAction func rankAction() {
+    }
+    @IBAction func storeAction() {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         LevelViewCLV.delegate = self
         LevelViewCLV.dataSource = self
+        
         LevelViewCLV.register(UINib(nibName: LevelCLVCell.className, bundle: nil), forCellWithReuseIdentifier: LevelCLVCell.className)
     }
 }

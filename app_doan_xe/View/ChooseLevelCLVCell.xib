@@ -16,14 +16,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="602" height="363"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJn-bw-8vT" userLabel="Choose">
-                        <rect key="frame" x="521" y="0.0" width="24" height="363"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain"/>
-                        <connections>
-                            <action selector="playAction" destination="gTV-IL-0wX" eventType="touchUpInside" id="EzL-Nb-7wJ"/>
-                        </connections>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emR-1P-YK7">
                         <rect key="frame" x="86" y="156.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -56,9 +48,19 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJn-bw-8vT" userLabel="Choose">
+                        <rect key="frame" x="0.0" y="0.0" width="602" height="363"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain"/>
+                        <connections>
+                            <action selector="nextAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ddp-Re-CRg"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="emR-1P-YK7" firstAttribute="top" secondItem="1qN-86-yAh" secondAttribute="top" id="2qT-IR-LuP"/>
                 <constraint firstItem="wJn-bw-8vT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3vW-v8-754"/>
@@ -72,8 +74,8 @@
                 <constraint firstItem="1qN-86-yAh" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="k7a-mp-UCK"/>
                 <constraint firstItem="emR-1P-YK7" firstAttribute="leading" secondItem="oje-72-5KH" secondAttribute="leading" id="kpa-EX-z5E"/>
                 <constraint firstItem="1qN-86-yAh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="14" id="mba-xK-2cO"/>
-                <constraint firstItem="wJn-bw-8vT" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="521" id="nCW-WY-b7h"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="wJn-bw-8vT" secondAttribute="trailing" constant="57" id="ooZ-8J-l5t"/>
+                <constraint firstItem="wJn-bw-8vT" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="nCW-WY-b7h"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="wJn-bw-8vT" secondAttribute="trailing" id="ooZ-8J-l5t"/>
                 <constraint firstItem="oci-oo-HY5" firstAttribute="centerY" secondItem="emR-1P-YK7" secondAttribute="centerY" id="orB-CA-dxG"/>
                 <constraint firstItem="oje-72-5KH" firstAttribute="top" secondItem="emR-1P-YK7" secondAttribute="bottom" constant="10" id="tOi-nQ-XeM"/>
                 <constraint firstItem="ZjQ-9y-QlK" firstAttribute="centerY" secondItem="1qN-86-yAh" secondAttribute="centerY" id="vIf-Q5-M2J"/>
@@ -89,7 +91,7 @@
                 <outlet property="unlockedLevelImage" destination="1qN-86-yAh" id="mgH-aO-xRR"/>
                 <outlet property="unlockedLevelLabel" destination="emR-1P-YK7" id="At0-0F-whs"/>
             </connections>
-            <point key="canvasLocation" x="203" y="69"/>
+            <point key="canvasLocation" x="203" y="87"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -52,7 +52,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="play"/>
                                         <connections>
-                                            <action selector="playAction" destination="tQ1-pz-KlZ" eventType="touchUpInside" id="Ycs-u7-M2D"/>
+                                            <action selector="playAction" destination="tQ1-pz-KlZ" eventType="touchUpInside" id="XbC-7c-pFf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cn3-7l-vOc" userLabel="Free Coins">
@@ -234,6 +234,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="share"/>
+                                <connections>
+                                    <action selector="shareAction" destination="JJo-Mx-xh4" eventType="touchUpInside" id="ces-iy-LZc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ol0-Hh-yN3" userLabel="Hintbtn">
                                 <rect key="frame" x="294.5" y="208" width="75" height="50"/>
@@ -242,6 +245,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="hint"/>
+                                <connections>
+                                    <action selector="watchHintAction" destination="JJo-Mx-xh4" eventType="touchUpInside" id="OV8-cn-lxO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OjP-Px-Hj3" userLabel="Watchbtn">
                                 <rect key="frame" x="169.5" y="208" width="75" height="50"/>
@@ -250,6 +256,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="adswatch"/>
+                                <connections>
+                                    <action selector="watchAdsAction" destination="JJo-Mx-xh4" eventType="touchUpInside" id="3Vm-6U-VBM"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z0t-u0-n74">
                                 <rect key="frame" x="15" y="273" width="384" height="549"/>
@@ -334,6 +343,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="rank"/>
+                                <connections>
+                                    <action selector="rankAction" destination="DNg-nf-Mru" eventType="touchUpInside" id="jwK-6t-Mmn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQM-pK-j5x" userLabel="Setting">
                                 <rect key="frame" x="79.5" y="780" width="75" height="50"/>
@@ -342,6 +354,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="setting"/>
+                                <connections>
+                                    <action selector="settingAction" destination="DNg-nf-Mru" eventType="touchUpInside" id="v8c-fO-nxP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVF-GI-BNR" userLabel="Store">
                                 <rect key="frame" x="258.5" y="780" width="75" height="50"/>
@@ -350,6 +365,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="store"/>
+                                <connections>
+                                    <action selector="storeAction" destination="DNg-nf-Mru" eventType="touchUpInside" id="c1L-wY-j6u"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ug2-ii-geB" userLabel="ViewBar">
                                 <rect key="frame" x="0.0" y="44" width="414" height="51"/>
@@ -480,6 +498,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="rank"/>
+                                <connections>
+                                    <action selector="rankAction" destination="yb4-Tc-I7i" eventType="touchUpInside" id="bfc-Ib-5xg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWE-Qy-bM1" userLabel="Setting">
                                 <rect key="frame" x="80" y="772" width="75" height="50"/>
@@ -488,6 +509,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="setting"/>
+                                <connections>
+                                    <action selector="settingAction" destination="yb4-Tc-I7i" eventType="touchUpInside" id="WqL-wz-S38"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bR8-om-V9m" userLabel="Store">
                                 <rect key="frame" x="259" y="772" width="75" height="50"/>
@@ -496,6 +520,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="store"/>
+                                <connections>
+                                    <action selector="storeAction" destination="yb4-Tc-I7i" eventType="touchUpInside" id="r5o-Jb-eRi"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVr-4S-hW5" userLabel="ViewBar">
                                 <rect key="frame" x="0.0" y="37" width="414" height="51"/>

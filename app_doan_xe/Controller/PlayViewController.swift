@@ -31,6 +31,12 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var goldLabel: UILabel!
+    @IBAction func shareAction() {
+    }
+    @IBAction func watchAdsAction() {
+    }
+    @IBAction func watchHintAction() {
+    }
     @IBAction func backAction() {
         dismiss(animated: true)
     }
