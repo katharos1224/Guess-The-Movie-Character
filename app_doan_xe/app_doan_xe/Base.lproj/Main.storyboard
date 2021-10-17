@@ -334,10 +334,10 @@
             </objects>
             <point key="canvasLocation" x="750.72463768115949" y="79.6875"/>
         </scene>
-        <!--Choose Level View Controller-->
+        <!--Choose LvlCLV-->
         <scene sceneID="ySK-Zk-fgC">
             <objects>
-                <viewController storyboardIdentifier="ChooseLevelViewController" id="zbv-Yb-SSa" customClass="ChooseLevelViewController" customModule="app_doan_xe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseLevelViewController" id="zbv-Yb-SSa" customModule="app_doan_xe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nZl-50-z8t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -472,6 +472,7 @@
                             <constraint firstItem="pjv-pf-cCk" firstAttribute="bottom" secondItem="guY-yX-Jf6" secondAttribute="bottom" constant="32" id="yVp-Ep-jBJ"/>
                         </constraints>
                     </view>
+                    <string key="customClass">		ChooseLvlCLV</string>
                     <connections>
                         <outlet property="ChooseLevelViewController" destination="aVM-Li-F0z" id="ZO7-0L-FHb"/>
                     </connections>
@@ -607,7 +608,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="LevelViewController" destination="VKP-im-13B" id="QX3-6Y-Mad"/>
+                        <outlet property="LevelViewClV" destination="VKP-im-13B" id="QX3-6Y-Mad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y37-hg-eki" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

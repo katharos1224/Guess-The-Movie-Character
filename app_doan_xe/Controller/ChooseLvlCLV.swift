@@ -12,8 +12,9 @@ class ChooseLevelViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        var
-        ChooseLevelViewController.register(UINib(nibName: ChooseLevelCLVCell.className, bundle: nil), forCellWithReuseIdentifier: ChooseLevelCLVCell.className)
+        ChooseLvlCLV.delegate = self
+        ChooseLvlCLV.dataSource = self
+        ChooseLvlCLV.register(UINib(nibName: ChooseLevelCLVCell.className, bundle: nil), forCellWithReuseIdentifier: ChooseLevelCLVCell.className)
     }
 }
 
