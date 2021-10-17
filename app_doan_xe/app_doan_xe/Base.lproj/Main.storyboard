@@ -472,6 +472,9 @@
                             <constraint firstItem="pjv-pf-cCk" firstAttribute="bottom" secondItem="guY-yX-Jf6" secondAttribute="bottom" constant="32" id="yVp-Ep-jBJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ChooseLevelViewController" destination="aVM-Li-F0z" id="ZO7-0L-FHb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dtv-pB-9yg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -603,6 +606,9 @@
                             <constraint firstItem="vcm-w0-Ejc" firstAttribute="trailing" secondItem="Fkn-O4-BAe" secondAttribute="trailing" id="mXr-zB-GaW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="LevelViewController" destination="VKP-im-13B" id="QX3-6Y-Mad"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y37-hg-eki" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C85F65F910D48AA3B34E41AD /* Pods_app_doan_xe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F4FED4FC7DC8A4BD21D2EA /* Pods_app_doan_xe.framework */; };
+		E7010615271C05B80009E250 /* Pods_app_doan_xe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7010614271C05B80009E250 /* Pods_app_doan_xe.framework */; };
+		E7010616271C05B80009E250 /* Pods_app_doan_xe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7010614271C05B80009E250 /* Pods_app_doan_xe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E72711432710C42D005CCD0D /* WordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72711422710C42D005CCD0D /* WordsModel.swift */; };
 		E72711452710D08A005CCD0D /* ChooseLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72711442710D08A005CCD0D /* ChooseLevelViewController.swift */; };
 		E72711472710D0C6005CCD0D /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72711462710D0C6005CCD0D /* LevelViewController.swift */; };
@@ -18,6 +19,8 @@
 		E728B02C271090EF00FC3E61 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728B02B271090EF00FC3E61 /* PlayViewController.swift */; };
 		E738E3FB271B5BF700FC871C /* SQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738E3FA271B5BF700FC871C /* SQLiteService.swift */; };
 		E738E3FF271B671200FC871C /* Database in Resources */ = {isa = PBXBuildFile; fileRef = E738E3FE271B671100FC871C /* Database */; };
+		E7849AE0271C08BA00AD5EA6 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7849ADF271C08BA00AD5EA6 /* SQLite.framework */; };
+		E7849AE1271C08BA00AD5EA6 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7849ADF271C08BA00AD5EA6 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E791184B270BE60A00FBF0DA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E791184A270BE60A00FBF0DA /* Roboto-Regular.ttf */; };
 		E7C4915227109451001F8929 /* GuessCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4915027109451001F8929 /* GuessCLVCell.swift */; };
 		E7C4915327109451001F8929 /* GuessCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7C4915127109451001F8929 /* GuessCLVCell.xib */; };
@@ -33,10 +36,25 @@
 		E7ED942F2709C5B100E64765 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7ED942D2709C5B100E64765 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E738E41A271B698D00FC871C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E7849AE1271C08BA00AD5EA6 /* SQLite.framework in Embed Frameworks */,
+				E7010616271C05B80009E250 /* Pods_app_doan_xe.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		22F4FED4FC7DC8A4BD21D2EA /* Pods_app_doan_xe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_app_doan_xe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B90D1D9EAE11DBFFD458412 /* Pods-app_doan_xe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_doan_xe.release.xcconfig"; path = "Target Support Files/Pods-app_doan_xe/Pods-app_doan_xe.release.xcconfig"; sourceTree = "<group>"; };
 		90B3EA4D4848631E18B46067 /* Pods-app_doan_xe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_doan_xe.debug.xcconfig"; path = "Target Support Files/Pods-app_doan_xe/Pods-app_doan_xe.debug.xcconfig"; sourceTree = "<group>"; };
+		E7010614271C05B80009E250 /* Pods_app_doan_xe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_app_doan_xe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72711422710C42D005CCD0D /* WordsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsModel.swift; sourceTree = "<group>"; };
 		E72711442710D08A005CCD0D /* ChooseLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLevelViewController.swift; sourceTree = "<group>"; };
 		E72711462710D0C6005CCD0D /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +65,7 @@
 		E728B02B271090EF00FC3E61 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		E738E3FA271B5BF700FC871C /* SQLiteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteService.swift; sourceTree = "<group>"; };
 		E738E3FE271B671100FC871C /* Database */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Database; sourceTree = "<group>"; };
+		E7849ADF271C08BA00AD5EA6 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E791184A270BE60A00FBF0DA /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		E791184C270C29EE00FBF0DA /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
 		E7C4915027109451001F8929 /* GuessCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessCLVCell.swift; sourceTree = "<group>"; };
@@ -70,7 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C85F65F910D48AA3B34E41AD /* Pods_app_doan_xe.framework in Frameworks */,
+				E7849AE0271C08BA00AD5EA6 /* SQLite.framework in Frameworks */,
+				E7010615271C05B80009E250 /* Pods_app_doan_xe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +100,8 @@
 		7484DC42420EFA8ED9698FC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				22F4FED4FC7DC8A4BD21D2EA /* Pods_app_doan_xe.framework */,
+				E7849ADF271C08BA00AD5EA6 /* SQLite.framework */,
+				E7010614271C05B80009E250 /* Pods_app_doan_xe.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,6 +216,8 @@
 				E7ED941B2709C5AF00E64765 /* Sources */,
 				E7ED941C2709C5AF00E64765 /* Frameworks */,
 				E7ED941D2709C5AF00E64765 /* Resources */,
+				E738E41A271B698D00FC871C /* Embed Frameworks */,
+				A4A49A1C0509BBD4E46B75BF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,6 +302,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4A49A1C0509BBD4E46B75BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-app_doan_xe/Pods-app_doan_xe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-app_doan_xe/Pods-app_doan_xe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-app_doan_xe/Pods-app_doan_xe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
