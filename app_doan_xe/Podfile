@@ -6,7 +6,5 @@ target 'app_doan_xe' do
   use_frameworks!
 
   # Pods for app_doan_xe
-	
-	pod 'SQLite.swift'
-
+  pod 'SQLite.swift'
 end

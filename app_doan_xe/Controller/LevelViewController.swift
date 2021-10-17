@@ -9,12 +9,13 @@ import UIKit
 
 class LevelViewController: UIViewController {
 
-    @IBOutlet weak var LevelViewClV: UICollectionView!
+    @IBOutlet weak var LevelViewCLV: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        LevelViewClV.delegate = self
-        LevelViewClV.dataSource = self
-        LevelViewClV.register(UINib(nibName: LevelCLVCell.className, bundle: nil), forCellWithReuseIdentifier: LevelCLVCell.className)
+        LevelViewCLV.delegate = self
+        LevelViewCLV.dataSource = self
+        LevelViewCLV.register(UINib(nibName: LevelCLVCell.className, bundle: nil), forCellWithReuseIdentifier: LevelCLVCell.className)
     }
 }
 
@@ -28,7 +29,7 @@ extension LevelViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LevelViewClV.className, for: indexPath) as! LevelCLVCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LevelViewCLV.className, for: indexPath) as! LevelCLVCell
             return cell
     }
     func collectionView(_ collectionView: UICollectionView,

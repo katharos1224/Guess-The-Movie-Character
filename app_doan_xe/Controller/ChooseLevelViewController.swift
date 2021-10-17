@@ -8,13 +8,17 @@
 import UIKit
 
 class ChooseLevelViewController: UIViewController {
-    @IBOutlet weak var ChooseLvlCLV: UICollectionView!
     
+    @IBOutlet weak var ChooseLevelCLV: UICollectionView!
+    @IBAction func backAction() {
+        dismiss(animated: true)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        ChooseLvlCLV.delegate = self
-        ChooseLvlCLV.dataSource = self
-        ChooseLvlCLV.register(UINib(nibName: ChooseLevelCLVCell.className, bundle: nil), forCellWithReuseIdentifier: ChooseLevelCLVCell.className)
+        ChooseLevelCLV.delegate = self
+        ChooseLevelCLV.dataSource = self
+        ChooseLevelCLV.register(UINib(nibName: ChooseLevelCLVCell.className, bundle: nil), forCellWithReuseIdentifier: ChooseLevelCLVCell.className)
     }
 }
 
@@ -54,9 +58,9 @@ extension ChooseLevelViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: 382, height: 76)
+            return CGSize(width: ChooseLevelCLV.frame.width, height: 76)
         }
-        return CGSize(width: 382, height: 76)
+        return CGSize(width: ChooseLevelCLV.frame.width, height: 76)
     }
 }
 

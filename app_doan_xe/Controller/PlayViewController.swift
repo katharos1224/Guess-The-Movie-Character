@@ -31,7 +31,9 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var goldLabel: UILabel!
-    @IBOutlet weak var returnMain: UIButton!
+    @IBAction func backAction() {
+        dismiss(animated: true)
+    }
     
     var listData:[WordsModel] = [WordsModel]()
     override func viewDidLoad() {

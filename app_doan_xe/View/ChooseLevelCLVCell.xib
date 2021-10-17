@@ -16,13 +16,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="602" height="363"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJn-bw-8vT" userLabel="Choose">
+                        <rect key="frame" x="521" y="0.0" width="24" height="363"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain"/>
+                        <connections>
+                            <action selector="playAction" destination="gTV-IL-0wX" eventType="touchUpInside" id="EzL-Nb-7wJ"/>
+                        </connections>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emR-1P-YK7">
                         <rect key="frame" x="86" y="156.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1qN-86-yAh">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1qN-86-yAh" userLabel="Unlocked Level Image">
                         <rect key="frame" x="14" y="156.5" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="VMo-w3-Jxt"/>
@@ -33,7 +41,7 @@
                         <rect key="frame" x="86" y="187.5" width="501" height="4"/>
                         <color key="tintColor" red="0.99862414600000005" green="0.72168296580000002" blue="0.1644276083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </progressView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZjQ-9y-QlK">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZjQ-9y-QlK" userLabel="Locked Level Image">
                         <rect key="frame" x="14" y="156.5" width="60" height="60"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qL9-Wh-qpp">
@@ -53,6 +61,8 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="emR-1P-YK7" firstAttribute="top" secondItem="1qN-86-yAh" secondAttribute="top" id="2qT-IR-LuP"/>
+                <constraint firstItem="wJn-bw-8vT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3vW-v8-754"/>
+                <constraint firstAttribute="bottom" secondItem="wJn-bw-8vT" secondAttribute="bottom" id="INZ-6u-6TB"/>
                 <constraint firstItem="qL9-Wh-qpp" firstAttribute="centerY" secondItem="oje-72-5KH" secondAttribute="centerY" id="N8e-04-mTZ"/>
                 <constraint firstItem="qL9-Wh-qpp" firstAttribute="leading" secondItem="emR-1P-YK7" secondAttribute="leading" id="Wy0-U6-KvL"/>
                 <constraint firstItem="ZjQ-9y-QlK" firstAttribute="top" secondItem="1qN-86-yAh" secondAttribute="top" id="ajM-gl-yIz"/>
@@ -62,6 +72,8 @@
                 <constraint firstItem="1qN-86-yAh" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="k7a-mp-UCK"/>
                 <constraint firstItem="emR-1P-YK7" firstAttribute="leading" secondItem="oje-72-5KH" secondAttribute="leading" id="kpa-EX-z5E"/>
                 <constraint firstItem="1qN-86-yAh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="14" id="mba-xK-2cO"/>
+                <constraint firstItem="wJn-bw-8vT" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="521" id="nCW-WY-b7h"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="wJn-bw-8vT" secondAttribute="trailing" constant="57" id="ooZ-8J-l5t"/>
                 <constraint firstItem="oci-oo-HY5" firstAttribute="centerY" secondItem="emR-1P-YK7" secondAttribute="centerY" id="orB-CA-dxG"/>
                 <constraint firstItem="oje-72-5KH" firstAttribute="top" secondItem="emR-1P-YK7" secondAttribute="bottom" constant="10" id="tOi-nQ-XeM"/>
                 <constraint firstItem="ZjQ-9y-QlK" firstAttribute="centerY" secondItem="1qN-86-yAh" secondAttribute="centerY" id="vIf-Q5-M2J"/>
@@ -70,12 +82,12 @@
             </constraints>
             <size key="customSize" width="602" height="363"/>
             <connections>
-                <outlet property="currentProgressBar" destination="oje-72-5KH" id="loP-it-Lk1"/>
+                <outlet property="currentProgress" destination="oje-72-5KH" id="sVK-ue-qOD"/>
                 <outlet property="currentProgressLabel" destination="oci-oo-HY5" id="jIG-II-YPx"/>
-                <outlet property="imgChooseLvCell" destination="ZjQ-9y-QlK" id="bFJ-7O-5iO"/>
-                <outlet property="lockedImageLevel" destination="ZjQ-9y-QlK" id="iym-fL-pNQ"/>
+                <outlet property="lockedLevelImage" destination="ZjQ-9y-QlK" id="LvX-en-KBU"/>
                 <outlet property="lockedLevelLabel" destination="qL9-Wh-qpp" id="SLi-Ww-zCD"/>
-                <outlet property="unlockedImageLevel" destination="1qN-86-yAh" id="fjw-te-9BK"/>
+                <outlet property="unlockedLevelImage" destination="1qN-86-yAh" id="mgH-aO-xRR"/>
+                <outlet property="unlockedLevelLabel" destination="emR-1P-YK7" id="At0-0F-whs"/>
             </connections>
             <point key="canvasLocation" x="203" y="69"/>
         </collectionViewCell>

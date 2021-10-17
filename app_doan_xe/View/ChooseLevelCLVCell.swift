@@ -9,15 +9,23 @@ import UIKit
 
 class ChooseLevelCLVCell: UICollectionViewCell {
 
-    @IBOutlet weak var imgChooseLvCell: UIImageView!
-    @IBOutlet weak var currentProgressBar: UIProgressView!
-    @IBOutlet weak var unlockedImageLevel: UIImageView!
-    @IBOutlet weak var lockedImageLevel: UIImageView!
+
+    @IBOutlet weak var currentProgress: UIProgressView!
+    @IBOutlet weak var unlockedLevelImage: UIImageView!
+    @IBOutlet weak var lockedLevelImage: UIImageView!
     @IBOutlet weak var currentProgressLabel: UILabel!
     @IBOutlet weak var lockedLevelLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet weak var unlockedLevelLabel: UILabel!
+//    @IBAction func playAction() {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "LevelViewController") as! LevelViewController
+//        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+//        self.present(vc, animated: true)
+//       // self.navigationController?.pushViewController(vc, animated: true)    }
+//    }
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        // Initialization code
+//    }
 
 }

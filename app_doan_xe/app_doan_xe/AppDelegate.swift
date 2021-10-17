@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  app_doan_xe
 //
-//  Created by Sơn on 03/10/2021.
+//  Created by Son on 18/10/2021.
 //
 
 import UIKit
