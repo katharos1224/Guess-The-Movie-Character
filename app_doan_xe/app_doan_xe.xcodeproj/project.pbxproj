@@ -180,8 +180,7 @@
 			children = (
 				E7AFD1D8271CC168005D3937 /* SQLiteService.swift */,
 			);
-			name = Services;
-			path = "Servicé";
+			path = Services;
 			sourceTree = "<group>";
 		};
 		E7235E38271CA621008F18B1 /* Database */ = {
