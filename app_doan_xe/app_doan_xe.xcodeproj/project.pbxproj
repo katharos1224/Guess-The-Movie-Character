@@ -19,7 +19,6 @@
 		E728B02C271090EF00FC3E61 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E728B02B271090EF00FC3E61 /* PlayViewController.swift */; };
 		E738E3FB271B5BF700FC871C /* SQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738E3FA271B5BF700FC871C /* SQLiteService.swift */; };
 		E738E3FF271B671200FC871C /* Database in Resources */ = {isa = PBXBuildFile; fileRef = E738E3FE271B671100FC871C /* Database */; };
-		E7849AE0271C08BA00AD5EA6 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7849ADF271C08BA00AD5EA6 /* SQLite.framework */; };
 		E7849AE1271C08BA00AD5EA6 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7849ADF271C08BA00AD5EA6 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E791184B270BE60A00FBF0DA /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E791184A270BE60A00FBF0DA /* Roboto-Regular.ttf */; };
 		E7C4915227109451001F8929 /* GuessCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C4915027109451001F8929 /* GuessCLVCell.swift */; };
@@ -89,7 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7849AE0271C08BA00AD5EA6 /* SQLite.framework in Frameworks */,
 				E7010615271C05B80009E250 /* Pods_app_doan_xe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
