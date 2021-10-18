@@ -17,16 +17,5 @@ class ChooseLevelCLVCell: UICollectionViewCell {
     @IBOutlet weak var lockedLevelLabel: UILabel!
     @IBOutlet weak var unlockedLevelLabel: UILabel!
     
-    @IBAction func nextAction() {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "LevelViewController") as! LevelViewController
-//        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-//        self.present(vc, animated: true)
-//       // self.navigationController?.pushViewController(vc, animated: true)    }
-//    }
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-    }
 
 }

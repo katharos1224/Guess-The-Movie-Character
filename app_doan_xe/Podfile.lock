@@ -2,17 +2,21 @@ PODS:
   - SQLite.swift (0.13.0):
     - SQLite.swift/standard (= 0.13.0)
   - SQLite.swift/standard (0.13.0)
+  - SwiftKeychainWrapper (4.0.1)
 
 DEPENDENCIES:
   - SQLite.swift
+  - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
     - SQLite.swift
+    - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   SQLite.swift: 8add701609fd0ef78d097dcc75d20a9782e6f5fc
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
 
-PODFILE CHECKSUM: 7d90b591722cb33273f2bb3247a09ccb5060d54d
+PODFILE CHECKSUM: 1654368ad94d17aaed9e0b8ca236b0ba8e2d0981
 
 COCOAPODS: 1.11.2

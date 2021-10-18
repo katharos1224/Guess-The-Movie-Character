@@ -34,6 +34,7 @@
 		E7235E3E271CA637008F18B1 /* data in Resources */ = {isa = PBXBuildFile; fileRef = E7235E3B271CA637008F18B1 /* data */; };
 		E7235E42271CA66B008F18B1 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7235E40271CA66B008F18B1 /* Roboto-Regular.ttf */; };
 		E7235E43271CA66B008F18B1 /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7235E41271CA66B008F18B1 /* LuckiestGuy-Regular.ttf */; };
+		E785B39F271DEF1A00C0E561 /* LetterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785B39E271DEF1A00C0E561 /* LetterModel.swift */; };
 		E7AFD1D9271CC168005D3937 /* SQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AFD1D8271CC168005D3937 /* SQLiteService.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		E7235E3B271CA637008F18B1 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		E7235E40271CA66B008F18B1 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		E7235E41271CA66B008F18B1 /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
+		E785B39E271DEF1A00C0E561 /* LetterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterModel.swift; sourceTree = "<group>"; };
 		E7AFD1D8271CC168005D3937 /* SQLiteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SQLiteService.swift; path = Services/SQLiteService.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 		E7235E1C271CA57E008F18B1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E785B39E271DEF1A00C0E561 /* LetterModel.swift */,
 				E7235E1F271CA5DA008F18B1 /* WordsModel.swift */,
 			);
 			path = Model;
@@ -333,6 +336,7 @@
 				E7235E16271CA4BE008F18B1 /* ChooseLevelViewController.swift in Sources */,
 				E7235E14271CA464008F18B1 /* PlayViewController.swift in Sources */,
 				E7235DF1271C9481008F18B1 /* AppDelegate.swift in Sources */,
+				E785B39F271DEF1A00C0E561 /* LetterModel.swift in Sources */,
 				E7235E18271CA4C2008F18B1 /* LevelViewController.swift in Sources */,
 				E7235E2D271CA5EF008F18B1 /* GuessCLVCell.swift in Sources */,
 				E7235E33271CA5EF008F18B1 /* ImageCLVCell.swift in Sources */,

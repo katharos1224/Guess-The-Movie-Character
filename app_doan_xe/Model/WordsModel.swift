@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SQLite3
+import SQLite
 
 class WordsModel: NSObject {
     var id: Int = 0
