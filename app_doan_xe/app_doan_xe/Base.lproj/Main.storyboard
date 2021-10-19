@@ -91,6 +91,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="freecoins"/>
+                                        <connections>
+                                            <action selector="freeCoinsAction" destination="tQ1-pz-KlZ" eventType="touchUpInside" id="aTJ-z4-5Vl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -134,12 +137,6 @@
                             <constraint firstItem="sck-JV-L4A" firstAttribute="width" secondItem="Mkz-F4-kAL" secondAttribute="width" multiplier="0.92029" id="ymx-gD-5fF"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="freeCoinsButton" destination="cn3-7l-vOc" id="YcJ-Zo-iJp"/>
-                        <outlet property="rankButton" destination="PTr-eW-Osv" id="n3P-7L-c7j"/>
-                        <outlet property="settingButton" destination="0bv-SE-PhK" id="ExC-hJ-eRK"/>
-                        <outlet property="storeButton" destination="Q9s-ze-eBR" id="yzT-jq-A55"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sb2-PO-cB2" sceneMemberID="firstResponder"/>
             </objects>
@@ -267,7 +264,7 @@
                                     <constraint firstAttribute="height" constant="50" id="zlI-VF-EZH"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="adswatch"/>
+                                <buttonConfiguration key="configuration" style="plain" image="watchads"/>
                                 <connections>
                                     <action selector="watchAdsAction" destination="JJo-Mx-xh4" eventType="touchUpInside" id="3Vm-6U-VBM"/>
                                 </connections>
@@ -633,7 +630,6 @@
     </scenes>
     <resources>
         <image name="Group" width="24" height="24"/>
-        <image name="adswatch" width="51" height="51"/>
         <image name="bgblue" width="414" height="896"/>
         <image name="bgpink" width="414" height="896"/>
         <image name="buy" width="32" height="44"/>
@@ -648,6 +644,7 @@
         <image name="setting" width="51" height="51"/>
         <image name="share" width="51" height="51"/>
         <image name="store" width="51" height="51"/>
+        <image name="watchads" width="51" height="51"/>
         <image name="whitemainbg" width="381" height="316"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -10,12 +10,12 @@ import UIKit
 class ChooseLevelCLVCell: UICollectionViewCell {
 
 
-    @IBOutlet weak var currentProgress: UIProgressView!
+    @IBOutlet weak var currentProgressView: UIProgressView!
     @IBOutlet weak var unlockedLevelImage: UIImageView!
     @IBOutlet weak var lockedLevelImage: UIImageView!
     @IBOutlet weak var currentProgressLabel: UILabel!
     @IBOutlet weak var lockedLevelLabel: UILabel!
-    @IBOutlet weak var unlockedLevelLabel: UILabel!
+    @IBOutlet weak var LevelLabel: UILabel!
     
-
+    let progress = Progress(totalUnitCount: 70)
 }
