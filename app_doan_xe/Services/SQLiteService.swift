@@ -61,14 +61,6 @@ class SqliteService:NSObject {
     }
     
     func getAmountLetterOfRightAnswer(number: Int)->Int{
-//        for item in listDataShin{
-//            if item.number == number{
-//                let word = item.rightAnswer.components(separatedBy: .letters)
-//                let whiteSpace = getWhiteSpace(number: number)
-//                let count = word.count - whiteSpace
-//                return count
-//            }
-//        }
         return getRightAnswerLetters(number: number).count
     }
     
@@ -151,11 +143,16 @@ class SqliteService:NSObject {
         let fourthWord = getRightAnswer(number: number)[3]
         return fourthWord.count
     }
+    
+    func setNumberOfSection4(number: Int)->Int{
+        let fifthWord = getRightAnswer(number: number)[4]
+        return fifthWord.count
+    }
     func randomizeAvailableLetters(tileArraySize: Int) -> Array<String> {
-      let alphabet: [String] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+      let alphabet: [String] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "&", "-", ",", ".", "‘", "2", "1", "7", "9", "8", "0", "3", "4" ]
       var availableTiles = [String]()
         for _ in 0..<tileArraySize {
-        let rand = Int(arc4random_uniform(26))
+        let rand = Int(arc4random_uniform(39))
         availableTiles.append(alphabet[rand])
       }
       return(availableTiles)
@@ -163,7 +160,7 @@ class SqliteService:NSObject {
     
     func getAmountOfRandomLetters(number: Int)->Int{
         let amountOfRightAnswer = getAmountLetterOfRightAnswer(number: number)
-        return 30 - amountOfRightAnswer
+        return 21 - amountOfRightAnswer
     }
     
     func shuffleLetters(number: Int)->[LetterModel]{

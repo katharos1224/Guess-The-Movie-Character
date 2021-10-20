@@ -9,7 +9,7 @@ import UIKit
 
 class GuessCLVCell: UICollectionViewCell {
 
-    @IBOutlet weak var guessCharLabel: UILabel!
+    @IBOutlet weak var guessLetterLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

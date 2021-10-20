@@ -16,7 +16,7 @@
 		E7235DFD271C9482008F18B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7235DFB271C9482008F18B1 /* LaunchScreen.storyboard */; };
 		E7235E14271CA464008F18B1 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E13271CA464008F18B1 /* PlayViewController.swift */; };
 		E7235E16271CA4BE008F18B1 /* ChooseLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E15271CA4BE008F18B1 /* ChooseLevelViewController.swift */; };
-		E7235E18271CA4C2008F18B1 /* LevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E17271CA4C1008F18B1 /* LevelViewController.swift */; };
+		E7235E18271CA4C2008F18B1 /* ChooseQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E17271CA4C1008F18B1 /* ChooseQuestionViewController.swift */; };
 		E7235E1A271CA4C5008F18B1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E19271CA4C5008F18B1 /* MainViewController.swift */; };
 		E7235E20271CA5DA008F18B1 /* WordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E1F271CA5DA008F18B1 /* WordsModel.swift */; };
 		E7235E2B271CA5EF008F18B1 /* ImageCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7235E21271CA5EE008F18B1 /* ImageCLVCell.xib */; };
@@ -52,7 +52,7 @@
 		E7235DFE271C9482008F18B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7235E13271CA464008F18B1 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		E7235E15271CA4BE008F18B1 /* ChooseLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLevelViewController.swift; sourceTree = "<group>"; };
-		E7235E17271CA4C1008F18B1 /* LevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewController.swift; sourceTree = "<group>"; };
+		E7235E17271CA4C1008F18B1 /* ChooseQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseQuestionViewController.swift; sourceTree = "<group>"; };
 		E7235E19271CA4C5008F18B1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E7235E1F271CA5DA008F18B1 /* WordsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsModel.swift; sourceTree = "<group>"; };
 		E7235E21271CA5EE008F18B1 /* ImageCLVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCLVCell.xib; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 			children = (
 				E7235E19271CA4C5008F18B1 /* MainViewController.swift */,
 				E7235E15271CA4BE008F18B1 /* ChooseLevelViewController.swift */,
-				E7235E17271CA4C1008F18B1 /* LevelViewController.swift */,
+				E7235E17271CA4C1008F18B1 /* ChooseQuestionViewController.swift */,
 				E7235E13271CA464008F18B1 /* PlayViewController.swift */,
 			);
 			path = Controller;
@@ -155,16 +155,16 @@
 		E7235E1B271CA578008F18B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E7235E27271CA5EF008F18B1 /* AnswerCLVCell.swift */,
-				E7235E2A271CA5EF008F18B1 /* AnswerCLVCell.xib */,
 				E7235E24271CA5EE008F18B1 /* ChooseLevelCLVCell.swift */,
 				E7235E28271CA5EF008F18B1 /* ChooseLevelCLVCell.xib */,
-				E7235E23271CA5EE008F18B1 /* GuessCLVCell.swift */,
-				E7235E26271CA5EE008F18B1 /* GuessCLVCell.xib */,
-				E7235E29271CA5EF008F18B1 /* ImageCLVCell.swift */,
-				E7235E21271CA5EE008F18B1 /* ImageCLVCell.xib */,
 				E7235E22271CA5EE008F18B1 /* LevelCLVCell.swift */,
 				E7235E25271CA5EE008F18B1 /* LevelCLVCell.xib */,
+				E7235E29271CA5EF008F18B1 /* ImageCLVCell.swift */,
+				E7235E21271CA5EE008F18B1 /* ImageCLVCell.xib */,
+				E7235E27271CA5EF008F18B1 /* AnswerCLVCell.swift */,
+				E7235E2A271CA5EF008F18B1 /* AnswerCLVCell.xib */,
+				E7235E23271CA5EE008F18B1 /* GuessCLVCell.swift */,
+				E7235E26271CA5EE008F18B1 /* GuessCLVCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -337,7 +337,7 @@
 				E7235E14271CA464008F18B1 /* PlayViewController.swift in Sources */,
 				E7235DF1271C9481008F18B1 /* AppDelegate.swift in Sources */,
 				E785B39F271DEF1A00C0E561 /* LetterModel.swift in Sources */,
-				E7235E18271CA4C2008F18B1 /* LevelViewController.swift in Sources */,
+				E7235E18271CA4C2008F18B1 /* ChooseQuestionViewController.swift in Sources */,
 				E7235E2D271CA5EF008F18B1 /* GuessCLVCell.swift in Sources */,
 				E7235E33271CA5EF008F18B1 /* ImageCLVCell.swift in Sources */,
 				E7AFD1D9271CC168005D3937 /* SQLiteService.swift in Sources */,

@@ -150,7 +150,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgblue" translatesAutoresizingMaskIntoConstraints="NO" id="44I-wx-Hrt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="44I-wx-Hrt">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pgt-Uc-KAG" userLabel="ViewBar">
@@ -266,7 +266,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="watchads"/>
                                 <connections>
-                                    <action selector="watchAdsAction" destination="JJo-Mx-xh4" eventType="touchUpInside" id="3Vm-6U-VBM"/>
+                                    <action selector="revealAnswerAction" destination="JJo-Mx-xh4" eventType="touchUpInside" id="3Vm-6U-VBM"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z0t-u0-n74">
@@ -323,8 +323,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="coinLabel" destination="h0l-MY-UYu" id="yWe-6d-jfM"/>
                         <outlet property="collectionView" destination="z0t-u0-n74" id="Q2z-Dx-g6C"/>
-                        <outlet property="goldLabel" destination="h0l-MY-UYu" id="yWe-6d-jfM"/>
                         <outlet property="levelLabel" destination="pbR-2X-TjS" id="0EP-MZ-9Rv"/>
                         <outlet property="questionLabel" destination="K7H-7B-Fg0" id="tyE-nd-iUz"/>
                     </connections>
@@ -487,10 +487,10 @@
             </objects>
             <point key="canvasLocation" x="709" y="79"/>
         </scene>
-        <!--Level View Controller-->
+        <!--Choose Question View Controller-->
         <scene sceneID="bGn-hq-bV4">
             <objects>
-                <viewController storyboardIdentifier="LevelViewController" id="yb4-Tc-I7i" customClass="LevelViewController" customModule="app_doan_xe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LevelViewController" id="yb4-Tc-I7i" customClass="ChooseQuestionViewController" customModule="app_doan_xe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tEP-Sj-IEG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -630,7 +630,6 @@
     </scenes>
     <resources>
         <image name="Group" width="24" height="24"/>
-        <image name="bgblue" width="414" height="896"/>
         <image name="bgpink" width="414" height="896"/>
         <image name="buy" width="32" height="44"/>
         <image name="freecoins" width="314" height="84"/>

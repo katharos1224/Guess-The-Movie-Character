@@ -54,44 +54,46 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
             else{
                 let completed = KeychainWrapper.standard.integer(forKey: "number1")
                 cell.currentProgressLabel.text = String(completed!) + "/70"
-                
                 cell.currentProgressView.progress +=  KeychainWrapper.standard.float(forKey: "number1")! * 70/100
+                totalAnswered += KeychainWrapper.standard.integer(forKey: "number1")!
             }
-            
-            //totalAnswered += KeychainWrapper.standard.integer(forKey: "number1")!
 
             cell.unlockedLevelImage.image = UIImage(imageLiteralResourceName: "1")
-            // Bo tron anh?
+            cell.unlockedLevelImage.layer.cornerRadius = cell.unlockedLevelImage.frame.size.width / 2
+            cell.unlockedLevelImage.clipsToBounds = true
             cell.lockedLevelLabel.text = ""
         }
         
         else if indexPath.item == 1 {
             cell.LevelLabel.text = "Level 2"
 
-            if (totalAnswered < 14) {
+            if (KeychainWrapper.standard.integer(forKey: "number2") == nil && totalAnswered < 21) {
                 let view = UIView()
                 view.backgroundColor = UIColor.black.withAlphaComponent(0.1)
                 cell.backgroundView = view
-                cell.lockedLevelLabel.text = "Guess 14 icons to unlock"
+                cell.lockedLevelLabel.text = "Guess 21 icons to unlock"
                 cell.unlockedLevelImage.image = UIImage(imageLiteralResourceName: "lockedimg")
-                //cell.backgroundColor = UIColor.darkGray.withAlphaComponent(0.2)
                 cell.currentProgressView.isHidden = true
                 cell.currentProgressLabel.text = "0/70"
             }
             else {
-                if (KeychainWrapper.standard.integer(forKey: "number2") == nil) {
+                if (KeychainWrapper.standard.integer(forKey: "number2") == nil && totalAnswered >= 21) {
                     cell.currentProgressLabel.text = "0/70"
                 }
                 
                 else{
                     let completed = KeychainWrapper.standard.integer(forKey: "number2")
                     cell.currentProgressLabel.text = String(completed!) + "/70"
-                    
                     cell.currentProgressView.progress +=  KeychainWrapper.standard.float(forKey: "number2")! * 70/100
+                    totalAnswered += KeychainWrapper.standard.integer(forKey: "number2")!
                 }
+                cell.unlockedLevelImage.image = UIImage(imageLiteralResourceName: "71")
+                cell.unlockedLevelImage.layer.cornerRadius = cell.unlockedLevelImage.frame.size.width / 2
+                cell.unlockedLevelImage.clipsToBounds = true
+                cell.lockedLevelLabel.text = ""
+                cell.currentProgressView.isHidden = false
+
             }
-            
-            
         }
         
         return cell
