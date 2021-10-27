@@ -96,12 +96,12 @@ class SqliteService:NSObject {
         return word
     }
     
-    func getRightAnswerLettersIncludeWhiteSpace(number: Int)->[String]{
+    func getRightAnswerLettersIncludeWhiteSpace(number: Int)->[String] {
         var letter:[String] = []
-        for item in listData{
-            if item.id == number{
+        for item in listData {
+            if item.id == number {
                 let word = item.answer
-                for item in 0...word.count-1{
+                for item in 0...word.count - 1 {
                     let index = word.index(word.startIndex, offsetBy: item)
                     letter.append(String(word[index]).lowercased())
                 }
@@ -112,11 +112,11 @@ class SqliteService:NSObject {
         return []
     }
     
-    func getRightAnswerLetters(number: Int)->[String]{
+    func getRightAnswerLetters(number: Int)->[String] {
         var rightAnswerLetters: [String] = []
         let rightAnswerLettersIncludeWhiteSpace = getRightAnswerLettersIncludeWhiteSpace(number: number)
         for item in rightAnswerLettersIncludeWhiteSpace{
-            if item == " "{
+            if item == " " {
                 continue
             }
             rightAnswerLetters.append(item)
@@ -124,30 +124,45 @@ class SqliteService:NSObject {
         return rightAnswerLetters
     }
     
-    func setNumberOfSection0(number: Int)->Int{
-        let firstWord = getRightAnswer(number: number)[0]
-        return firstWord.count
+//    func setNumberOfSection0(number: Int)->Int{
+//        let firstWord = getRightAnswer(number: number)[0]
+//        return firstWord.count
+//    }
+//
+//    func setNumberOfSection1(number: Int)->Int{
+//        let secondWord = getRightAnswer(number: number)[1]
+//        return secondWord.count
+//    }
+//
+//    func setNumberOfSection2(number: Int)->Int{
+//        let thirdWord = getRightAnswer(number: number)[2]
+//        return thirdWord.count
+//    }
+//
+//    func setNumberOfSection3(number: Int)->Int{
+//        let fourthWord = getRightAnswer(number: number)[3]
+//        return fourthWord.count
+//    }
+//
+//    func setNumberOfSection4(number: Int)->Int{
+//        let fifthWord = getRightAnswer(number: number)[4]
+//        return fifthWord.count
+//    }
+    
+    func getWhiteSpaceLocation(number: Int)->[Int] {
+        var whiteSpaceLocation: [Int] = []
+        let rightAnswerLettersIncludeWhiteSpace = getRightAnswerLettersIncludeWhiteSpace(number: number)
+        for item in 0...rightAnswerLettersIncludeWhiteSpace.count - 1 {
+            if rightAnswerLettersIncludeWhiteSpace[item] == " " {
+                if item == 0 {
+                    continue
+                }
+                whiteSpaceLocation.append(item - 1)
+            }
+        }
+        return whiteSpaceLocation
     }
     
-    func setNumberOfSection1(number: Int)->Int{
-        let secondWord = getRightAnswer(number: number)[1]
-        return secondWord.count
-    }
-    
-    func setNumberOfSection2(number: Int)->Int{
-        let thirdWord = getRightAnswer(number: number)[2]
-        return thirdWord.count
-    }
-    
-    func setNumberOfSection3(number: Int)->Int{
-        let fourthWord = getRightAnswer(number: number)[3]
-        return fourthWord.count
-    }
-    
-    func setNumberOfSection4(number: Int)->Int{
-        let fifthWord = getRightAnswer(number: number)[4]
-        return fifthWord.count
-    }
     func randomizeAvailableLetters(tileArraySize: Int) -> Array<String> {
       let alphabet: [String] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "&", "-", ",", ".", "‘", "2", "1", "7", "9", "8", "0", "3", "4" ]
       var availableTiles = [String]()

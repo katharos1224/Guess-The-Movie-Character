@@ -1,5 +1,5 @@
 //
-//  LevelViewController.swift
+//  ChooseQuestionViewController.swift
 //  app_doan_xe
 //
 //  Created by Son on 09/10/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LevelViewController: UIViewController {
+class ChooseQuestionViewController: UIViewController {
 
     @IBOutlet weak var LevelViewCLV: UICollectionView!
     @IBAction func settingAction() {
@@ -25,7 +25,7 @@ class LevelViewController: UIViewController {
     }
 }
 
-extension LevelViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ChooseQuestionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -46,7 +46,7 @@ extension LevelViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
 }
 
-extension LevelViewController: UICollectionViewDelegateFlowLayout {
+extension ChooseQuestionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .zero
     }

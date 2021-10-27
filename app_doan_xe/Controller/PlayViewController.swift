@@ -8,7 +8,7 @@
 import UIKit
 import SwiftKeychainWrapper
 import AVFoundation
-import GoogleMobileAds
+//import GoogleMobileAds
 
 extension NSObject {
     func background(delay: Double = 0.0, background: (()->Void)? = nil, completion: (() -> Void)? = nil) {
@@ -46,7 +46,7 @@ class PlayViewController: UIViewController {
     
     var coin = 0
     //var image: UIImage!
-    var numberQuestion = 1
+    var numberQuestion = 0
     var listData:[WordsModel] = [WordsModel]()
     var listLetter: [LetterModel] = [LetterModel]()
 //    var isCheckAnswer = false
@@ -68,7 +68,8 @@ class PlayViewController: UIViewController {
         collectionView.register(UINib(nibName: AnswerCLVCell.className, bundle: nil), forCellWithReuseIdentifier: AnswerCLVCell.className)
         collectionView.register(UINib(nibName: GuessCLVCell.className, bundle: nil), forCellWithReuseIdentifier: GuessCLVCell.className)
         // Do any additional setup after loading the view.
-        
+        listWhiteSpace = SqliteService.shared.getWhiteSpaceLocation(number: numberQuestion + 1)
+        listRemainLetter = SqliteService.shared.shuffleLetters(number: numberQuestion + 1)
         listData = SqliteService.shared.listData
         //image = UIImage(imageLiteralResourceName: "\(numberQuestion)")
         listLetter = SqliteService.shared.shuffleLetters(number: numberQuestion)
@@ -276,14 +277,14 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
 //    }
 //    
     func isFullCellInRightAnswer()->Bool{
-        let amountletter = SQLiteService.shared.getAmountLetterOfRightAnswer(number: numberQuestion + 1)
+        let amountletter = SqliteService.shared.getAmountLetterOfRightAnswer(number: numberQuestion + 1)
         var isWhiteSpace = false
         for item in 0...amountletter - 1{
             for whiteSpaceItem in listWhiteSpace {
                 if item == whiteSpaceItem {
                     isWhiteSpace = true
-                    let cell = collectionView.cellForItem(at: IndexPath(item: whiteSpaceItem, section: 1)) as! AnswerWhiteSpaceCLVCell
-                    if (cell.lbLetter.text == "") {
+                    let cell = collectionView.cellForItem(at: IndexPath(item: whiteSpaceItem, section: 1)) as! AnswerCLVCell
+                    if (cell.answerLetterLabel.text == "") {
                         return false
                     }
                     if item == amountletter - 1{
@@ -296,8 +297,8 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 isWhiteSpace = false
                 continue
             }
-            let cell = collectionView.cellForItem(at: IndexPath(item: item, section: 1)) as! AnswerLetterCLVCell
-            if (cell.lbLetter.text == "") {
+            let cell = collectionView.cellForItem(at: IndexPath(item: item, section: 1)) as! AnswerCLVCell
+            if (cell.answerLetterLabel.text == "") {
                 return false
             }
             if item == amountletter - 1{
@@ -308,14 +309,14 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 //    
     func getIndexPathOfEmptyTextCell(in collectionView: UICollectionView) -> IndexPath? {
-        let amountletter = SQLiteService.shared.getAmountLetterOfRightAnswer(number: numberQuestion + 1)
+        let amountletter = SqliteService.shared.getAmountLetterOfRightAnswer(number: numberQuestion + 1)
         var isWhiteSpace = false
         for item in 0...amountletter - 1{
             for whiteSpaceItem in listWhiteSpace {
                 if item == whiteSpaceItem {
                     isWhiteSpace = true
-                    let cell = collectionView.cellForItem(at: IndexPath(item: whiteSpaceItem, section: 1)) as! AnswerWhiteSpaceCLVCell
-                    if (cell.lbLetter.text == "") {
+                    let cell = collectionView.cellForItem(at: IndexPath(item: whiteSpaceItem, section: 1)) as! AnswerCLVCell
+                    if (cell.answerLetterLabel.text == "") {
                         return IndexPath(item: item, section: 1)
                     }
                     break
@@ -325,8 +326,8 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 isWhiteSpace = false
                 continue
             }
-            let cell = collectionView.cellForItem(at: IndexPath(item: item, section: 1)) as! AnswerLetterCLVCell
-            if (cell.lbLetter.text == "") {
+            let cell = collectionView.cellForItem(at: IndexPath(item: item, section: 1)) as! AnswerCLVCell
+            if (cell.answerLetterLabel.text == "") {
                 return IndexPath(item: item, section: 1)
             }
         }
