@@ -10,7 +10,7 @@ import SQLite
 
 class SqliteService:NSObject {
     static let shared: SqliteService = SqliteService()
-    var DatabaseRoot:Connection?
+    public var DatabaseRoot:Connection?
     var listData:[WordsModel] = [WordsModel]()
     let users = Table("Words")
     let id = Expression<Int>("id")
@@ -64,10 +64,10 @@ class SqliteService:NSObject {
         return getRightAnswerLetters(number: number).count
     }
     
-//    func getWhiteSpace(number: Int)->Int{
-//        let rightAnswer = getRightAnswer(number: number)
-//        return rightAnswer.count - 1
-//    }
+    func getWhiteSpace(number: Int)->Int{
+        let rightAnswer = getRightAnswer(number: number)
+        return rightAnswer.count - 1
+    }
     
     func setNumberOfSection(number: Int)->Int{
         let rightAnswer = getRightAnswer(number: number)
@@ -119,37 +119,12 @@ class SqliteService:NSObject {
             if item == " " {
                 continue
             }
-            rightAnswerLetters.append(item)
+            rightAnswerLetters.append(item.uppercased())
         }
         return rightAnswerLetters
     }
     
-//    func setNumberOfSection0(number: Int)->Int{
-//        let firstWord = getRightAnswer(number: number)[0]
-//        return firstWord.count
-//    }
-//
-//    func setNumberOfSection1(number: Int)->Int{
-//        let secondWord = getRightAnswer(number: number)[1]
-//        return secondWord.count
-//    }
-//
-//    func setNumberOfSection2(number: Int)->Int{
-//        let thirdWord = getRightAnswer(number: number)[2]
-//        return thirdWord.count
-//    }
-//
-//    func setNumberOfSection3(number: Int)->Int{
-//        let fourthWord = getRightAnswer(number: number)[3]
-//        return fourthWord.count
-//    }
-//
-//    func setNumberOfSection4(number: Int)->Int{
-//        let fifthWord = getRightAnswer(number: number)[4]
-//        return fifthWord.count
-//    }
-    
-    func getWhiteSpaceLocation(number: Int)->[Int] {
+    func getWhiteSpaceLocation(number: Int)->[Int]{
         var whiteSpaceLocation: [Int] = []
         let rightAnswerLettersIncludeWhiteSpace = getRightAnswerLettersIncludeWhiteSpace(number: number)
         for item in 0...rightAnswerLettersIncludeWhiteSpace.count - 1 {
@@ -164,7 +139,7 @@ class SqliteService:NSObject {
     }
     
     func randomizeAvailableLetters(tileArraySize: Int) -> Array<String> {
-      let alphabet: [String] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "&", "-", ",", ".", "‘", "2", "1", "7", "9", "8", "0", "3", "4" ]
+      let alphabet: [String] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "7", "8", "9", "&", "-", ",", ".", "‘"]
       var availableTiles = [String]()
         for _ in 0..<tileArraySize {
         let rand = Int(arc4random_uniform(39))
@@ -185,7 +160,7 @@ class SqliteService:NSObject {
         let rightAnswerLetters = getRightAnswerLetters(number: number)
         var letters = randomLetters + rightAnswerLetters
         letters.shuffle()
-        for item in 0...letters.count-1{
+        for item in 0...letters.count - 1 {
             randomAndRightAnswerLetters.append(LetterModel(rightAnswer: letters[item], number: item))
         }
         return randomAndRightAnswerLetters

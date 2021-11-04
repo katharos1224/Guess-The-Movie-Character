@@ -1,5 +1,5 @@
 //
-//  LevelCLVCell.swift
+//  QuestionCLVCell.swift
 //  app_doan_xe
 //
 //  Created by Son on 09/10/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LevelCLVCell: UICollectionViewCell {
+class QuestionCLVCell: UICollectionViewCell {
 
     @IBOutlet weak var levelCell: UIImageView!
     override func awakeFromNib() {

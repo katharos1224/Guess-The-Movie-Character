@@ -19,15 +19,15 @@
 		E7235E18271CA4C2008F18B1 /* ChooseQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E17271CA4C1008F18B1 /* ChooseQuestionViewController.swift */; };
 		E7235E1A271CA4C5008F18B1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E19271CA4C5008F18B1 /* MainViewController.swift */; };
 		E7235E20271CA5DA008F18B1 /* WordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E1F271CA5DA008F18B1 /* WordsModel.swift */; };
-		E7235E2B271CA5EF008F18B1 /* ImageCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7235E21271CA5EE008F18B1 /* ImageCLVCell.xib */; };
-		E7235E2C271CA5EF008F18B1 /* LevelCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E22271CA5EE008F18B1 /* LevelCLVCell.swift */; };
+		E7235E2B271CA5EF008F18B1 /* ImagePlayCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7235E21271CA5EE008F18B1 /* ImagePlayCLVCell.xib */; };
+		E7235E2C271CA5EF008F18B1 /* QuestionCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E22271CA5EE008F18B1 /* QuestionCLVCell.swift */; };
 		E7235E2D271CA5EF008F18B1 /* GuessCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E23271CA5EE008F18B1 /* GuessCLVCell.swift */; };
 		E7235E2E271CA5EF008F18B1 /* ChooseLevelCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E24271CA5EE008F18B1 /* ChooseLevelCLVCell.swift */; };
-		E7235E2F271CA5EF008F18B1 /* LevelCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7235E25271CA5EE008F18B1 /* LevelCLVCell.xib */; };
+		E7235E2F271CA5EF008F18B1 /* QuestionCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7235E25271CA5EE008F18B1 /* QuestionCLVCell.xib */; };
 		E7235E30271CA5EF008F18B1 /* GuessCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7235E26271CA5EE008F18B1 /* GuessCLVCell.xib */; };
 		E7235E31271CA5EF008F18B1 /* AnswerCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E27271CA5EF008F18B1 /* AnswerCLVCell.swift */; };
 		E7235E32271CA5EF008F18B1 /* ChooseLevelCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7235E28271CA5EF008F18B1 /* ChooseLevelCLVCell.xib */; };
-		E7235E33271CA5EF008F18B1 /* ImageCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E29271CA5EF008F18B1 /* ImageCLVCell.swift */; };
+		E7235E33271CA5EF008F18B1 /* ImagePlayCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235E29271CA5EF008F18B1 /* ImagePlayCLVCell.swift */; };
 		E7235E34271CA5EF008F18B1 /* AnswerCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7235E2A271CA5EF008F18B1 /* AnswerCLVCell.xib */; };
 		E7235E3C271CA637008F18B1 /* pics_lg in Resources */ = {isa = PBXBuildFile; fileRef = E7235E39271CA636008F18B1 /* pics_lg */; };
 		E7235E3D271CA637008F18B1 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = E7235E3A271CA637008F18B1 /* sounds */; };
@@ -55,15 +55,15 @@
 		E7235E17271CA4C1008F18B1 /* ChooseQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseQuestionViewController.swift; sourceTree = "<group>"; };
 		E7235E19271CA4C5008F18B1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E7235E1F271CA5DA008F18B1 /* WordsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsModel.swift; sourceTree = "<group>"; };
-		E7235E21271CA5EE008F18B1 /* ImageCLVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCLVCell.xib; sourceTree = "<group>"; };
-		E7235E22271CA5EE008F18B1 /* LevelCLVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelCLVCell.swift; sourceTree = "<group>"; };
+		E7235E21271CA5EE008F18B1 /* ImagePlayCLVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagePlayCLVCell.xib; sourceTree = "<group>"; };
+		E7235E22271CA5EE008F18B1 /* QuestionCLVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCLVCell.swift; sourceTree = "<group>"; };
 		E7235E23271CA5EE008F18B1 /* GuessCLVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessCLVCell.swift; sourceTree = "<group>"; };
 		E7235E24271CA5EE008F18B1 /* ChooseLevelCLVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseLevelCLVCell.swift; sourceTree = "<group>"; };
-		E7235E25271CA5EE008F18B1 /* LevelCLVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LevelCLVCell.xib; sourceTree = "<group>"; };
+		E7235E25271CA5EE008F18B1 /* QuestionCLVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCLVCell.xib; sourceTree = "<group>"; };
 		E7235E26271CA5EE008F18B1 /* GuessCLVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuessCLVCell.xib; sourceTree = "<group>"; };
 		E7235E27271CA5EF008F18B1 /* AnswerCLVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerCLVCell.swift; sourceTree = "<group>"; };
 		E7235E28271CA5EF008F18B1 /* ChooseLevelCLVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseLevelCLVCell.xib; sourceTree = "<group>"; };
-		E7235E29271CA5EF008F18B1 /* ImageCLVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCLVCell.swift; sourceTree = "<group>"; };
+		E7235E29271CA5EF008F18B1 /* ImagePlayCLVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePlayCLVCell.swift; sourceTree = "<group>"; };
 		E7235E2A271CA5EF008F18B1 /* AnswerCLVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerCLVCell.xib; sourceTree = "<group>"; };
 		E7235E39271CA636008F18B1 /* pics_lg */ = {isa = PBXFileReference; lastKnownFileType = folder; path = pics_lg; sourceTree = "<group>"; };
 		E7235E3A271CA637008F18B1 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
@@ -157,10 +157,10 @@
 			children = (
 				E7235E24271CA5EE008F18B1 /* ChooseLevelCLVCell.swift */,
 				E7235E28271CA5EF008F18B1 /* ChooseLevelCLVCell.xib */,
-				E7235E22271CA5EE008F18B1 /* LevelCLVCell.swift */,
-				E7235E25271CA5EE008F18B1 /* LevelCLVCell.xib */,
-				E7235E29271CA5EF008F18B1 /* ImageCLVCell.swift */,
-				E7235E21271CA5EE008F18B1 /* ImageCLVCell.xib */,
+				E7235E22271CA5EE008F18B1 /* QuestionCLVCell.swift */,
+				E7235E25271CA5EE008F18B1 /* QuestionCLVCell.xib */,
+				E7235E29271CA5EF008F18B1 /* ImagePlayCLVCell.swift */,
+				E7235E21271CA5EE008F18B1 /* ImagePlayCLVCell.xib */,
 				E7235E27271CA5EF008F18B1 /* AnswerCLVCell.swift */,
 				E7235E2A271CA5EF008F18B1 /* AnswerCLVCell.xib */,
 				E7235E23271CA5EE008F18B1 /* GuessCLVCell.swift */,
@@ -270,13 +270,13 @@
 				E7235DFD271C9482008F18B1 /* LaunchScreen.storyboard in Resources */,
 				E7235E3E271CA637008F18B1 /* data in Resources */,
 				E7235E30271CA5EF008F18B1 /* GuessCLVCell.xib in Resources */,
-				E7235E2B271CA5EF008F18B1 /* ImageCLVCell.xib in Resources */,
+				E7235E2B271CA5EF008F18B1 /* ImagePlayCLVCell.xib in Resources */,
 				E7235E43271CA66B008F18B1 /* LuckiestGuy-Regular.ttf in Resources */,
 				E7235E42271CA66B008F18B1 /* Roboto-Regular.ttf in Resources */,
 				E7235DFA271C9482008F18B1 /* Assets.xcassets in Resources */,
 				E7235E32271CA5EF008F18B1 /* ChooseLevelCLVCell.xib in Resources */,
 				E7235DF8271C9481008F18B1 /* Main.storyboard in Resources */,
-				E7235E2F271CA5EF008F18B1 /* LevelCLVCell.xib in Resources */,
+				E7235E2F271CA5EF008F18B1 /* QuestionCLVCell.xib in Resources */,
 				E7235E34271CA5EF008F18B1 /* AnswerCLVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,14 +332,14 @@
 			files = (
 				E7235DF5271C9481008F18B1 /* ViewController.swift in Sources */,
 				E7235E20271CA5DA008F18B1 /* WordsModel.swift in Sources */,
-				E7235E2C271CA5EF008F18B1 /* LevelCLVCell.swift in Sources */,
+				E7235E2C271CA5EF008F18B1 /* QuestionCLVCell.swift in Sources */,
 				E7235E16271CA4BE008F18B1 /* ChooseLevelViewController.swift in Sources */,
 				E7235E14271CA464008F18B1 /* PlayViewController.swift in Sources */,
 				E7235DF1271C9481008F18B1 /* AppDelegate.swift in Sources */,
 				E785B39F271DEF1A00C0E561 /* LetterModel.swift in Sources */,
 				E7235E18271CA4C2008F18B1 /* ChooseQuestionViewController.swift in Sources */,
 				E7235E2D271CA5EF008F18B1 /* GuessCLVCell.swift in Sources */,
-				E7235E33271CA5EF008F18B1 /* ImageCLVCell.swift in Sources */,
+				E7235E33271CA5EF008F18B1 /* ImagePlayCLVCell.swift in Sources */,
 				E7AFD1D9271CC168005D3937 /* SQLiteService.swift in Sources */,
 				E7235DF3271C9481008F18B1 /* SceneDelegate.swift in Sources */,
 				E7235E1A271CA4C5008F18B1 /* MainViewController.swift in Sources */,

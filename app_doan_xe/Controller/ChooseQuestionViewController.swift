@@ -21,7 +21,7 @@ class ChooseQuestionViewController: UIViewController {
         LevelViewCLV.delegate = self
         LevelViewCLV.dataSource = self
         
-        LevelViewCLV.register(UINib(nibName: LevelCLVCell.className, bundle: nil), forCellWithReuseIdentifier: LevelCLVCell.className)
+        LevelViewCLV.register(UINib(nibName: QuestionCLVCell.className, bundle: nil), forCellWithReuseIdentifier: QuestionCLVCell.className)
     }
 }
 
@@ -35,7 +35,7 @@ extension ChooseQuestionViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LevelViewCLV.className, for: indexPath) as! LevelCLVCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LevelViewCLV.className, for: indexPath) as! QuestionCLVCell
             return cell
     }
     func collectionView(_ collectionView: UICollectionView,
