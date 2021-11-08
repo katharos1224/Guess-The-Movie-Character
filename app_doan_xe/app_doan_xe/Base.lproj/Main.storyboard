@@ -150,7 +150,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="44I-wx-Hrt">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgblue" translatesAutoresizingMaskIntoConstraints="NO" id="44I-wx-Hrt">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pgt-Uc-KAG" userLabel="ViewBar">
@@ -164,7 +164,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="returnbtn"/>
                                         <connections>
-                                            <action selector="backAction" destination="JJo-Mx-xh4" eventType="touchUpInside" id="Kwk-B1-UvO"/>
+                                            <action selector="backAction" destination="JJo-Mx-xh4" eventType="touchUpInside" id="XX5-pI-dC8"/>
                                             <action selector="backAction:" destination="6kd-6E-pw4" eventType="touchUpInside" id="I3G-of-B6M"/>
                                         </connections>
                                     </button>
@@ -337,7 +337,7 @@
         <!--Choose Level View Controller-->
         <scene sceneID="rde-hW-cwQ">
             <objects>
-                <viewController storyboardIdentifier="ChooseLevelViewController" id="DNg-nf-Mru" customClass="ChooseLevelViewController" customModule="app_doan_xe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseLevelViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DNg-nf-Mru" customClass="ChooseLevelViewController" customModule="app_doan_xe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DqV-Y0-7ye">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -490,7 +490,7 @@
         <!--Choose Question View Controller-->
         <scene sceneID="bGn-hq-bV4">
             <objects>
-                <viewController storyboardIdentifier="LevelViewController" id="yb4-Tc-I7i" customClass="ChooseQuestionViewController" customModule="app_doan_xe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseQuestionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yb4-Tc-I7i" customClass="ChooseQuestionViewController" customModule="app_doan_xe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tEP-Sj-IEG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -538,6 +538,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="returnbtn"/>
+                                        <connections>
+                                            <action selector="backAction" destination="yb4-Tc-I7i" eventType="touchUpInside" id="wxN-kp-WrN"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" translatesAutoresizingMaskIntoConstraints="NO" id="Rnx-f9-Z9n" userLabel="Dolar">
                                         <rect key="frame" x="330.66666666666669" y="13.666666666666664" width="24" height="24"/>
@@ -555,16 +558,25 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olW-Ef-w8x" userLabel="Level">
+                                        <rect key="frame" x="178" y="10.999999999999998" width="58" height="29.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.84572178129999998" green="0.68230563399999999" blue="0.99669295550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="dWL-Gb-QI7" firstAttribute="leading" secondItem="Rnx-f9-Z9n" secondAttribute="trailing" constant="2" id="07e-0H-9HC"/>
+                                    <constraint firstItem="olW-Ef-w8x" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FMI-Vs-lyC" secondAttribute="trailing" constant="8" symbolic="YES" id="2cC-jl-2IJ"/>
                                     <constraint firstItem="Rnx-f9-Z9n" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FMI-Vs-lyC" secondAttribute="trailing" constant="8" symbolic="YES" id="7cp-0L-i5a"/>
                                     <constraint firstItem="FMI-Vs-lyC" firstAttribute="centerY" secondItem="KVr-4S-hW5" secondAttribute="centerY" id="7y7-bK-1lY"/>
                                     <constraint firstAttribute="trailing" secondItem="dWL-Gb-QI7" secondAttribute="trailing" constant="15" id="AS9-E0-m7f"/>
                                     <constraint firstItem="dWL-Gb-QI7" firstAttribute="centerY" secondItem="Rnx-f9-Z9n" secondAttribute="centerY" id="RyZ-W9-p26"/>
                                     <constraint firstItem="dWL-Gb-QI7" firstAttribute="centerY" secondItem="FMI-Vs-lyC" secondAttribute="centerY" id="TUD-XL-7oj"/>
                                     <constraint firstAttribute="height" constant="51" id="XxY-4D-E3V"/>
+                                    <constraint firstItem="olW-Ef-w8x" firstAttribute="centerX" secondItem="KVr-4S-hW5" secondAttribute="centerX" id="cPb-6G-Xds"/>
+                                    <constraint firstItem="olW-Ef-w8x" firstAttribute="centerY" secondItem="KVr-4S-hW5" secondAttribute="centerY" id="qze-oT-BXw"/>
                                     <constraint firstItem="FMI-Vs-lyC" firstAttribute="leading" secondItem="KVr-4S-hW5" secondAttribute="leading" id="wVb-Y0-mZk"/>
                                 </constraints>
                             </view>
@@ -588,8 +600,8 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="yb4-Tc-I7i" id="lKV-Zg-kFV"/>
-                                    <outlet property="delegate" destination="yb4-Tc-I7i" id="gsV-Di-9yx"/>
+                                    <outlet property="dataSource" destination="yb4-Tc-I7i" id="xqT-g6-TPf"/>
+                                    <outlet property="delegate" destination="yb4-Tc-I7i" id="npG-9u-A9G"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -620,7 +632,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="LevelViewCLV" destination="ZSQ-be-MeA" id="WGe-F0-jBp"/>
+                        <outlet property="ChooseQuestionCLV" destination="ZSQ-be-MeA" id="b0n-Z1-W9A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yxE-lI-bOp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -630,6 +642,7 @@
     </scenes>
     <resources>
         <image name="Group" width="24" height="24"/>
+        <image name="bgblue" width="414" height="896"/>
         <image name="bgpink" width="414" height="896"/>
         <image name="buy" width="32" height="44"/>
         <image name="freecoins" width="314" height="84"/>

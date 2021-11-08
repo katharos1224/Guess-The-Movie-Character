@@ -14,6 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if let pathForFile = Bundle.main.path(forResource: "Words", ofType: "sqlite"){
+            SqliteService.shared.loadInit(linkPath: pathForFile)
+            SqliteService.shared.getData(){ repond,error in
+            }
+        }
         return true
     }
 

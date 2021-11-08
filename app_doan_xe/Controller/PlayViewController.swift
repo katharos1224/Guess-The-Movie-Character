@@ -105,8 +105,10 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImagePlayCLVCell.className, for: indexPath) as! ImagePlayCLVCell
-            cell.imageCell.image = UIImage.init(imageLiteralResourceName: "\(numberQuestion)")
+            cell.imageCell.image = UIImage.init(imageLiteralResourceName: "\(numberQuestion + 1)")
             cell.layer.cornerRadius = 20
+            cell.imageCell.layer.cornerRadius = 20
+            cell.clipsToBounds = true
             return cell
         }
         else if indexPath.section == 1 {
