@@ -104,7 +104,7 @@ class SqliteService:NSObject {
                 let word = item.answer
                 for item in 0...word.count - 1 {
                     let index = word.index(word.startIndex, offsetBy: item)
-                    letter.append(String(word[index]).lowercased())
+                    letter.append(String(word[index]).uppercased())
                 }
                 
                 return letter

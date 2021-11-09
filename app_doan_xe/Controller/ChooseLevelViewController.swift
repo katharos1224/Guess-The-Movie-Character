@@ -11,6 +11,8 @@ import AVFoundation
 
 class ChooseLevelViewController: UIViewController {
     
+    @IBOutlet weak var coinLabel: UILabel!
+    
     @IBOutlet weak var ChooseLevelCLV: UICollectionView!
     
     @IBAction func settingAction() {
@@ -22,6 +24,8 @@ class ChooseLevelViewController: UIViewController {
     @IBAction func backAction() {
         dismiss(animated: true)
     }
+    
+    var levelLabel: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,15 +57,20 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
             if (indexPath.item == indexLevel - 1 && indexPath.item == 0) {
                 cell.LevelLabel.text = "Level \(indexLevel)"
                 
-                if (KeychainWrapper.standard.integer(forKey: "number\(indexLevel)") == nil) {
-                    cell.currentProgressLabel.text = "0/70"
-                }
-                else{
-                    let completed = KeychainWrapper.standard.integer(forKey: "number\(indexLevel)")
-                    cell.currentProgressLabel.text = String(completed!) + "/70"
-                    cell.currentProgressView.progress +=  KeychainWrapper.standard.float(forKey: "number\(indexLevel)")! * 70/100
-                    totalAnswered += KeychainWrapper.standard.integer(forKey: "number\(indexLevel)")!
-                }
+                cell.currentProgressLabel.text = "0/70"
+                cell.currentProgressView.layer.cornerRadius = 8
+                cell.currentProgressView.clipsToBounds = true
+//                if (KeychainWrapper.standard.integer(forKey: "number\(indexLevel)") == nil) {
+//                    cell.currentProgressLabel.text = "0/70"
+//                }
+//                else{
+//                    let completed = KeychainWrapper.standard.integer(forKey: "number\(indexLevel)")
+//                    cell.currentProgressView.layer.cornerRadius = 8
+//                    cell.currentProgressView.clipsToBounds = true
+//                    cell.currentProgressLabel.text = String(completed!) + "/70"
+//                    cell.currentProgressView.progress +=  KeychainWrapper.standard.float(forKey: "number\(indexLevel)")! * 7/1000
+//                    totalAnswered += KeychainWrapper.standard.integer(forKey: "number\(indexLevel)")!
+//                }
 
                 cell.unlockedLevelImage.image = UIImage(imageLiteralResourceName: "\(indexLevel)")
                 cell.unlockedLevelImage.layer.cornerRadius = cell.unlockedLevelImage.frame.size.width / 2
@@ -71,39 +80,78 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
             else {
                 if (indexPath.item == indexLevel - 1 && indexPath.item > 0) {
                     cell.LevelLabel.text = "Level \(indexLevel)"
-                    if (KeychainWrapper.standard.integer(forKey: "number\(indexLevel)") == nil && totalAnswered < 21) { //fix 21
+                    
+                    if (totalAnswered < 21) { //fix 21
                         let view = UIView()
                         view.backgroundColor = UIColor.black.withAlphaComponent(0.1)
                         cell.backgroundView = view
                         cell.lockedLevelLabel.text = "Guess 21 icons to unlock" //fix 21
-                        cell.unlockedLevelImage.image = UIImage(imageLiteralResourceName: "lockedimg")
-                        cell.unlockedLevelImage.layer.cornerRadius = cell.unlockedLevelImage.frame.size.width / 2
-                        cell.unlockedLevelImage.clipsToBounds = true
+                        cell.unlockedLevelImage.isHidden = true
+                        cell.lockedLevelImage.layer.cornerRadius = cell.unlockedLevelImage.frame.size.width / 2
+                        cell.lockedLevelImage.clipsToBounds = true
+                        cell.currentProgressView.layer.cornerRadius = 8
+                        cell.currentProgressView.clipsToBounds = true
                         cell.currentProgressView.isHidden = true
                         cell.currentProgressLabel.text = "0/70" //fix
                     }
                     else {
-                        if (KeychainWrapper.standard.integer(forKey: "number\(indexLevel)") == nil && totalAnswered >= 21) {    //fix 21
+                        if (totalAnswered >= 21) {    //fix 21
                             cell.currentProgressLabel.text = "0/70" //fix
                         }
                         
                         else{
-                            let completed = KeychainWrapper.standard.integer(forKey: "number\(indexLevel)")
-                            cell.currentProgressLabel.text = String(completed!) + "/70"
-                            cell.currentProgressView.progress +=  KeychainWrapper.standard.float(forKey: "number\(indexLevel)")! * 70/100
-                            totalAnswered += KeychainWrapper.standard.integer(forKey: "number\(indexLevel)")!
+                            //let completed = KeychainWrapper.standard.integer(forKey: "number\(indexLevel)")
+                            cell.currentProgressView.layer.cornerRadius = 8
+                            cell.currentProgressView.clipsToBounds = true
+                            //cell.currentProgressLabel.text = String(completed!) + "/70"
+                            //cell.currentProgressView.progress +=  KeychainWrapper.standard.float(forKey: "number\(indexLevel)")! * 7/1000
+                            //totalAnswered += KeychainWrapper.standard.integer(forKey: "number\(indexLevel)")!
                         }
                         cell.unlockedLevelImage.image = UIImage(imageLiteralResourceName: "\(70 * indexLevel + 1)")
                         cell.unlockedLevelImage.layer.cornerRadius = cell.unlockedLevelImage.frame.size.width / 2
                         cell.unlockedLevelImage.clipsToBounds = true
+                        cell.unlockedLevelImage.isHidden = false
                         cell.lockedLevelLabel.text = ""
                         cell.currentProgressView.isHidden = false
 
                     }
+                    
+//                    if (KeychainWrapper.standard.integer(forKey: "number\(indexLevel)") == nil && totalAnswered < 21) { //fix 21
+//                        let view = UIView()
+//                        view.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+//                        cell.backgroundView = view
+//                        cell.lockedLevelLabel.text = "Guess 21 icons to unlock" //fix 21
+//                        cell.unlockedLevelImage.image = UIImage(imageLiteralResourceName: "lockedimg")
+//                        cell.unlockedLevelImage.layer.cornerRadius = cell.unlockedLevelImage.frame.size.width / 2
+//                        cell.unlockedLevelImage.clipsToBounds = true
+//                        cell.currentProgressView.layer.cornerRadius = 8
+//                        cell.currentProgressView.clipsToBounds = true
+//                        cell.currentProgressView.isHidden = true
+//                        cell.currentProgressLabel.text = "0/70" //fix
+//                    }
+//                    else {
+//                        if (KeychainWrapper.standard.integer(forKey: "number\(indexLevel)") == nil && totalAnswered >= 21) {    //fix 21
+//                            cell.currentProgressLabel.text = "0/70" //fix
+//                        }
+//
+//                        else{
+//                            let completed = KeychainWrapper.standard.integer(forKey: "number\(indexLevel)")
+//                            cell.currentProgressView.layer.cornerRadius = 8
+//                            cell.currentProgressView.clipsToBounds = true
+//                            cell.currentProgressLabel.text = String(completed!) + "/70"
+//                            cell.currentProgressView.progress +=  KeychainWrapper.standard.float(forKey: "number\(indexLevel)")! * 7/1000
+//                            totalAnswered += KeychainWrapper.standard.integer(forKey: "number\(indexLevel)")!
+//                        }
+//                        cell.unlockedLevelImage.image = UIImage(imageLiteralResourceName: "\(70 * indexLevel + 1)")
+//                        cell.unlockedLevelImage.layer.cornerRadius = cell.unlockedLevelImage.frame.size.width / 2
+//                        cell.unlockedLevelImage.clipsToBounds = true
+//                        cell.lockedLevelLabel.text = ""
+//                        cell.currentProgressView.isHidden = false
+//
+//                    }
                 }
             }
         }
-        
         return cell
     }
 
@@ -116,34 +164,33 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
 //-----------------
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        for indexLevel in 1...7 {
-            if indexPath.item == indexLevel - 1 {
-                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "ChooseQuestionViewController") as! ChooseQuestionViewController
-    //            if (KeychainWrapper.standard.integer(forKey: "number1") == nil){
-    //                if (KeychainWrapper.standard.integer(forKey: "coin") == nil){
-    //                    KeychainWrapper.standard.set(0, forKey: "coin")
-    //                }
-    //                KeychainWrapper.standard.set(0, forKey: "number1")
-    //                vc.numberQuestion = KeychainWrapper.standard.integer(forKey: "number1")! + 1
-    //                vc.coin = KeychainWrapper.standard.integer(forKey: "coin")!
-    //            }else{
-    //                let numberQuestion = KeychainWrapper.standard.integer(forKey: "number1")! + 1
-    //                if numberQuestion == 71{
-    //
-    //                }else{
-    //                    if (KeychainWrapper.standard.integer(forKey: "coin") == nil){
-    //                        KeychainWrapper.standard.set(0, forKey: "coin")
-    //                    }
-    //                    vc.coin = KeychainWrapper.standard.integer(forKey: "coin")!
-    //                    vc.numberQuestion = numberQuestion
-    //                    print("selected")
-    //                }
-    //            }
-                
-                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-                self.present(vc, animated: true, completion: nil)
-            }
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ChooseQuestionViewController") as! ChooseQuestionViewController
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"ChooseLevelCLVCell", for: indexPath) as! ChooseLevelCLVCell
+        
+        if indexPath.item == 0 {
+            
+            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+            self.present(vc, animated: true, completion: nil)
+        }
+        if indexPath.item == 1 {
+            
+        }
+        if indexPath.item == 2 {
+            
+        }
+        if indexPath.item == 3 {
+            
+        }
+        if indexPath.item == 4 {
+            
+        }
+        if indexPath.item == 5 {
+            
+        }
+        if indexPath.item == 6 {
+            
         }
     }
 }

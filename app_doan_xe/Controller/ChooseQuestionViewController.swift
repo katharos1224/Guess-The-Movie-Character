@@ -9,6 +9,8 @@ import UIKit
 
 class ChooseQuestionViewController: UIViewController {
 
+    @IBOutlet weak var coinLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var ChooseQuestionCLV: UICollectionView!
     @IBAction func settingAction() {
     }
@@ -43,6 +45,7 @@ extension ChooseQuestionViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChooseQuestionCLVCell.className, for: indexPath) as! ChooseQuestionCLVCell
         
         cell.layer.cornerRadius = 20
