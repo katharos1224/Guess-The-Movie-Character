@@ -63,6 +63,7 @@ class SqliteService:NSObject {
     
     func getAmountLetterOfRightAnswer(number: Int)->Int{
         return getRightAnswerLetters(number: number).count
+        
     }
     
     func getWhiteSpace(number: Int)->Int{
@@ -122,6 +123,7 @@ class SqliteService:NSObject {
             }
             rightAnswerLetters.append(item.uppercased())
         }
+
         return rightAnswerLetters
     }
     
@@ -140,7 +142,7 @@ class SqliteService:NSObject {
     }
     
     func randomizeAvailableLetters(tileArraySize: Int) -> Array<String> {
-      let alphabet: [String] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "7", "8", "9", "&", "-", ",", ".", "‘"]
+      let alphabet: [String] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "7", "8", "9", "&", "-", ",", ".", "‘"]
       var availableTiles = [String]()
         for _ in 0..<tileArraySize {
         let rand = Int(arc4random_uniform(39))

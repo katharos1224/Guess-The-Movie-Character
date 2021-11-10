@@ -54,7 +54,9 @@
                                             <constraint firstAttribute="height" constant="52" id="vOU-a8-ZbJ"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="play"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="play">
+                                            <backgroundConfiguration key="background"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="playAction" destination="tQ1-pz-KlZ" eventType="touchUpInside" id="XbC-7c-pFf"/>
                                         </connections>

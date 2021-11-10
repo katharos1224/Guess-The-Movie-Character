@@ -73,7 +73,7 @@ extension ChooseQuestionViewController: UICollectionViewDelegate, UICollectionVi
             if indexPath.item == indexQuestion - 1 {
                 let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
-                
+                vc.numberQuestion = indexPath.item
                 vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
                 self.present(vc, animated: true, completion: nil)
             }
