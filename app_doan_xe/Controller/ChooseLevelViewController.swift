@@ -58,6 +58,7 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
                 cell.LevelLabel.text = "Level \(indexLevel)"
                 
                 cell.currentProgressLabel.text = "0/70"
+                cell.currentProgressView.progress = Float(0/Float(70))
                 cell.currentProgressView.layer.cornerRadius = 8
                 cell.currentProgressView.clipsToBounds = true
 //                if (KeychainWrapper.standard.integer(forKey: "number\(indexLevel)") == nil) {
@@ -93,6 +94,7 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
                         cell.currentProgressView.clipsToBounds = true
                         cell.currentProgressView.isHidden = true
                         cell.currentProgressLabel.text = "0/70" //fix
+                        //cell.currentProgressView.progress = Float()
                     }
                     else {
                         if (totalAnswered >= 21) {    //fix 21

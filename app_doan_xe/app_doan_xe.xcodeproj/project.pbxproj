@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		80DEB820198BDB117B46CDB7 /* Pods_app_doan_xe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8350440E24CB3477D858B57 /* Pods_app_doan_xe.framework */; };
 		E716C58727397F1000E157CE /* Words.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E716C58627397F1000E157CE /* Words.sqlite */; };
+		E720D23F273C59940035CC67 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E720D23E273C59940035CC67 /* Roboto-Medium.ttf */; };
 		E7235DF1271C9481008F18B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235DF0271C9481008F18B1 /* AppDelegate.swift */; };
 		E7235DF3271C9481008F18B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235DF2271C9481008F18B1 /* SceneDelegate.swift */; };
 		E7235DF5271C9481008F18B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235DF4271C9481008F18B1 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		B8350440E24CB3477D858B57 /* Pods_app_doan_xe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_app_doan_xe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8C5872D10A514ECC10854E /* Pods-app_doan_xe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_doan_xe.debug.xcconfig"; path = "Target Support Files/Pods-app_doan_xe/Pods-app_doan_xe.debug.xcconfig"; sourceTree = "<group>"; };
 		E716C58627397F1000E157CE /* Words.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = Words.sqlite; path = data/Words.sqlite; sourceTree = "<group>"; };
+		E720D23E273C59940035CC67 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		E7235DED271C9481008F18B1 /* app_doan_xe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app_doan_xe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7235DF0271C9481008F18B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7235DF2271C9481008F18B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		E7235E3F271CA65A008F18B1 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				E720D23E273C59940035CC67 /* Roboto-Medium.ttf */,
 				E7235E41271CA66B008F18B1 /* LuckiestGuy-Regular.ttf */,
 				E7235E40271CA66B008F18B1 /* Roboto-Regular.ttf */,
 			);
@@ -267,6 +270,7 @@
 				E7235E42271CA66B008F18B1 /* Roboto-Regular.ttf in Resources */,
 				E7235DFA271C9482008F18B1 /* Assets.xcassets in Resources */,
 				E7235E32271CA5EF008F18B1 /* ChooseLevelCLVCell.xib in Resources */,
+				E720D23F273C59940035CC67 /* Roboto-Medium.ttf in Resources */,
 				E7235DF8271C9481008F18B1 /* Main.storyboard in Resources */,
 				E7235E2F271CA5EF008F18B1 /* ChooseQuestionCLVCell.xib in Resources */,
 				E7235E34271CA5EF008F18B1 /* AnswerCLVCell.xib in Resources */,

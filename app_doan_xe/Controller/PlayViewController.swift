@@ -72,7 +72,7 @@ class PlayViewController: UIViewController {
         listData = SqliteService.shared.listData
         //image = UIImage(imageLiteralResourceName: "\(numberQuestion)")
         listLetter = SqliteService.shared.shuffleLetters(number: numberQuestion)
-        coinLabel.text = String(coin)
+        //coinLabel.text = String(coin)
         func createBackground(){
             let images: [UIImage] = [ #imageLiteral(resourceName: "bggreen"), #imageLiteral(resourceName: "bgblue")]
             let randomImage = images.shuffled().randomElement()
@@ -82,8 +82,9 @@ class PlayViewController: UIViewController {
             self.view.insertSubview(backgroundImage, at: 0)
         }
     }
-
-
+    
+    
+    
 }
 
 extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -199,12 +200,15 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if indexPath.section == 1 {
             let answerCell = collectionView.cellForItem(at: indexPath) as! AnswerCLVCell
             
-            if answerCell.answerLetterLabel.text!.contains("") || isHintLetter(indexPath: indexPath){
+            if answerCell.answerLetterLabel.text!.contains("Label") || isHintLetter(indexPath: indexPath){
                 
             }
             else {
-                let answerCell = collectionView.cellForItem(at: IndexPath(item: listNumber[indexPath.item], section: 0)) as! AnswerCLVCell
-                answerCell.answerLetterLabel.text = letterArr[indexPath.item]
+                answerCell.answerLetterLabel.text = "Label"
+                answerCell.answerLetterLabel.textColor = .clear
+                let guessCell = collectionView.cellForItem(at: IndexPath(item: listNumber[indexPath.item], section: 2)) as! GuessCLVCell
+                
+                guessCell.guessLetterLabel.text = letterArr[indexPath.item]
                 //set arrays to default
                 letterArr[indexPath.item] = ""
                 listNumber[indexPath.item] = -1
@@ -377,22 +381,25 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension PlayViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .zero
+        return UIEdgeInsets(top: 0.0, left: 0.0, bottom: 10.0, right: 0.0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        //fix imagePlayView size:
+        
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: 45, height: 45)
+            return CGSize(width: 40, height: 40)
         }
-        return CGSize(width: 45, height: 45)
+        return CGSize(width: 40, height: 40)
     }
 }
 
