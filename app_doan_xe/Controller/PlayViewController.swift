@@ -200,11 +200,11 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if indexPath.section == 1 {
             let answerCell = collectionView.cellForItem(at: indexPath) as! AnswerCLVCell
             
-            if answerCell.answerLetterLabel.text!.contains("Label") || isHintLetter(indexPath: indexPath){
+            if answerCell.answerLetterLabel.text!.contains("") || isHintLetter(indexPath: indexPath){
                 
             }
             else {
-                answerCell.answerLetterLabel.text = "Label"
+                answerCell.answerLetterLabel.text = ""
                 answerCell.answerLetterLabel.textColor = .clear
                 let guessCell = collectionView.cellForItem(at: IndexPath(item: listNumber[indexPath.item], section: 2)) as! GuessCLVCell
                 
@@ -393,13 +393,10 @@ extension PlayViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        //fix imagePlayView size:
-        
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: 40, height: 40)
+            return CGSize(width: UIScreen.main.bounds.width, height: 50)
         }
-        return CGSize(width: 40, height: 40)
+        return CGSize(width: 50, height: 50)
     }
 }
 
