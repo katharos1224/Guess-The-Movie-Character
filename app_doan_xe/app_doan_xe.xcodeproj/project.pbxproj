@@ -35,6 +35,14 @@
 		E7235E43271CA66B008F18B1 /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7235E41271CA66B008F18B1 /* LuckiestGuy-Regular.ttf */; };
 		E785B39F271DEF1A00C0E561 /* LetterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785B39E271DEF1A00C0E561 /* LetterModel.swift */; };
 		E7AFD1D9271CC168005D3937 /* SQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AFD1D8271CC168005D3937 /* SQLiteService.swift */; };
+		E7E5C3C1276CE0890066C49B /* click.ogg in Resources */ = {isa = PBXBuildFile; fileRef = E7E5C3B9276CE0880066C49B /* click.ogg */; };
+		E7E5C3C2276CE0890066C49B /* correct_2.ogg in Resources */ = {isa = PBXBuildFile; fileRef = E7E5C3BA276CE0880066C49B /* correct_2.ogg */; };
+		E7E5C3C3276CE0890066C49B /* alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E7E5C3BB276CE0880066C49B /* alert.mp3 */; };
+		E7E5C3C4276CE0890066C49B /* error_e_oh.ogg in Resources */ = {isa = PBXBuildFile; fileRef = E7E5C3BC276CE0890066C49B /* error_e_oh.ogg */; };
+		E7E5C3C5276CE0890066C49B /* error_2.ogg in Resources */ = {isa = PBXBuildFile; fileRef = E7E5C3BD276CE0890066C49B /* error_2.ogg */; };
+		E7E5C3C6276CE0890066C49B /* correct.ogg in Resources */ = {isa = PBXBuildFile; fileRef = E7E5C3BE276CE0890066C49B /* correct.ogg */; };
+		E7E5C3C7276CE0890066C49B /* almost.ogg in Resources */ = {isa = PBXBuildFile; fileRef = E7E5C3BF276CE0890066C49B /* almost.ogg */; };
+		E7E5C3C8276CE0890066C49B /* button_2.ogg in Resources */ = {isa = PBXBuildFile; fileRef = E7E5C3C0276CE0890066C49B /* button_2.ogg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +78,14 @@
 		E7235E41271CA66B008F18B1 /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
 		E785B39E271DEF1A00C0E561 /* LetterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterModel.swift; sourceTree = "<group>"; };
 		E7AFD1D8271CC168005D3937 /* SQLiteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SQLiteService.swift; path = Services/SQLiteService.swift; sourceTree = SOURCE_ROOT; };
+		E7E5C3B9276CE0880066C49B /* click.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; name = click.ogg; path = Database/sounds/click.ogg; sourceTree = SOURCE_ROOT; };
+		E7E5C3BA276CE0880066C49B /* correct_2.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; name = correct_2.ogg; path = Database/sounds/correct_2.ogg; sourceTree = SOURCE_ROOT; };
+		E7E5C3BB276CE0880066C49B /* alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alert.mp3; path = Database/sounds/alert.mp3; sourceTree = SOURCE_ROOT; };
+		E7E5C3BC276CE0890066C49B /* error_e_oh.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; name = error_e_oh.ogg; path = Database/sounds/error_e_oh.ogg; sourceTree = SOURCE_ROOT; };
+		E7E5C3BD276CE0890066C49B /* error_2.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; name = error_2.ogg; path = Database/sounds/error_2.ogg; sourceTree = SOURCE_ROOT; };
+		E7E5C3BE276CE0890066C49B /* correct.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; name = correct.ogg; path = Database/sounds/correct.ogg; sourceTree = SOURCE_ROOT; };
+		E7E5C3BF276CE0890066C49B /* almost.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; name = almost.ogg; path = Database/sounds/almost.ogg; sourceTree = SOURCE_ROOT; };
+		E7E5C3C0276CE0890066C49B /* button_2.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; name = button_2.ogg; path = Database/sounds/button_2.ogg; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,16 +120,17 @@
 		E7235DE4271C9481008F18B1 = {
 			isa = PBXGroup;
 			children = (
-				E7235E3F271CA65A008F18B1 /* Fonts */,
-				E7235E38271CA621008F18B1 /* Database */,
-				E7235E35271CA5FA008F18B1 /* Services */,
-				E7235E1C271CA57E008F18B1 /* Model */,
-				E7235E1B271CA578008F18B1 /* View */,
-				E7235E10271CA44A008F18B1 /* Controller */,
 				E7235DEF271C9481008F18B1 /* app_doan_xe */,
-				E7235DEE271C9481008F18B1 /* Products */,
-				9F046DB3C0BF9D1E1C80BB63 /* Pods */,
+				E7235E10271CA44A008F18B1 /* Controller */,
+				E7235E38271CA621008F18B1 /* Database */,
+				E7235E3F271CA65A008F18B1 /* Fonts */,
 				A562E69C1599269E5845A3EA /* Frameworks */,
+				E7235E1C271CA57E008F18B1 /* Model */,
+				9F046DB3C0BF9D1E1C80BB63 /* Pods */,
+				E7235DEE271C9481008F18B1 /* Products */,
+				E7235E35271CA5FA008F18B1 /* Services */,
+				E7E5C3B8276CE06B0066C49B /* Sounds */,
+				E7235E1B271CA578008F18B1 /* View */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +219,21 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		E7E5C3B8276CE06B0066C49B /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				E7E5C3BB276CE0880066C49B /* alert.mp3 */,
+				E7E5C3BF276CE0890066C49B /* almost.ogg */,
+				E7E5C3C0276CE0890066C49B /* button_2.ogg */,
+				E7E5C3B9276CE0880066C49B /* click.ogg */,
+				E7E5C3BA276CE0880066C49B /* correct_2.ogg */,
+				E7E5C3BE276CE0890066C49B /* correct.ogg */,
+				E7E5C3BD276CE0890066C49B /* error_2.ogg */,
+				E7E5C3BC276CE0890066C49B /* error_e_oh.ogg */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,16 +294,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7E5C3C1276CE0890066C49B /* click.ogg in Resources */,
 				E7235DFD271C9482008F18B1 /* LaunchScreen.storyboard in Resources */,
+				E7E5C3C6276CE0890066C49B /* correct.ogg in Resources */,
+				E7E5C3C5276CE0890066C49B /* error_2.ogg in Resources */,
+				E7E5C3C8276CE0890066C49B /* button_2.ogg in Resources */,
 				E7235E30271CA5EF008F18B1 /* GuessCLVCell.xib in Resources */,
 				E7235E2B271CA5EF008F18B1 /* ImagePlayCLVCell.xib in Resources */,
+				E7E5C3C7276CE0890066C49B /* almost.ogg in Resources */,
 				E7235E43271CA66B008F18B1 /* LuckiestGuy-Regular.ttf in Resources */,
+				E7E5C3C3276CE0890066C49B /* alert.mp3 in Resources */,
+				E7E5C3C2276CE0890066C49B /* correct_2.ogg in Resources */,
 				E716C58727397F1000E157CE /* Words.sqlite in Resources */,
 				E7235E42271CA66B008F18B1 /* Roboto-Regular.ttf in Resources */,
 				E7235DFA271C9482008F18B1 /* Assets.xcassets in Resources */,
 				E7235E32271CA5EF008F18B1 /* ChooseLevelCLVCell.xib in Resources */,
 				E720D23F273C59940035CC67 /* Roboto-Medium.ttf in Resources */,
 				E7235DF8271C9481008F18B1 /* Main.storyboard in Resources */,
+				E7E5C3C4276CE0890066C49B /* error_e_oh.ogg in Resources */,
 				E7235E2F271CA5EF008F18B1 /* ChooseQuestionCLVCell.xib in Resources */,
 				E7235E34271CA5EF008F18B1 /* AnswerCLVCell.xib in Resources */,
 			);
@@ -497,6 +537,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -525,6 +566,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

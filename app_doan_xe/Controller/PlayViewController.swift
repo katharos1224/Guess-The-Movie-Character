@@ -34,7 +34,7 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var coinLabel: UILabel!
-    @IBAction func shareAction() {
+    @IBAction func showOneLetterAction() {
     }
     @IBAction func revealAnswerAction() {
     }
@@ -49,7 +49,6 @@ class PlayViewController: UIViewController {
     var numberQuestion = 0
     var listData:[WordsModel] = [WordsModel]()
     var listWhiteSpace: [Int] = []
-    var listRemainLetter: [LetterModel] = [LetterModel]()
     var listLetter: [LetterModel] = [LetterModel]()
     var listLettersOfRightAnswer: [String] = []
     var letter = ""
@@ -68,10 +67,9 @@ class PlayViewController: UIViewController {
         collectionView.register(UINib(nibName: GuessCLVCell.className, bundle: nil), forCellWithReuseIdentifier: GuessCLVCell.className)
         // Do any additional setup after loading the view.
         listWhiteSpace = SqliteService.shared.getWhiteSpaceLocation(number: numberQuestion + 1)
-        listRemainLetter = SqliteService.shared.shuffleLetters(number: numberQuestion + 1)
+        listLetter = SqliteService.shared.shuffleLetters(number: numberQuestion + 1)
         listData = SqliteService.shared.listData
         //image = UIImage(imageLiteralResourceName: "\(numberQuestion)")
-        listLetter = SqliteService.shared.shuffleLetters(number: numberQuestion)
         //coinLabel.text = String(coin)
         func createBackground(){
             let images: [UIImage] = [ #imageLiteral(resourceName: "bggreen"), #imageLiteral(resourceName: "bgblue")]
@@ -118,11 +116,12 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
         else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnswerCLVCell.className, for: indexPath) as! AnswerCLVCell
             cell.answerLetterLabel.text = ""
+            cell.answerLetterLabel.textColor = .clear
             return cell
         }
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GuessCLVCell.className, for: indexPath) as! GuessCLVCell
-            cell.guessLetterLabel.text = listRemainLetter[indexPath.item].rightAnswer
+            cell.guessLetterLabel.text = listLetter[indexPath.item].rightAnswer
             return cell
         }
     }
@@ -210,12 +209,13 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 
                 guessCell.guessLetterLabel.text = letterArr[indexPath.item]
                 //set arrays to default
+                listLetter[listNumber[indexPath.item]].rightAnswer = letterArr[indexPath.item]
                 letterArr[indexPath.item] = ""
                 listNumber[indexPath.item] = -1
             }
         }
         
-        if indexPath.section == 2 {
+        else if indexPath.section == 2 {
             let guessCell = collectionView.cellForItem(at: indexPath) as! GuessCLVCell
             
             if guessCell.guessLetterLabel.text == "" {
@@ -226,28 +226,32 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     
                 }
                 else {
-                    letter = listRemainLetter[indexPath.item].rightAnswer
-                    number = listRemainLetter[indexPath.item].number
-                    letterArr.append(letter)
-                    listNumber.append(number)
-                    listRemainLetter[indexPath.item].rightAnswer = ""
-                    //
+                    letter = listLetter[indexPath.item].rightAnswer
+                    number = listLetter[indexPath.item].number
+                    //set LetterArr
+                    insertLetterArr(letter: letter)
+                    //set ListNumber
+                    insertListNumber(number: number)
+                    
+                    listLetter[indexPath.item].rightAnswer = ""
+                    
                     guessCell.guessLetterLabel.text = ""
                     var isWhiteSpace = false
-                    let index = getIndexPathOfEmptyTextCell(in: self.collectionView)!
-                    for item in listWhiteSpace {
-                        if item == index.item {
-                            isWhiteSpace = true
-                            let rightAnswerCell = self.collectionView.cellForItem(at: index) as! AnswerCLVCell
-                            rightAnswerCell.answerLetterLabel.text = letter
-                        }
-                    }
+//                    let index = getIndexPathOfEmptyTextCell(in: self.collectionView)!
+//                    for item in listWhiteSpace {
+//                        if item == index.item {
+//                            isWhiteSpace = true
+//                            let rightAnswerCell = self.collectionView.cellForItem(at: index) as! AnswerCLVCell
+//                            rightAnswerCell.answerLetterLabel.text = letter
+//                        }
+//                    }
                     if isWhiteSpace {
                         isWhiteSpace = false
                     }
                     else {
                         let rightAnswerCell = self.collectionView.cellForItem(at: getIndexPathOfEmptyTextCell(in: self.collectionView)!) as! AnswerCLVCell
                         rightAnswerCell.answerLetterLabel.text = letter
+                        rightAnswerCell.answerLetterLabel.textColor = .white
                     }
                 }
             }
@@ -309,8 +313,8 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func isHintLetter(indexPath: IndexPath)->Bool {
-        let cell = collectionView.cellForItem(at: indexPath)
-        if ((cell?.backgroundColor == #colorLiteral(red: 0.01377372164, green: 0.1723273396, blue: 0.1566250622, alpha: 1)) ) {
+        let cell = collectionView.cellForItem(at: indexPath) as! AnswerCLVCell
+        if ((cell.answerLetterLabel.textColor == .clear) ) {
             return true
         }
         else {
