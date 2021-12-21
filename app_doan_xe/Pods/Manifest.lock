@@ -1,5 +1,6 @@
 PODS:
   - CollectionViewCenteredFlowLayout (1.0.1)
+  - NewPopMenu (2.1.2)
   - SQLite.swift (0.13.0):
     - SQLite.swift/standard (= 0.13.0)
   - SQLite.swift/standard (0.13.0)
@@ -7,20 +8,23 @@ PODS:
 
 DEPENDENCIES:
   - CollectionViewCenteredFlowLayout
+  - NewPopMenu
   - SQLite.swift
   - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
     - CollectionViewCenteredFlowLayout
+    - NewPopMenu
     - SQLite.swift
     - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   CollectionViewCenteredFlowLayout: 339b935be4d8578c59e448c8906117a07c657d85
+  NewPopMenu: c6129e08e8192f6257ceb5f9a4357e1b59c6e2e7
   SQLite.swift: 8add701609fd0ef78d097dcc75d20a9782e6f5fc
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
 
-PODFILE CHECKSUM: a7152e7e111502abcaaf58dcdf82cb1e8b1a1354
+PODFILE CHECKSUM: 4ade29bce365232f220a7d66cff1d09ea710f5d5
 
 COCOAPODS: 1.11.2
