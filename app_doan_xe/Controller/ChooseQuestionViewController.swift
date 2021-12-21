@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PopMenu
 
 class ChooseQuestionViewController: UIViewController {
 
@@ -13,10 +14,15 @@ class ChooseQuestionViewController: UIViewController {
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var ChooseQuestionCLV: UICollectionView!
     @IBAction func settingAction() {
+        let menu = PopMenuViewController()
+        present(menu, animated: true, completion: nil)
     }
     @IBAction func rankAction() {
+        
     }
     @IBAction func storeAction() {
+        let menu = PopMenuViewController()
+        present(menu, animated: true, completion: nil)
     }
     @IBAction func backAction() {
         dismiss(animated: true)
@@ -73,6 +79,7 @@ extension ChooseQuestionViewController: UICollectionViewDelegate, UICollectionVi
             if indexPath.item == indexQuestion - 1 {
                 let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
+//                vc.questionLabel.text = "\(indexQuestion)/70"
                 vc.numberQuestion = indexPath.item
                 vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
                 self.present(vc, animated: true, completion: nil)

@@ -8,6 +8,7 @@
 import UIKit
 import SwiftKeychainWrapper
 import AVFoundation
+import PopMenu
 
 class ChooseLevelViewController: UIViewController {
     
@@ -16,10 +17,15 @@ class ChooseLevelViewController: UIViewController {
     @IBOutlet weak var ChooseLevelCLV: UICollectionView!
     
     @IBAction func settingAction() {
+        let menu = PopMenuViewController()
+        present(menu, animated: true, completion: nil)
     }
     @IBAction func rankAction() {
+        
     }
     @IBAction func storeAction() {
+        let menu = PopMenuViewController()
+        present(menu, animated: true, completion: nil)
     }
     @IBAction func backAction() {
         dismiss(animated: true)
@@ -51,10 +57,11 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"ChooseLevelCLVCell", for: indexPath) as! ChooseLevelCLVCell
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
+        
         var totalAnswered: Int = 0
         
         for indexLevel in 1...7 {
-            if (indexPath.item == indexLevel - 1 && indexPath.item == 0) {
+            if indexPath.item == indexLevel - 1 && indexPath.item == 0 {
                 cell.LevelLabel.text = "Level \(indexLevel)"
                 
                 cell.currentProgressLabel.text = "0/70"
@@ -69,7 +76,7 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
 //                    cell.currentProgressView.layer.cornerRadius = 8
 //                    cell.currentProgressView.clipsToBounds = true
 //                    cell.currentProgressLabel.text = String(completed!) + "/70"
-//                    cell.currentProgressView.progress +=  KeychainWrapper.standard.float(forKey: "number\(indexLevel)")! * 7/1000
+//                    cell.currentProgressView.progress +=  Float(KeychainWrapper.standard.float(forKey: "number\(indexLevel)")! / Float(70))
 //                    totalAnswered += KeychainWrapper.standard.integer(forKey: "number\(indexLevel)")!
 //                }
 
@@ -79,14 +86,14 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
                 cell.lockedLevelLabel.text = ""
             }
             else {
-                if (indexPath.item == indexLevel - 1 && indexPath.item > 0) {
+                if indexPath.item == indexLevel - 1 && indexPath.item > 0 {
                     cell.LevelLabel.text = "Level \(indexLevel)"
                     
-                    if (totalAnswered < 21) { //fix 21
+                    if (totalAnswered < 40 * indexLevel) { //fix 21
                         let view = UIView()
                         view.backgroundColor = UIColor.black.withAlphaComponent(0.1)
                         cell.backgroundView = view
-                        cell.lockedLevelLabel.text = "Guess 21 icons to unlock" //fix 21
+                        cell.lockedLevelLabel.text = "Guess \(40 * (indexLevel - 1)) icons to unlock" //fix 21
                         cell.unlockedLevelImage.isHidden = true
                         cell.lockedLevelImage.layer.cornerRadius = cell.unlockedLevelImage.frame.size.width / 2
                         cell.lockedLevelImage.clipsToBounds = true
@@ -97,7 +104,7 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
                         //cell.currentProgressView.progress = Float()
                     }
                     else {
-                        if (totalAnswered >= 21) {    //fix 21
+                        if (totalAnswered >= 40 * indexLevel) {    //fix 21
                             cell.currentProgressLabel.text = "0/70" //fix
                         }
                         

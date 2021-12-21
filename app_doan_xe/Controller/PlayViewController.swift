@@ -8,6 +8,7 @@
 import UIKit
 import SwiftKeychainWrapper
 import AVFoundation
+import PopMenu
 //import GoogleMobileAds
 
 extension NSObject {
@@ -34,11 +35,24 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var coinLabel: UILabel!
+    @IBOutlet weak var totalAnsweredLabel: UILabel!
+    
+    @IBAction func buyAction() {
+        let menu = PopMenuViewController()
+        present(menu, animated: true, completion: nil)
+    }
+    
     @IBAction func showOneLetterAction() {
+        let menu = PopMenuViewController()
+        present(menu, animated: true, completion: nil)
     }
     @IBAction func revealAnswerAction() {
+        let menu = PopMenuViewController()
+        present(menu, animated: true, completion: nil)
     }
     @IBAction func watchHintAction() {
+        let menu = PopMenuViewController()
+        present(menu, animated: true, completion: nil)
     }
     @IBAction func backAction() {
         dismiss(animated: true)

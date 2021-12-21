@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D72C16C28F2E5E37016E6F123B2B004"
-               BuildableName = "CollectionViewCenteredFlowLayout.framework"
-               BlueprintName = "CollectionViewCenteredFlowLayout"
+               BlueprintIdentifier = "8CC7F28675174E65A4EB204EBB5DC19A"
+               BuildableName = "PopMenu.framework"
+               BlueprintName = "NewPopMenu"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
