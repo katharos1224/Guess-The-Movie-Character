@@ -8,8 +8,6 @@
 import UIKit
 import SwiftKeychainWrapper
 import AVFoundation
-import PopMenu
-//import GoogleMobileAds
 
 extension NSObject {
     func background(delay: Double = 0.0, background: (()->Void)? = nil, completion: (() -> Void)? = nil) {
@@ -38,21 +36,12 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var totalAnsweredLabel: UILabel!
     
     @IBAction func buyAction() {
-        let menu = PopMenuViewController()
-        present(menu, animated: true, completion: nil)
     }
-    
-    @IBAction func showOneLetterAction() {
-        let menu = PopMenuViewController()
-        present(menu, animated: true, completion: nil)
+    @IBAction func revealOneLetterAction() {
     }
     @IBAction func revealAnswerAction() {
-        let menu = PopMenuViewController()
-        present(menu, animated: true, completion: nil)
     }
-    @IBAction func watchHintAction() {
-        let menu = PopMenuViewController()
-        present(menu, animated: true, completion: nil)
+    @IBAction func revealHintAction() {
     }
     @IBAction func backAction() {
         dismiss(animated: true)
@@ -80,6 +69,9 @@ class PlayViewController: UIViewController {
         collectionView.register(UINib(nibName: AnswerCLVCell.className, bundle: nil), forCellWithReuseIdentifier: AnswerCLVCell.className)
         collectionView.register(UINib(nibName: GuessCLVCell.className, bundle: nil), forCellWithReuseIdentifier: GuessCLVCell.className)
         // Do any additional setup after loading the view.
+        
+        
+        
         listWhiteSpace = SqliteService.shared.getWhiteSpaceLocation(number: numberQuestion + 1)
         listLetter = SqliteService.shared.shuffleLetters(number: numberQuestion + 1)
         listData = SqliteService.shared.listData

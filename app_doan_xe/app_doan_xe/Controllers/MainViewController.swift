@@ -6,27 +6,16 @@
 //
 
 import UIKit
-import PopMenu
 
 class MainViewController: UIViewController {
 
     @IBAction func freeCoinsAction() {
-        let menu = PopMenuViewController()
-        
-        
-        
-        present(menu, animated: true, completion: nil)
     }
     @IBAction func settingAction() {
-        let menu = PopMenuViewController()
-        present(menu, animated: true, completion: nil)
     }
     @IBAction func rankAction() {
-        
     }
     @IBAction func storeAction() {
-        let menu = PopMenuViewController()
-        present(menu, animated: true, completion: nil)
     }
     @IBAction func playAction() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

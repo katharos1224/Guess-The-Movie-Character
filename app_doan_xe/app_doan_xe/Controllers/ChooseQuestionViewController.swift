@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import PopMenu
 
 class ChooseQuestionViewController: UIViewController {
 
@@ -14,15 +13,11 @@ class ChooseQuestionViewController: UIViewController {
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var ChooseQuestionCLV: UICollectionView!
     @IBAction func settingAction() {
-        let menu = PopMenuViewController()
-        present(menu, animated: true, completion: nil)
     }
     @IBAction func rankAction() {
         
     }
     @IBAction func storeAction() {
-        let menu = PopMenuViewController()
-        present(menu, animated: true, completion: nil)
     }
     @IBAction func backAction() {
         dismiss(animated: true)

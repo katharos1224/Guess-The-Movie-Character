@@ -8,7 +8,6 @@
 import UIKit
 import SwiftKeychainWrapper
 import AVFoundation
-import PopMenu
 
 class ChooseLevelViewController: UIViewController {
     
@@ -17,21 +16,18 @@ class ChooseLevelViewController: UIViewController {
     @IBOutlet weak var ChooseLevelCLV: UICollectionView!
     
     @IBAction func settingAction() {
-        let menu = PopMenuViewController()
-        present(menu, animated: true, completion: nil)
     }
     @IBAction func rankAction() {
         
     }
     @IBAction func storeAction() {
-        let menu = PopMenuViewController()
-        present(menu, animated: true, completion: nil)
     }
     @IBAction func backAction() {
         dismiss(animated: true)
     }
     
     var levelLabel: String = ""
+    var totalAnswered: Int = 240
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,10 +54,8 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
         
-        var totalAnswered: Int = 0
-        
         for indexLevel in 1...7 {
-            if indexPath.item == indexLevel - 1 && indexPath.item == 0 {
+            if indexPath.item == indexLevel - 1 && indexLevel == 1 {
                 cell.LevelLabel.text = "Level \(indexLevel)"
                 
                 cell.currentProgressLabel.text = "0/70"
@@ -84,12 +78,11 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
                 cell.unlockedLevelImage.layer.cornerRadius = cell.unlockedLevelImage.frame.size.width / 2
                 cell.unlockedLevelImage.clipsToBounds = true
                 cell.lockedLevelLabel.text = ""
-            }
-            else {
-                if indexPath.item == indexLevel - 1 && indexPath.item > 0 {
+            } else {
+                if indexPath.item == indexLevel - 1 && indexLevel > 1 {
                     cell.LevelLabel.text = "Level \(indexLevel)"
                     
-                    if (totalAnswered < 40 * indexLevel) { //fix 21
+                    if totalAnswered < 40 * (indexLevel - 1) { //fix 21
                         let view = UIView()
                         view.backgroundColor = UIColor.black.withAlphaComponent(0.1)
                         cell.backgroundView = view
@@ -101,14 +94,14 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
                         cell.currentProgressView.clipsToBounds = true
                         cell.currentProgressView.isHidden = true
                         cell.currentProgressLabel.text = "0/70" //fix
-                        //cell.currentProgressView.progress = Float()
-                    }
-                    else {
-                        if (totalAnswered >= 40 * indexLevel) {    //fix 21
-                            cell.currentProgressLabel.text = "0/70" //fix
-                        }
-                        
-                        else{
+                        cell.currentProgressView.progress = Float(0/Float(70))
+                    } else {
+                        if totalAnswered >= 40 * (indexLevel - 1) {    //fix 21
+                            cell.currentProgressLabel.text = "0/70"
+                            cell.currentProgressView.progress = Float(0/Float(70))  //fix
+                            cell.currentProgressView.layer.cornerRadius = 8
+                            cell.currentProgressView.clipsToBounds = true
+                        } else {
                             //let completed = KeychainWrapper.standard.integer(forKey: "number\(indexLevel)")
                             cell.currentProgressView.layer.cornerRadius = 8
                             cell.currentProgressView.clipsToBounds = true
@@ -116,7 +109,7 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
                             //cell.currentProgressView.progress +=  KeychainWrapper.standard.float(forKey: "number\(indexLevel)")! * 7/1000
                             //totalAnswered += KeychainWrapper.standard.integer(forKey: "number\(indexLevel)")!
                         }
-                        cell.unlockedLevelImage.image = UIImage(imageLiteralResourceName: "\(70 * indexLevel + 1)")
+                        cell.unlockedLevelImage.image = UIImage(imageLiteralResourceName: "\(70 * indexPath.item + 1)")
                         cell.unlockedLevelImage.layer.cornerRadius = cell.unlockedLevelImage.frame.size.width / 2
                         cell.unlockedLevelImage.clipsToBounds = true
                         cell.unlockedLevelImage.isHidden = false

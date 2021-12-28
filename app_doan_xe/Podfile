@@ -9,5 +9,4 @@ target 'app_doan_xe' do
   pod 'SQLite.swift'
   pod 'SwiftKeychainWrapper'
   pod 'CollectionViewCenteredFlowLayout'
-  pod 'NewPopMenu'
 end

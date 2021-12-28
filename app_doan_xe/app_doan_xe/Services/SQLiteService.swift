@@ -7,7 +7,6 @@
 
 import UIKit
 import SQLite
-import SQLite3
 
 class SqliteService:NSObject {
     static let shared: SqliteService = SqliteService()
