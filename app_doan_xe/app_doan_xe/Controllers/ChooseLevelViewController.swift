@@ -35,6 +35,10 @@ class ChooseLevelViewController: UIViewController {
         ChooseLevelCLV.dataSource = self
         
         ChooseLevelCLV.register(UINib(nibName: ChooseLevelCLVCell.className, bundle: nil), forCellWithReuseIdentifier: ChooseLevelCLVCell.className)
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
+        
+        coinLabel.text = "\(vc.coin)"
     }
 }
 
@@ -169,30 +173,35 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ChooseQuestionViewController") as! ChooseQuestionViewController
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"ChooseLevelCLVCell", for: indexPath) as! ChooseLevelCLVCell
+        vc.level = indexPath.item + 1
         
         if indexPath.item == 0 {
-            
             vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
             self.present(vc, animated: true, completion: nil)
         }
-        if indexPath.item == 1 {
-            
+        else if indexPath.item == 1 && totalAnswered >= 40 {
+            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+            self.present(vc, animated: true, completion: nil)
         }
-        if indexPath.item == 2 {
-            
+        else if indexPath.item == 2 && totalAnswered >= 80 {
+            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+            self.present(vc, animated: true, completion: nil)
         }
-        if indexPath.item == 3 {
-            
+        else if indexPath.item == 3 && totalAnswered >= 120 {
+            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+            self.present(vc, animated: true, completion: nil)
         }
-        if indexPath.item == 4 {
-            
+        else if indexPath.item == 4 && totalAnswered >= 160 {
+            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+            self.present(vc, animated: true, completion: nil)
         }
-        if indexPath.item == 5 {
-            
+        else if indexPath.item == 5 && totalAnswered >= 200 {
+            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+            self.present(vc, animated: true, completion: nil)
         }
-        if indexPath.item == 6 {
-            
+        else if indexPath.item == 6 && totalAnswered >= 240 {
+            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+            self.present(vc, animated: true, completion: nil)
         }
     }
 }

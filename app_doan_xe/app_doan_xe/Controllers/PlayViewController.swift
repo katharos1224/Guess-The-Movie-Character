@@ -31,9 +31,11 @@ extension NSObject {
 class PlayViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var levelLabel: UILabel!
-    @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var coinLabel: UILabel!
     @IBOutlet weak var totalAnsweredLabel: UILabel!
+    @IBOutlet weak var answeredLabel: UILabel!
+    @IBOutlet weak var coinLabel: UILabel!
+    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var viewBar: UIView!
     
     @IBAction func buyAction() {
     }
@@ -48,7 +50,7 @@ class PlayViewController: UIViewController {
     }
     
     var coin = 0
-    //var image: UIImage!
+    var totalAnswered = 240
     var numberQuestion = 0
     var listData:[WordsModel] = [WordsModel]()
     var listWhiteSpace: [Int] = []
@@ -70,21 +72,27 @@ class PlayViewController: UIViewController {
         collectionView.register(UINib(nibName: GuessCLVCell.className, bundle: nil), forCellWithReuseIdentifier: GuessCLVCell.className)
         // Do any additional setup after loading the view.
         
-        
-        
         listWhiteSpace = SqliteService.shared.getWhiteSpaceLocation(number: numberQuestion + 1)
         listLetter = SqliteService.shared.shuffleLetters(number: numberQuestion + 1)
         listData = SqliteService.shared.listData
         //image = UIImage(imageLiteralResourceName: "\(numberQuestion)")
         //coinLabel.text = String(coin)
-        func createBackground(){
-            let images: [UIImage] = [ #imageLiteral(resourceName: "bggreen"), #imageLiteral(resourceName: "bgblue")]
-            let randomImage = images.shuffled().randomElement()
-            let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-            backgroundImage.image = randomImage
-            backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-            self.view.insertSubview(backgroundImage, at: 0)
+        
+        let backgroundImages: [UIImage] = [#imageLiteral(resourceName: "bggreen"), #imageLiteral(resourceName: "bgblue")]
+        backgroundImage.image = backgroundImages.randomElement()
+        
+        if backgroundImage.image == #imageLiteral(resourceName: "bgblue") {
+            viewBar.backgroundColor = #colorLiteral(red: 0.4072989821, green: 0.9387814403, blue: 0.9059766531, alpha: 0.3)
+            levelLabel.textColor = UIColor.black
+            answeredLabel.textColor = UIColor.black
+        } else if backgroundImage.image == #imageLiteral(resourceName: "bggreen") {
+            viewBar.backgroundColor = #colorLiteral(red: 0.7474684119, green: 0.7131774426, blue: 0, alpha: 0.3020593504)
+            levelLabel.textColor = #colorLiteral(red: 0.3411329985, green: 0.00358922733, blue: 0.2856191993, alpha: 1)
+            answeredLabel.textColor = #colorLiteral(red: 0.3411329985, green: 0.00358922733, blue: 0.2856191993, alpha: 1)
         }
+        
+        coinLabel.text = "\(coin)"
+//        totalAnsweredLabel.text = "\(totalAnswered)/70"
     }
     
     

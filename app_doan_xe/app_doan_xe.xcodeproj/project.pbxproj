@@ -32,6 +32,7 @@
 		E7235E34271CA5EF008F18B1 /* AnswerCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7235E2A271CA5EF008F18B1 /* AnswerCLVCell.xib */; };
 		E7235E42271CA66B008F18B1 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7235E40271CA66B008F18B1 /* Roboto-Regular.ttf */; };
 		E7235E43271CA66B008F18B1 /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7235E41271CA66B008F18B1 /* LuckiestGuy-Regular.ttf */; };
+		E74E9541279C6673003DD948 /* CorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74E9540279C6673003DD948 /* CorrectViewController.swift */; };
 		E777AD00277BA12700C878A1 /* SQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E777ACFF277BA12700C878A1 /* SQLiteService.swift */; };
 		E785B39F271DEF1A00C0E561 /* LetterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785B39E271DEF1A00C0E561 /* LetterModel.swift */; };
 		E7C17D7B277BA95100521F72 /* click.ogg in Resources */ = {isa = PBXBuildFile; fileRef = E7C17D73277BA95100521F72 /* click.ogg */; };
@@ -74,6 +75,7 @@
 		E7235E2A271CA5EF008F18B1 /* AnswerCLVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerCLVCell.xib; sourceTree = "<group>"; };
 		E7235E40271CA66B008F18B1 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		E7235E41271CA66B008F18B1 /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
+		E74E9540279C6673003DD948 /* CorrectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectViewController.swift; sourceTree = "<group>"; };
 		E777ACFF277BA12700C878A1 /* SQLiteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteService.swift; sourceTree = "<group>"; };
 		E785B39E271DEF1A00C0E561 /* LetterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterModel.swift; sourceTree = "<group>"; };
 		E7C17D73277BA95100521F72 /* click.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; name = click.ogg; path = Databases/sounds/click.ogg; sourceTree = SOURCE_ROOT; };
@@ -159,6 +161,7 @@
 				E7235E15271CA4BE008F18B1 /* ChooseLevelViewController.swift */,
 				E7235E17271CA4C1008F18B1 /* ChooseQuestionViewController.swift */,
 				E7235E13271CA464008F18B1 /* PlayViewController.swift */,
+				E74E9540279C6673003DD948 /* CorrectViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				E7235E18271CA4C2008F18B1 /* ChooseQuestionViewController.swift in Sources */,
 				E7235E2D271CA5EF008F18B1 /* GuessCLVCell.swift in Sources */,
 				E7235E33271CA5EF008F18B1 /* ImagePlayCLVCell.swift in Sources */,
+				E74E9541279C6673003DD948 /* CorrectViewController.swift in Sources */,
 				E777AD00277BA12700C878A1 /* SQLiteService.swift in Sources */,
 				E7235DF3271C9481008F18B1 /* SceneDelegate.swift in Sources */,
 				E7235E1A271CA4C5008F18B1 /* MainViewController.swift in Sources */,

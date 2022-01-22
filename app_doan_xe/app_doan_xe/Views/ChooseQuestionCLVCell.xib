@@ -41,6 +41,7 @@
             </constraints>
             <size key="customSize" width="111" height="104"/>
             <connections>
+                <outlet property="checkmarkImage" destination="rIn-iJ-REJ" id="Og1-Jx-RNB"/>
                 <outlet property="questionImage" destination="x2p-Eu-BOf" id="sKp-L0-fKU"/>
             </connections>
             <point key="canvasLocation" x="500.72463768115944" y="-139.28571428571428"/>

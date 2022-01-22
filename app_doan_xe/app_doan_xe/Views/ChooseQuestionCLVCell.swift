@@ -10,6 +10,7 @@ import UIKit
 class ChooseQuestionCLVCell: UICollectionViewCell {
 
     @IBOutlet weak var questionImage: UIImageView!
+    @IBOutlet weak var checkmarkImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

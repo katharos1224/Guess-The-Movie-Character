@@ -24,15 +24,18 @@ class ChooseQuestionViewController: UIViewController {
     }
     
     var numberQuestion = 0
-    var coin = 0
+    var level = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ChooseQuestionCLV.delegate = self
         ChooseQuestionCLV.dataSource = self
-        
+        levelLabel.text = "Level " + String(level)
         ChooseQuestionCLV.register(UINib(nibName: ChooseQuestionCLVCell.className, bundle: nil), forCellWithReuseIdentifier: ChooseQuestionCLVCell.className)
         
+        let vc = storyboard?.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
+        
+        coinLabel.text = "\(vc.coin)"
     }
 }
 
@@ -48,17 +51,19 @@ extension ChooseQuestionViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChooseQuestionCLVCell.className, for: indexPath) as! ChooseQuestionCLVCell
-        
+                
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
         
         for indexImage in 1...70 {
             if indexPath.item == indexImage - 1 {
-                cell.questionImage.image = UIImage(imageLiteralResourceName: "\(indexImage)")
+                cell.questionImage.image = UIImage(imageLiteralResourceName: "\(70*(level-1)+indexPath.item+1)")
             }
         }
+        
         cell.questionImage.layer.cornerRadius = 20
         cell.questionImage.clipsToBounds = true
+        cell.checkmarkImage.isHidden = true
         
         return cell
     }
@@ -72,10 +77,9 @@ extension ChooseQuestionViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         for indexQuestion in 1...70 {
             if indexPath.item == indexQuestion - 1 {
-                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
-//                vc.questionLabel.text = "\(indexQuestion)/70"
-                vc.numberQuestion = indexPath.item
+                //let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard?.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
+                vc.numberQuestion = 70*(level-1)+indexPath.item
                 vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
                 self.present(vc, animated: true, completion: nil)
             }
