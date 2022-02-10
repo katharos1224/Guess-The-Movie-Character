@@ -661,7 +661,7 @@
                                 <rect key="frame" x="150.33333333333334" y="486" width="113.66666666666666" height="47"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCQ-Gy-Hbp">
-                                <rect key="frame" x="150.33333333333334" y="488.33333333333331" width="81.666666666666657" height="42.333333333333314"/>
+                                <rect key="frame" x="150.33333333333334" y="488.66666666666669" width="81.666666666666657" height="42.000000000000057"/>
                                 <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
