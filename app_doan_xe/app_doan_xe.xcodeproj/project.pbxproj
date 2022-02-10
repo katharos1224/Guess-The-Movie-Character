@@ -34,6 +34,7 @@
 		E7235E34271CA5EF008F18B1 /* AnswerCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7235E2A271CA5EF008F18B1 /* AnswerCLVCell.xib */; };
 		E7235E42271CA66B008F18B1 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7235E40271CA66B008F18B1 /* Roboto-Regular.ttf */; };
 		E7235E43271CA66B008F18B1 /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7235E41271CA66B008F18B1 /* LuckiestGuy-Regular.ttf */; };
+		E747673D27B56AD6006B8644 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E747673C27B56AD6006B8644 /* Roboto-Bold.ttf */; };
 		E74E9541279C6673003DD948 /* CorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74E9540279C6673003DD948 /* CorrectViewController.swift */; };
 		E777AD00277BA12700C878A1 /* SQLiteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E777ACFF277BA12700C878A1 /* SQLiteService.swift */; };
 		E785B39F271DEF1A00C0E561 /* LetterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E785B39E271DEF1A00C0E561 /* LetterModel.swift */; };
@@ -79,6 +80,7 @@
 		E7235E2A271CA5EF008F18B1 /* AnswerCLVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerCLVCell.xib; sourceTree = "<group>"; };
 		E7235E40271CA66B008F18B1 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		E7235E41271CA66B008F18B1 /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
+		E747673C27B56AD6006B8644 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		E74E9540279C6673003DD948 /* CorrectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectViewController.swift; sourceTree = "<group>"; };
 		E777ACFF277BA12700C878A1 /* SQLiteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteService.swift; sourceTree = "<group>"; };
 		E785B39E271DEF1A00C0E561 /* LetterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterModel.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 		E7235E3F271CA65A008F18B1 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				E747673C27B56AD6006B8644 /* Roboto-Bold.ttf */,
 				E720D23E273C59940035CC67 /* Roboto-Medium.ttf */,
 				E7235E41271CA66B008F18B1 /* LuckiestGuy-Regular.ttf */,
 				E7235E40271CA66B008F18B1 /* Roboto-Regular.ttf */,
@@ -304,6 +307,7 @@
 				E7235DFD271C9482008F18B1 /* LaunchScreen.storyboard in Resources */,
 				E7235E30271CA5EF008F18B1 /* GuessCLVCell.xib in Resources */,
 				E7C17D7F277BA95100521F72 /* correct_2.ogg in Resources */,
+				E747673D27B56AD6006B8644 /* Roboto-Bold.ttf in Resources */,
 				E7235E2B271CA5EF008F18B1 /* ImagePlayCLVCell.xib in Resources */,
 				E7C17D80277BA95100521F72 /* almost.ogg in Resources */,
 				E7235E43271CA66B008F18B1 /* LuckiestGuy-Regular.ttf in Resources */,
