@@ -18,8 +18,8 @@ class MainViewController: UIViewController {
     @IBAction func storeAction() {
     }
     @IBAction func playAction() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ChooseLevelViewController") as! ChooseLevelViewController
+        //let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ChooseLevelViewController") as! ChooseLevelViewController
         vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
         self.present(vc, animated: true)
        // self.navigationController?.pushViewController(vc, animated: true)    }

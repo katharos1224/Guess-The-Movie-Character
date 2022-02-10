@@ -17,6 +17,8 @@ class CorrectViewController: UIViewController {
        // self.navigationController?.pushViewController(vc, animated: true)    }
     }
     
+    var coin = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

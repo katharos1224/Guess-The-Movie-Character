@@ -27,7 +27,7 @@ class ChooseLevelViewController: UIViewController {
     }
     
     var levelLabel: String = ""
-    var totalAnswered: Int = 240
+//    var totalAnswered: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +58,8 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
         cell.layer.cornerRadius = 20
         cell.clipsToBounds = true
         
+        let vc = storyboard?.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
+        
         for indexLevel in 1...7 {
             if indexPath.item == indexLevel - 1 && indexLevel == 1 {
                 cell.LevelLabel.text = "Level \(indexLevel)"
@@ -86,7 +88,7 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
                 if indexPath.item == indexLevel - 1 && indexLevel > 1 {
                     cell.LevelLabel.text = "Level \(indexLevel)"
                     
-                    if totalAnswered < 40 * (indexLevel - 1) { //fix 21
+                    if vc.totalAnswered < 40 * (indexLevel - 1) { //fix 21
                         let view = UIView()
                         view.backgroundColor = UIColor.black.withAlphaComponent(0.1)
                         cell.backgroundView = view
@@ -100,7 +102,7 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
                         cell.currentProgressLabel.text = "0/70" //fix
                         cell.currentProgressView.progress = Float(0/Float(70))
                     } else {
-                        if totalAnswered >= 40 * (indexLevel - 1) {    //fix 21
+                        if vc.totalAnswered >= 40 * (indexLevel - 1) {    //fix 21
                             cell.currentProgressLabel.text = "0/70"
                             cell.currentProgressView.progress = Float(0/Float(70))  //fix
                             cell.currentProgressView.layer.cornerRadius = 8
@@ -170,38 +172,17 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
 //-----------------
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ChooseQuestionViewController") as! ChooseQuestionViewController
-        
+//        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ChooseQuestionViewController") as! ChooseQuestionViewController
+        let vc1 = storyboard?.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
         vc.level = indexPath.item + 1
         
-        if indexPath.item == 0 {
-            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-            self.present(vc, animated: true, completion: nil)
-        }
-        else if indexPath.item == 1 && totalAnswered >= 40 {
-            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-            self.present(vc, animated: true, completion: nil)
-        }
-        else if indexPath.item == 2 && totalAnswered >= 80 {
-            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-            self.present(vc, animated: true, completion: nil)
-        }
-        else if indexPath.item == 3 && totalAnswered >= 120 {
-            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-            self.present(vc, animated: true, completion: nil)
-        }
-        else if indexPath.item == 4 && totalAnswered >= 160 {
-            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-            self.present(vc, animated: true, completion: nil)
-        }
-        else if indexPath.item == 5 && totalAnswered >= 200 {
-            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-            self.present(vc, animated: true, completion: nil)
-        }
-        else if indexPath.item == 6 && totalAnswered >= 240 {
-            vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
-            self.present(vc, animated: true, completion: nil)
+        for i in 0...6 {
+            if indexPath.item == i && vc1.totalAnswered >= 40 * i {
+                vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+                self.present(vc, animated: true, completion: nil)
+                break
+            }
         }
     }
 }
