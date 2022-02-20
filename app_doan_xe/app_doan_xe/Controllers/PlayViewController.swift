@@ -32,7 +32,7 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var totalAnsweredLabel: UILabel!
-    @IBOutlet weak var answeredLabel: UILabel!
+    @IBOutlet weak var currentQuestion: UILabel!
     @IBOutlet weak var coinLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var viewBar: UIView!
@@ -49,11 +49,12 @@ class PlayViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    var level = 0
     var coin = 0
     var totalAnswered = 0
     var numberQuestion = 0
     var listData:[WordsModel] = [WordsModel]()
-    var listWhiteSpace: [Int] = []
+    var listSpecialCharacter: [Int] = []
     var listRemainLetter: [LetterModel] = [LetterModel]()
     var listExcludeSpecialLetter: [LetterModel] = [LetterModel]()
     var listLettersOfRightAnswer: [String] = []
@@ -78,7 +79,7 @@ class PlayViewController: UIViewController {
         
         listExcludeSpecialLetter = SqliteService.shared.shuffleLettersExcludeSpecialCharacters(number: numberQuestion + 1)
         listRemainLetter = SqliteService.shared.shuffleLetters(number: numberQuestion + 1)
-        listWhiteSpace = SqliteService.shared.getWhiteSpaceLocation(number: numberQuestion + 1)
+        listSpecialCharacter = SqliteService.shared.getSpecialCharacterLocation(number: numberQuestion + 1)
         listData = SqliteService.shared.listData
         
         let backgroundImages: [UIImage] = [#imageLiteral(resourceName: "bggreen"), #imageLiteral(resourceName: "bgblue")]
@@ -87,15 +88,23 @@ class PlayViewController: UIViewController {
         if backgroundImage.image == #imageLiteral(resourceName: "bgblue") {
             viewBar.backgroundColor = #colorLiteral(red: 0.4072989821, green: 0.9387814403, blue: 0.9059766531, alpha: 0.3)
             levelLabel.textColor = UIColor.black
-            answeredLabel.textColor = UIColor.black
+            currentQuestion.textColor = UIColor.black
         } else if backgroundImage.image == #imageLiteral(resourceName: "bggreen") {
             viewBar.backgroundColor = #colorLiteral(red: 0.7474684119, green: 0.7131774426, blue: 0, alpha: 0.3020593504)
             levelLabel.textColor = #colorLiteral(red: 0.3411329985, green: 0.00358922733, blue: 0.2856191993, alpha: 1)
-            answeredLabel.textColor = #colorLiteral(red: 0.3411329985, green: 0.00358922733, blue: 0.2856191993, alpha: 1)
+            currentQuestion.textColor = #colorLiteral(red: 0.3411329985, green: 0.00358922733, blue: 0.2856191993, alpha: 1)
         }
         
+        for index in 0...6 {
+            if numberQuestion >= 70 * index && numberQuestion <= 70 * index + 70 - 1 {
+                level = index + 1
+                levelLabel.text = "Level \(level)"
+                currentQuestion.text = "\((numberQuestion + 1) - 70 * index)/70"
+            }
+        }
+        
+        totalAnsweredLabel.text = "\(totalAnswered)"
         coinLabel.text = "\(coin)"
-//        totalAnsweredLabel.text = "\(totalAnswered)/70"
     }
     
     
@@ -122,6 +131,7 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImagePlayCLVCell.className, for: indexPath) as! ImagePlayCLVCell
             cell.imageCell.image = UIImage.init(imageLiteralResourceName: "\(numberQuestion + 1)")
@@ -132,10 +142,10 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         else if indexPath.section == 1 {
             
-            for item in listWhiteSpace {
+            for item in listSpecialCharacter {
                 if indexPath.item == item {
                     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnswerWhiteSpaceCLVCell", for: indexPath) as! AnswerWhiteSpaceCLVCell
-                    cell.lbLetter.text = "?"
+                    cell.lbLetter.text = "@"
                     return cell
                 }
             }
@@ -156,12 +166,13 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
             let answerCell = collectionView.cellForItem(at: indexPath) as! AnswerCLVCell
             
-            if answerCell.answerLetterLabel.text!.contains("") || isHintLetter(indexPath: indexPath){
+            if answerCell.answerLetterLabel.text!.contains("") || isHintLetter(indexPath: indexPath) {
                 
             }
             else {
                 answerCell.answerLetterLabel.text = ""
                 answerCell.answerLetterLabel.textColor = .clear
+                
                 let guessCell = collectionView.cellForItem(at: IndexPath(item: listNumber[indexPath.item], section: 2)) as! GuessCLVCell
                 
                 guessCell.guessLetterLabel.text = letterArr[indexPath.item]
@@ -200,7 +211,7 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     
                     var isWhiteSpace = false
                     let index = getIndexPathOfEmptyTextCell(in: self.collectionView)!
-                    for item in listWhiteSpace {
+                    for item in listSpecialCharacter {
                         if item == index.item {
                             isWhiteSpace = true
                             let rightAnswerCell = self.collectionView.cellForItem(at: index) as! AnswerWhiteSpaceCLVCell
@@ -330,10 +341,11 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
         self.present(vc, animated: true, completion: nil)
         
         listRemainLetter = SqliteService.shared.shuffleLetters(number: numberQuestion + 1)
-        listWhiteSpace = SqliteService.shared.getWhiteSpaceLocation(number: numberQuestion + 1)
+        listSpecialCharacter = SqliteService.shared.getSpecialCharacterLocation(number: numberQuestion + 1)
         listNumber.removeAll()
         letterArr.removeAll()
         listLettersOfRightAnswer.removeAll()
+        totalAnswered += 1
     }
     
     func isHintLetter(indexPath: IndexPath)->Bool {
@@ -350,7 +362,7 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let amountLetter = SqliteService.shared.getAmountLetterOfRightAnswer(number: numberQuestion + 1 )
         var isWhiteSpace = false
         for item in 0...amountLetter - 1 {
-            for whiteSpaceItem in listWhiteSpace {
+            for whiteSpaceItem in listSpecialCharacter {
                 if item == whiteSpaceItem {
                     isWhiteSpace = true
                     let cell = collectionView.cellForItem(at: IndexPath(item: whiteSpaceItem, section: 0)) as! AnswerCLVCell
@@ -382,7 +394,7 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let amountLetter = SqliteService.shared.getAmountLetterOfRightAnswer(number: numberQuestion + 1)
         var isWhiteSpace = false
         for item in 0...amountLetter - 1 {
-            for whiteSpaceItem in listWhiteSpace {
+            for whiteSpaceItem in listSpecialCharacter {
                 if item == whiteSpaceItem {
                     isWhiteSpace = true
                     let cell = collectionView.cellForItem(at: IndexPath(item: whiteSpaceItem, section: 1)) as! AnswerCLVCell
@@ -417,7 +429,7 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let amountLetter = SqliteService.shared.getAmountLetterOfRightAnswer(number: numberQuestion + 1)
         var isWhiteSpace = false
         for item in 0...amountLetter - 1 {
-            for whiteSpaceItem in listWhiteSpace {
+            for whiteSpaceItem in listSpecialCharacter {
                 if item == whiteSpaceItem {
                     isWhiteSpace = true
                     let cell = collectionView.cellForItem(at: IndexPath(item: whiteSpaceItem, section: 0)) as! AnswerCLVCell

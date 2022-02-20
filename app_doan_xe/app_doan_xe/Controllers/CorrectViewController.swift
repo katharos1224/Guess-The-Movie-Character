@@ -22,7 +22,7 @@ class CorrectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        rewardCoins.text = "0"
+        rewardCoins.text = "+100"
 
         // Do any additional setup after loading the view.
     }
