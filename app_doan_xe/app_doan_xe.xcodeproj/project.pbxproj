@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		80DEB820198BDB117B46CDB7 /* Pods_app_doan_xe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8350440E24CB3477D858B57 /* Pods_app_doan_xe.framework */; };
-		E704382627B55428001B9D9A /* AnswerWhiteSpaceCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704382427B55428001B9D9A /* AnswerWhiteSpaceCLVCell.swift */; };
-		E704382727B55428001B9D9A /* AnswerWhiteSpaceCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E704382527B55428001B9D9A /* AnswerWhiteSpaceCLVCell.xib */; };
+		E704382627B55428001B9D9A /* SpecialCharacterCLVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E704382427B55428001B9D9A /* SpecialCharacterCLVCell.swift */; };
+		E704382727B55428001B9D9A /* SpecialCharacterCLVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E704382527B55428001B9D9A /* SpecialCharacterCLVCell.xib */; };
 		E716C58727397F1000E157CE /* Words.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E716C58627397F1000E157CE /* Words.sqlite */; };
 		E720D23F273C59940035CC67 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E720D23E273C59940035CC67 /* Roboto-Medium.ttf */; };
 		E7235DF1271C9481008F18B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7235DF0271C9481008F18B1 /* AppDelegate.swift */; };
@@ -52,8 +52,8 @@
 		15B506D8E592FAAF8BEBD8D2 /* Pods-app_doan_xe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_doan_xe.release.xcconfig"; path = "Target Support Files/Pods-app_doan_xe/Pods-app_doan_xe.release.xcconfig"; sourceTree = "<group>"; };
 		B8350440E24CB3477D858B57 /* Pods_app_doan_xe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_app_doan_xe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8C5872D10A514ECC10854E /* Pods-app_doan_xe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app_doan_xe.debug.xcconfig"; path = "Target Support Files/Pods-app_doan_xe/Pods-app_doan_xe.debug.xcconfig"; sourceTree = "<group>"; };
-		E704382427B55428001B9D9A /* AnswerWhiteSpaceCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerWhiteSpaceCLVCell.swift; sourceTree = "<group>"; };
-		E704382527B55428001B9D9A /* AnswerWhiteSpaceCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerWhiteSpaceCLVCell.xib; sourceTree = "<group>"; };
+		E704382427B55428001B9D9A /* SpecialCharacterCLVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialCharacterCLVCell.swift; sourceTree = "<group>"; };
+		E704382527B55428001B9D9A /* SpecialCharacterCLVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialCharacterCLVCell.xib; sourceTree = "<group>"; };
 		E716C58627397F1000E157CE /* Words.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = Words.sqlite; path = data/Words.sqlite; sourceTree = "<group>"; };
 		E720D23E273C59940035CC67 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		E7235DED271C9481008F18B1 /* app_doan_xe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app_doan_xe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,8 +186,8 @@
 				E7235E2A271CA5EF008F18B1 /* AnswerCLVCell.xib */,
 				E7235E23271CA5EE008F18B1 /* GuessCLVCell.swift */,
 				E7235E26271CA5EE008F18B1 /* GuessCLVCell.xib */,
-				E704382427B55428001B9D9A /* AnswerWhiteSpaceCLVCell.swift */,
-				E704382527B55428001B9D9A /* AnswerWhiteSpaceCLVCell.xib */,
+				E704382427B55428001B9D9A /* SpecialCharacterCLVCell.swift */,
+				E704382527B55428001B9D9A /* SpecialCharacterCLVCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,7 +312,7 @@
 				E75653EC27B5703C009F78AF /* error_2.ogg in Resources */,
 				E7235E43271CA66B008F18B1 /* LuckiestGuy-Regular.ttf in Resources */,
 				E75653EB27B5703C009F78AF /* almost.ogg in Resources */,
-				E704382727B55428001B9D9A /* AnswerWhiteSpaceCLVCell.xib in Resources */,
+				E704382727B55428001B9D9A /* SpecialCharacterCLVCell.xib in Resources */,
 				E716C58727397F1000E157CE /* Words.sqlite in Resources */,
 				E7235E42271CA66B008F18B1 /* Roboto-Regular.ttf in Resources */,
 				E7235DFA271C9482008F18B1 /* Assets.xcassets in Resources */,
@@ -387,7 +387,7 @@
 				E7235E2D271CA5EF008F18B1 /* GuessCLVCell.swift in Sources */,
 				E7235E33271CA5EF008F18B1 /* ImagePlayCLVCell.swift in Sources */,
 				E74E9541279C6673003DD948 /* CorrectViewController.swift in Sources */,
-				E704382627B55428001B9D9A /* AnswerWhiteSpaceCLVCell.swift in Sources */,
+				E704382627B55428001B9D9A /* SpecialCharacterCLVCell.swift in Sources */,
 				E777AD00277BA12700C878A1 /* SQLiteService.swift in Sources */,
 				E7235DF3271C9481008F18B1 /* SceneDelegate.swift in Sources */,
 				E7235E1A271CA4C5008F18B1 /* MainViewController.swift in Sources */,

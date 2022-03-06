@@ -58,6 +58,7 @@ class PlayViewController: UIViewController {
     var listRemainLetter: [LetterModel] = [LetterModel]()
     var listExcludeSpecialLetter: [LetterModel] = [LetterModel]()
     var listLettersOfRightAnswer: [String] = []
+    var listFullAnswerChacracters: [String] = []
     var letter = ""
     var number = 0
     var listNumber: [Int] = []
@@ -72,14 +73,15 @@ class PlayViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: ImagePlayCLVCell.className, bundle: nil), forCellWithReuseIdentifier: ImagePlayCLVCell.className)
-        collectionView.register(UINib(nibName: AnswerWhiteSpaceCLVCell.className, bundle: nil), forCellWithReuseIdentifier: AnswerWhiteSpaceCLVCell.className)
+        collectionView.register(UINib(nibName: SpecialCharacterCLVCell.className, bundle: nil), forCellWithReuseIdentifier: SpecialCharacterCLVCell.className)
         collectionView.register(UINib(nibName: AnswerCLVCell.className, bundle: nil), forCellWithReuseIdentifier: AnswerCLVCell.className)
         collectionView.register(UINib(nibName: GuessCLVCell.className, bundle: nil), forCellWithReuseIdentifier: GuessCLVCell.className)
         // Do any additional setup after loading the view.
         
-        listExcludeSpecialLetter = SqliteService.shared.shuffleLettersExcludeSpecialCharacters(number: numberQuestion + 1)
+        listExcludeSpecialLetter = SqliteService.shared.shuffleLetters(number: numberQuestion + 1)
         listRemainLetter = SqliteService.shared.shuffleLetters(number: numberQuestion + 1)
-        listSpecialCharacter = SqliteService.shared.getSpecialCharacterLocation(number: numberQuestion + 1)
+        listSpecialCharacter = SqliteService.shared.getSpecialCharacterIndex(number: numberQuestion + 1)
+        listFullAnswerChacracters = SqliteService.shared.getCharactersOfFullAnswer(number: numberQuestion + 1)
         listData = SqliteService.shared.listData
         
         let backgroundImages: [UIImage] = [#imageLiteral(resourceName: "bggreen"), #imageLiteral(resourceName: "bgblue")]
@@ -122,7 +124,7 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return 1
         }
         else if section == 1 {
-            let amountLetter = SqliteService.shared.getAmountLetterOfRightAnswer(number: numberQuestion + 1)
+            let amountLetter = SqliteService.shared.getAmountCharacterOfFullAnswer(number: numberQuestion + 1)
             return amountLetter
         }
         else {
@@ -141,21 +143,25 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         }
         else if indexPath.section == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnswerCLVCell", for: indexPath) as! AnswerCLVCell
+            let specialCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SpecialCharacterCLVCell", for: indexPath) as! SpecialCharacterCLVCell
             
-            for item in listSpecialCharacter {
-                if indexPath.item == item {
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnswerWhiteSpaceCLVCell", for: indexPath) as! AnswerWhiteSpaceCLVCell
-                    cell.lbLetter.text = "@"
-                    return cell
+            for _ in listFullAnswerChacracters {
+                specialCell.lbLetter.text = listFullAnswerChacracters[indexPath.item]
+                if specialCell.lbLetter.text == " " || specialCell.lbLetter.text == "&" || specialCell.lbLetter.text == "-" || specialCell.lbLetter.text == "," || specialCell.lbLetter.text == "." || specialCell.lbLetter.text == "'" {
+                    specialCell.lbLetter.textColor = .white
+                    return specialCell
+                }
+                else if cell.answerLetterLabel.text != " " && cell.answerLetterLabel.text != "&" && cell.answerLetterLabel.text != "-" && cell.answerLetterLabel.text != "," && cell.answerLetterLabel.text != "." && cell.answerLetterLabel.text != "'" {
+                    cell.answerLetterLabel.text = ""
                 }
             }
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnswerCLVCell", for: indexPath) as! AnswerCLVCell
-            cell.answerLetterLabel.text = ""
+            
             return cell
         }
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GuessCLVCell.className, for: indexPath) as! GuessCLVCell
-            cell.guessLetterLabel.text = listExcludeSpecialLetter[indexPath.item].rightAnswer
+            cell.guessLetterLabel.text = listRemainLetter[indexPath.item].rightAnswer
             return cell
         }
     }
@@ -165,15 +171,17 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if indexPath.section == 1 {
             
             let answerCell = collectionView.cellForItem(at: indexPath) as! AnswerCLVCell
-            
-            if answerCell.answerLetterLabel.text!.contains("") || isHintLetter(indexPath: indexPath) {
-                
+                        
+            if answerCell.answerLetterLabel.textColor != .clear || isHintLetter(indexPath: indexPath) {
             }
+            
             else {
                 answerCell.answerLetterLabel.text = ""
-                answerCell.answerLetterLabel.textColor = .clear
                 
                 let guessCell = collectionView.cellForItem(at: IndexPath(item: listNumber[indexPath.item], section: 2)) as! GuessCLVCell
+                print("\(indexPath.item)")
+                
+                
                 
                 guessCell.guessLetterLabel.text = letterArr[indexPath.item]
                 //set arrays to default
@@ -214,7 +222,7 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     for item in listSpecialCharacter {
                         if item == index.item {
                             isWhiteSpace = true
-                            let rightAnswerCell = self.collectionView.cellForItem(at: index) as! AnswerWhiteSpaceCLVCell
+                            let rightAnswerCell = self.collectionView.cellForItem(at: index) as! SpecialCharacterCLVCell
                             rightAnswerCell.lbLetter.text = letter
                         }
                     }
@@ -318,7 +326,7 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func whenAnswerCorrect() {
-        let correctAnswer = SqliteService.shared.getOriginalRightAnswer(number: numberQuestion)
+        let correctAnswer = SqliteService.shared.getFullAnswer(number: numberQuestion)
         
         //next to new question
         KeychainWrapper.standard.removeObject(forKey: "number")
@@ -341,7 +349,7 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
         self.present(vc, animated: true, completion: nil)
         
         listRemainLetter = SqliteService.shared.shuffleLetters(number: numberQuestion + 1)
-        listSpecialCharacter = SqliteService.shared.getSpecialCharacterLocation(number: numberQuestion + 1)
+        listSpecialCharacter = SqliteService.shared.getSpecialCharacterIndex(number: numberQuestion + 1)
         listNumber.removeAll()
         letterArr.removeAll()
         listLettersOfRightAnswer.removeAll()
@@ -359,13 +367,13 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func isFullCellInRightAnswer()->Bool {
-        let amountLetter = SqliteService.shared.getAmountLetterOfRightAnswer(number: numberQuestion + 1 )
+        let amountLetter = SqliteService.shared.getAmountCharacterOfFullAnswer(number: numberQuestion + 1 )
         var isWhiteSpace = false
         for item in 0...amountLetter - 1 {
-            for whiteSpaceItem in listSpecialCharacter {
-                if item == whiteSpaceItem {
+            for specialItem in listSpecialCharacter {
+                if item == specialItem {
                     isWhiteSpace = true
-                    let cell = collectionView.cellForItem(at: IndexPath(item: whiteSpaceItem, section: 0)) as! AnswerCLVCell
+                    let cell = collectionView.cellForItem(at: IndexPath(item: specialItem, section: 1)) as! AnswerCLVCell
                     if (cell.answerLetterLabel.text == "") {
                         return false
                     }
@@ -391,7 +399,7 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func isRightAnswer()->Bool {
-        let amountLetter = SqliteService.shared.getAmountLetterOfRightAnswer(number: numberQuestion + 1)
+        let amountLetter = SqliteService.shared.getAmountCharacterOfFullAnswer(number: numberQuestion + 1)
         var isWhiteSpace = false
         for item in 0...amountLetter - 1 {
             for whiteSpaceItem in listSpecialCharacter {
@@ -400,7 +408,7 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
                     let cell = collectionView.cellForItem(at: IndexPath(item: whiteSpaceItem, section: 1)) as! AnswerCLVCell
                     listLettersOfRightAnswer.append(cell.answerLetterLabel.text ?? "")
                     if item == amountLetter - 1{
-                        let rightAnswer = SqliteService.shared.getRightAnswerLetters(number: numberQuestion + 1)
+                        let rightAnswer = SqliteService.shared.getOnlyLetters(number: numberQuestion + 1)
                         if listLettersOfRightAnswer == rightAnswer{
                             return true
                         }
@@ -415,7 +423,7 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let cell = collectionView.cellForItem(at: IndexPath(item: item, section: 1)) as! AnswerCLVCell
             listLettersOfRightAnswer.append(cell.answerLetterLabel.text ?? "")
             if item == amountLetter - 1{
-                let rightAnswer = SqliteService.shared.getRightAnswerLetters(number: numberQuestion + 1)
+                let rightAnswer = SqliteService.shared.getOnlyLetters(number: numberQuestion + 1)
                 if listLettersOfRightAnswer == rightAnswer{
                     isTrueAnswer = true
                     return true
@@ -426,15 +434,15 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func getIndexPathOfEmptyTextCell(in collectionView: UICollectionView) -> IndexPath? {
-        let amountLetter = SqliteService.shared.getAmountLetterOfRightAnswer(number: numberQuestion + 1)
+        let amountLetter = SqliteService.shared.getAmountCharacterOfFullAnswer(number: numberQuestion + 1)
         var isWhiteSpace = false
         for item in 0...amountLetter - 1 {
             for whiteSpaceItem in listSpecialCharacter {
                 if item == whiteSpaceItem {
                     isWhiteSpace = true
-                    let cell = collectionView.cellForItem(at: IndexPath(item: whiteSpaceItem, section: 0)) as! AnswerCLVCell
+                    let cell = collectionView.cellForItem(at: IndexPath(item: whiteSpaceItem, section: 1)) as! AnswerCLVCell
                     if (cell.answerLetterLabel.text == "") {
-                        return IndexPath(item: item, section: 0)
+                        return IndexPath(item: item, section: 1)
                     }
                     break
                 }
@@ -445,10 +453,10 @@ extension PlayViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
             let cell = collectionView.cellForItem(at: IndexPath(item: item, section: 1)) as! AnswerCLVCell
             if (cell.answerLetterLabel.text == "") {
-                return IndexPath(item: item, section: 0)
+                return IndexPath(item: item, section: 1)
             }
         }
-        return IndexPath(item: 0, section: 0)
+        return IndexPath(item: 0, section: 1)
     }
 }
 

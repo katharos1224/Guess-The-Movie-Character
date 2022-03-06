@@ -60,28 +60,28 @@ class SqliteService:NSObject {
         
     }
     
-    func getAmountLetterOfRightAnswer(number: Int)->Int{
-        return getRightAnswerLettersIncludeSpecialCharacter(number: number).count
+    func getAmountCharacterOfFullAnswer(number: Int)->Int{
+        return getCharactersOfFullAnswer(number: number).count
         
     }
     
-    func getAmountLetterOfRightAnswerExcludeSpecialCharacters(number: Int)->Int{
-        return getRightAnswerLetters(number: number).count
+    func getAmountLetterExcludeSpecialCharacters(number: Int)->Int{
+        return getOnlyLetters(number: number).count
         
     }
     
-    func getRightAnswer(number: Int)->[String]{
-        var word: [String] = []
-        for item in listData {
-            if item.id == number + 1 {
-                word = item.answer.components(separatedBy: [" ", "&", "-", ",", ".", "'"])  //fix this
-                break
-            }
-        }
-        return word
-    }
+//    func getRightAnswer(number: Int)->[String]{
+//        var word: [String] = []
+//        for item in listData {
+//            if item.id == number + 1 {
+//                word = item.answer.components(separatedBy: [" ", "&", "-", ",", ".", "'"])  //fix this
+//                break
+//            }
+//        }
+//        return word
+//    }
     
-    func getRightAnswerLettersIncludeSpecialCharacter(number: Int)->[String] {
+    func getCharactersOfFullAnswer(number: Int)->[String] {
         var letter:[String] = []
         for item in listData {
             if item.id == number {
@@ -97,9 +97,9 @@ class SqliteService:NSObject {
         return []
     }
     
-    func getRightAnswerLetters(number: Int)->[String] {
+    func getOnlyLetters(number: Int)->[String] {
         var rightAnswerLetters: [String] = []
-        let rightAnswerLettersIncludeWhiteSpace = getRightAnswerLettersIncludeSpecialCharacter(number: number)
+        let rightAnswerLettersIncludeWhiteSpace = getCharactersOfFullAnswer(number: number)
         for item in rightAnswerLettersIncludeWhiteSpace {
             if item == " " || item == "&" || item == "-" || item == "," || item == "." || item == "'" {
                 continue
@@ -110,46 +110,47 @@ class SqliteService:NSObject {
         return rightAnswerLetters
     }
     
-    func getSpecialCharacterLocation(number: Int)->[Int] {
-        var specialCharacterLocation: [Int] = []
-        let rightAnswerLettersIncludeWhiteSpace = getRightAnswerLettersIncludeSpecialCharacter(number: number)
-        for item in 0...rightAnswerLettersIncludeWhiteSpace.count - 1 {
-            if rightAnswerLettersIncludeWhiteSpace[item] == " " || rightAnswerLettersIncludeWhiteSpace[item] == "&" || rightAnswerLettersIncludeWhiteSpace[item] == "-" || rightAnswerLettersIncludeWhiteSpace[item] == "," || rightAnswerLettersIncludeWhiteSpace[item] == "." || rightAnswerLettersIncludeWhiteSpace[item] == "'" {
-                if item == 0 {
-                    continue
-                }
-                specialCharacterLocation.append(item)
+    func getSpecialCharacterIndex(number: Int)->[Int] {
+        var specialCharacterIndex: [Int] = []
+        let fullAnswer = getCharactersOfFullAnswer(number: number)
+        for item in 0...fullAnswer.count - 1 {
+            if fullAnswer[item] == " " || fullAnswer[item] == "&" || fullAnswer[item] == "-" || fullAnswer[item] == "," || fullAnswer[item] == "." || fullAnswer[item] == "'" {
+//                if item == 0 {
+//                    continue
+//                }
+                specialCharacterIndex.append(item)
             }
         }
-        return specialCharacterLocation
+        return specialCharacterIndex
     }
+        
     
     func randomizeAvailableLetters(tileArraySize: Int) -> Array<String> {
-        let alphabet: [String] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "7", "8", "9"]
+        let alphabet: [String] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         var availableTiles = [String]()
         for _ in 0..<tileArraySize {
-            let rand = Int(arc4random_uniform(34))
+            let rand = Int(arc4random_uniform(36))
             availableTiles.append(alphabet[rand])
         }
         return(availableTiles)
     }
     
     func getAmountOfRandomLetters(number: Int)->Int{
-        let amountOfRightAnswer = getAmountLetterOfRightAnswerExcludeSpecialCharacters(number: number)
+        let amountOfRightAnswer = getAmountLetterExcludeSpecialCharacters(number: number)
         return 21 - amountOfRightAnswer
     }
     
-    func setNumberOfSection(number: Int)->Int{
-        let rightAnswer = getRightAnswer(number: number)
-        return rightAnswer.count
-    }
+//    func setNumberOfSection(number: Int)->Int{
+//        let rightAnswer = getRightAnswer(number: number)
+//        return rightAnswer.count
+//    }
     
     
     
-    func getOriginalRightAnswer(number: Int)->String{
+    func getFullAnswer(number: Int)->String {
         var word = ""
-        for item in listData{
-            if item.id == number{
+        for item in listData {
+            if item.id == number {
                 word = item.answer
                 break
             }
@@ -158,37 +159,32 @@ class SqliteService:NSObject {
     }
     
     func shuffleLetters(number: Int)->[LetterModel] {
-        var randomAndRightAnswerLetters: [LetterModel] = [LetterModel]()
+        var randomLettersAndAnswerLetters: [LetterModel] = [LetterModel]()
         let amountOfRandomLetters = getAmountOfRandomLetters(number: number)
         let randomLetters = randomizeAvailableLetters(tileArraySize: amountOfRandomLetters)
-        let rightAnswerLetters = getRightAnswerLettersIncludeSpecialCharacter(number: number)
+        let rightAnswerLetters = getCharactersOfFullAnswer(number: number)
         var letters = randomLetters + rightAnswerLetters
         letters.shuffle()
         for item in 0...letters.count - 1 {
-            randomAndRightAnswerLetters.append(LetterModel(rightAnswer: letters[item], number: item))
+            
+            if letters[item] == " " || letters[item] == "&" || letters[item] == "-" || letters[item] == "," || letters[item] == "." || letters[item] == "'" {
+                continue
+            }
+            randomLettersAndAnswerLetters.append(LetterModel(rightAnswer: letters[item], number: item))
         }
-        //        //Exclude Special Characters?
-        //        if <#condition#> {
-        //            <#code#>
-        //        }
-        return randomAndRightAnswerLetters
+        return randomLettersAndAnswerLetters
     }
     
-    func shuffleLettersExcludeSpecialCharacters(number: Int)->[LetterModel] {
-        var randomAndRightAnswerLetters: [LetterModel] = [LetterModel]()
-        let amountOfRandomLetters = getAmountOfRandomLetters(number: number)
-        let randomLetters = randomizeAvailableLetters(tileArraySize: amountOfRandomLetters)
-        let rightAnswerLetters = getRightAnswerLetters(number: number)
-        var letters = randomLetters + rightAnswerLetters
-        letters.shuffle()
-        for item in 0...letters.count - 1 {
-            randomAndRightAnswerLetters.append(LetterModel(rightAnswer: letters[item], number: item))
+    func getCharacterByIndex(number: Int)->String {
+        var char = ""
+        for item in getSpecialCharacterIndex(number: number) {
+            let character = getCharactersOfFullAnswer(number: number)
+            if character[item] == " " || character[item] == "&" || character[item] == "-" || character[item] == "," || character[item] == "." || character[item] == "'" {
+                char = character[item]
+                break
+            }
         }
-        //        //Exclude Special Characters?
-        //        if <#condition#> {
-        //            <#code#>
-        //        }
-        return randomAndRightAnswerLetters
+        return char
     }
 }
 
