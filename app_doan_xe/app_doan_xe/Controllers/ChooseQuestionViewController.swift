@@ -103,8 +103,8 @@ extension ChooseQuestionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if UIDevice.current.userInterfaceIdiom == .pad{
-            return CGSize(width: 100, height: 100)
+            return CGSize(width: 150, height: 150)
         }
-        return CGSize(width: 100, height: 100)
+        return CGSize(width: 115, height: 115)
     }
 }

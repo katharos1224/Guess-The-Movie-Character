@@ -114,22 +114,34 @@ class SqliteService:NSObject {
         var specialCharacterIndex: [Int] = []
         let fullAnswer = getCharactersOfFullAnswer(number: number)
         for item in 0...fullAnswer.count - 1 {
+            if item == 0 {
+                continue
+            }
             if fullAnswer[item] == " " || fullAnswer[item] == "&" || fullAnswer[item] == "-" || fullAnswer[item] == "," || fullAnswer[item] == "." || fullAnswer[item] == "'" {
-//                if item == 0 {
-//                    continue
-//                }
                 specialCharacterIndex.append(item)
             }
         }
         return specialCharacterIndex
     }
-        
+    
+    func getCharacterIndex(number: Int)->[Int] {
+        var characterIndex: [Int] = []
+        let fullAnswer = getCharactersOfFullAnswer(number: number)
+        for item in 0...fullAnswer.count - 1 {
+            if item == 0 {
+                continue
+            }
+            characterIndex.append(item)
+        }
+        return characterIndex
+    }
     
     func randomizeAvailableLetters(tileArraySize: Int) -> Array<String> {
         let alphabet: [String] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        let specialCharacter: [String] = [" ", "&", "-", ",", ".", "'"]
         var availableTiles = [String]()
         for _ in 0..<tileArraySize {
-            let rand = Int(arc4random_uniform(36))
+            let rand = Int(arc4random_uniform(UInt32(alphabet.count)))
             availableTiles.append(alphabet[rand])
         }
         return(availableTiles)
@@ -175,16 +187,16 @@ class SqliteService:NSObject {
         return randomLettersAndAnswerLetters
     }
     
-    func getCharacterByIndex(number: Int)->String {
-        var char = ""
-        for item in getSpecialCharacterIndex(number: number) {
-            let character = getCharactersOfFullAnswer(number: number)
-            if character[item] == " " || character[item] == "&" || character[item] == "-" || character[item] == "," || character[item] == "." || character[item] == "'" {
-                char = character[item]
-                break
-            }
-        }
-        return char
-    }
+//    func getCharacterByIndex(number: Int)->String {
+//        var char = ""
+//        for item in getSpecialCharacterIndex(number: number) {
+//            let character = getCharactersOfFullAnswer(number: number)
+//            if character[item] == " " || character[item] == "&" || character[item] == "-" || character[item] == "," || character[item] == "." || character[item] == "'" {
+//                char = character[item]
+//                break
+//            }
+//        }
+//        return char
+//    }
 }
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tQ1-pz-KlZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tQ1-pz-KlZ">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -29,17 +29,17 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainbg" translatesAutoresizingMaskIntoConstraints="NO" id="E2J-4V-CHk">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOVIE &amp; CHARACTER" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrB-Ej-pC6">
-                                <rect key="frame" x="46.333333333333343" y="130" width="321.66666666666663" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie &amp; Character" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qrB-Ej-pC6">
+                                <rect key="frame" x="42.666666666666657" y="130" width="328.66666666666674" height="36"/>
                                 <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="36"/>
                                 <color key="textColor" red="0.3411136568" green="0.0036650905390000002" blue="0.28558558229999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitemainbg" translatesAutoresizingMaskIntoConstraints="NO" id="sck-JV-L4A">
-                                <rect key="frame" x="16.666666666666657" y="166" width="381" height="316"/>
+                                <rect key="frame" x="16.666666666666657" y="181" width="381" height="316"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainimg" translatesAutoresizingMaskIntoConstraints="NO" id="rvY-9z-nVd">
-                                <rect key="frame" x="36" y="186" width="342" height="276"/>
+                                <rect key="frame" x="36" y="201" width="342" height="276"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZO9-3W-IS0" userLabel="ButtonView">
                                 <rect key="frame" x="30" y="482" width="354" height="338"/>
@@ -131,8 +131,8 @@
                                     <constraint firstItem="Ze1-Dq-oaa" firstAttribute="centerX" secondItem="hBt-jx-o1R" secondAttribute="centerX" id="ruO-wa-kG8"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GUESS THE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jlu-Rs-msS" userLabel="GUESS THE">
-                                <rect key="frame" x="123.66666666666667" y="94" width="166.66666666666663" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guess The" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jlu-Rs-msS" userLabel="GUESS THE">
+                                <rect key="frame" x="120.33333333333333" y="94" width="173.33333333333337" height="36"/>
                                 <fontDescription key="fontDescription" name="LuckiestGuy-Regular" family="Luckiest Guy" pointSize="36"/>
                                 <color key="textColor" red="0.3411764705882353" green="0.0035892273299999999" blue="0.28561919930000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -142,13 +142,13 @@
                         <color key="backgroundColor" red="0.937264502" green="0.71863001589999997" blue="0.98702663180000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qrB-Ej-pC6" firstAttribute="centerX" secondItem="Md1-ve-nxx" secondAttribute="centerX" id="1sn-GV-fhl"/>
-                            <constraint firstItem="sck-JV-L4A" firstAttribute="top" secondItem="qrB-Ej-pC6" secondAttribute="bottom" id="2wV-AL-Hzl"/>
+                            <constraint firstItem="sck-JV-L4A" firstAttribute="top" secondItem="qrB-Ej-pC6" secondAttribute="bottom" constant="15" id="2wV-AL-Hzl"/>
                             <constraint firstItem="E2J-4V-CHk" firstAttribute="leading" secondItem="Mkz-F4-kAL" secondAttribute="leading" id="4fC-A1-0nm"/>
                             <constraint firstItem="rvY-9z-nVd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sck-JV-L4A" secondAttribute="leading" constant="15" id="6NV-bX-ok2"/>
                             <constraint firstItem="E2J-4V-CHk" firstAttribute="top" secondItem="Mkz-F4-kAL" secondAttribute="top" id="7cU-qr-3Ip"/>
                             <constraint firstItem="Jlu-Rs-msS" firstAttribute="centerX" secondItem="Md1-ve-nxx" secondAttribute="centerX" id="7x6-pY-sOK"/>
                             <constraint firstItem="Md1-ve-nxx" firstAttribute="trailing" secondItem="Q9s-ze-eBR" secondAttribute="trailing" constant="80" id="CfA-ft-Xyp"/>
-                            <constraint firstItem="ZO9-3W-IS0" firstAttribute="top" secondItem="sck-JV-L4A" secondAttribute="bottom" id="HU0-WA-ch8"/>
+                            <constraint firstItem="ZO9-3W-IS0" firstAttribute="top" secondItem="sck-JV-L4A" secondAttribute="bottom" constant="-15" id="HU0-WA-ch8"/>
                             <constraint firstItem="ZO9-3W-IS0" firstAttribute="width" secondItem="Mkz-F4-kAL" secondAttribute="width" multiplier="0.855072" id="Hcm-7N-WRW"/>
                             <constraint firstItem="sck-JV-L4A" firstAttribute="centerX" secondItem="Md1-ve-nxx" secondAttribute="centerX" id="Khf-Gk-ox6"/>
                             <constraint firstItem="ZO9-3W-IS0" firstAttribute="height" secondItem="Mkz-F4-kAL" secondAttribute="height" multiplier="0.377232" id="L5J-St-ejn"/>

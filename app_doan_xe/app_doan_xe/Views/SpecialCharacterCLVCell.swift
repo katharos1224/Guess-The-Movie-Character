@@ -8,7 +8,7 @@
 import UIKit
 
 class SpecialCharacterCLVCell: UICollectionViewCell {
-    @IBOutlet weak var lbLetter: UILabel!
+    @IBOutlet weak var specialCharacter: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

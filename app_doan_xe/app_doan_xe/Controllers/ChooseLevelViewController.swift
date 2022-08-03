@@ -174,12 +174,12 @@ extension ChooseLevelViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard?.instantiateViewController(withIdentifier: "ChooseQuestionViewController") as! ChooseQuestionViewController
-        let vc1 = storyboard?.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
+        let playVC = storyboard?.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
         
         vc.level = indexPath.item + 1
                 
         for i in 0...6 {
-            if indexPath.item == i && vc1.totalAnswered >= 40 * i {
+            if indexPath.item == i && playVC.totalAnswered >= 40 * i {
                 vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
                 self.present(vc, animated: true, completion: nil)
                 break
