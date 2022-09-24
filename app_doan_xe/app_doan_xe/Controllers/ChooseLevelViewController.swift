@@ -18,7 +18,6 @@ class ChooseLevelViewController: UIViewController {
     @IBAction func settingAction() {
     }
     @IBAction func rankAction() {
-        
     }
     @IBAction func storeAction() {
     }
