@@ -8,5 +8,5 @@ target 'app_doan_xe' do
   # Pods for app_doan_xe
   pod 'SQLite.swift'
   pod 'SwiftKeychainWrapper'
-  pod 'CollectionViewCenteredFlowLayout'
+  
 end

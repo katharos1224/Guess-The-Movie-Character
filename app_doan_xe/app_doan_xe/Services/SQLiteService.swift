@@ -60,29 +60,18 @@ class SqliteService:NSObject {
         
     }
     
-    func getAmountCharacterOfFullAnswer(number: Int)->Int{
+    func getTotalNumberOfCharacters(number: Int)->Int{
         return getCharactersOfFullAnswer(number: number).count
         
     }
     
     func getAmountLetterExcludeSpecialCharacters(number: Int)->Int{
-        return getOnlyLetters(number: number).count
-        
+        return getLetterOnly(number: number).count
+
     }
     
-//    func getRightAnswer(number: Int)->[String]{
-//        var word: [String] = []
-//        for item in listData {
-//            if item.id == number + 1 {
-//                word = item.answer.components(separatedBy: [" ", "&", "-", ",", ".", "'"])  //fix this
-//                break
-//            }
-//        }
-//        return word
-//    }
-    
     func getCharactersOfFullAnswer(number: Int)->[String] {
-        var letter:[String] = []
+        var letter: [String] = []
         for item in listData {
             if item.id == number {
                 let word = item.answer
@@ -90,24 +79,23 @@ class SqliteService:NSObject {
                     let index = word.index(word.startIndex, offsetBy: item)
                     letter.append(String(word[index]).uppercased())
                 }
-                
                 return letter
             }
         }
         return []
     }
     
-    func getOnlyLetters(number: Int)->[String] {
-        var rightAnswerLetters: [String] = []
-        let rightAnswerLettersIncludeWhiteSpace = getCharactersOfFullAnswer(number: number)
-        for item in rightAnswerLettersIncludeWhiteSpace {
+    func getLetterOnly(number: Int)->[String] {
+        var onlyLetterAnswer: [String] = []
+        let fullAnswer = getCharactersOfFullAnswer(number: number)
+        for item in fullAnswer {
             if item == " " || item == "&" || item == "-" || item == "," || item == "." || item == "'" {
                 continue
             }
-            rightAnswerLetters.append(item.uppercased())
+            onlyLetterAnswer.append(item.uppercased())
         }
         
-        return rightAnswerLetters
+        return onlyLetterAnswer
     }
     
     func getSpecialCharacterIndex(number: Int)->[Int] {
@@ -128,9 +116,6 @@ class SqliteService:NSObject {
         var characterIndex: [Int] = []
         let fullAnswer = getCharactersOfFullAnswer(number: number)
         for item in 0...fullAnswer.count - 1 {
-            if item == 0 {
-                continue
-            }
             characterIndex.append(item)
         }
         return characterIndex
@@ -138,7 +123,6 @@ class SqliteService:NSObject {
     
     func randomizeAvailableLetters(tileArraySize: Int) -> Array<String> {
         let alphabet: [String] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-        let specialCharacter: [String] = [" ", "&", "-", ",", ".", "'"]
         var availableTiles = [String]()
         for _ in 0..<tileArraySize {
             let rand = Int(arc4random_uniform(UInt32(alphabet.count)))
@@ -186,17 +170,5 @@ class SqliteService:NSObject {
         }
         return randomLettersAndAnswerLetters
     }
-    
-//    func getCharacterByIndex(number: Int)->String {
-//        var char = ""
-//        for item in getSpecialCharacterIndex(number: number) {
-//            let character = getCharactersOfFullAnswer(number: number)
-//            if character[item] == " " || character[item] == "&" || character[item] == "-" || character[item] == "," || character[item] == "." || character[item] == "'" {
-//                char = character[item]
-//                break
-//            }
-//        }
-//        return char
-//    }
 }
 

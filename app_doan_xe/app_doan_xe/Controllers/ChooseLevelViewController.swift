@@ -11,6 +11,7 @@ import AVFoundation
 
 class ChooseLevelViewController: UIViewController {
     
+    
     @IBOutlet weak var coinLabel: UILabel!
     
     @IBOutlet weak var ChooseLevelCLV: UICollectionView!
@@ -18,6 +19,7 @@ class ChooseLevelViewController: UIViewController {
     @IBAction func settingAction() {
     }
     @IBAction func rankAction() {
+        
     }
     @IBAction func storeAction() {
     }

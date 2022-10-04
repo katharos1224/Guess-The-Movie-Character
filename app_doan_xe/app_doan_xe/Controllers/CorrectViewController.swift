@@ -14,7 +14,7 @@ class CorrectViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "ChooseLevelViewController") as! ChooseLevelViewController
         vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
         self.present(vc, animated: true)
-       // self.navigationController?.pushViewController(vc, animated: true)    }
+       // self.navigationController?.pushViewController(vc, animated: true)
     }
     
     var coin = 0
